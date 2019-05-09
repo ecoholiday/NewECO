@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relHome"
+    tools:context=".Activity.Home">
+    <include layout="@layout/toolbar"></include>
+    <LinearLayout
+        android:id="@+id/relHomeSearch"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/txtHomeSearch"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="10"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:focusable="false"
+            android:drawableLeft="@drawable/places_ic_search"
+            android:background="@drawable/table_shape"
+            android:hint="Enter National Park Name">
+        </AutoCompleteTextView>
+
+        <ImageButton
+            android:id="@+id/imgfilter"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_alignParentRight="true"
+            android:background="#ffffff"
+            app:srcCompat="@drawable/ic_filter"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/relImgSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relHomeSearch">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="2dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v4.view.ViewPager
+                android:layout_height="180dp"
+                android:layout_width="match_parent"
+                android:id="@+id/viewPager"/>
+
+            <LinearLayout
+                android:id="@+id/SliderDots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relImgSlider">
+        <ListView
+            android:id="@+id/view_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:dividerHeight="@null"
+            android:listSelector="@color/rareColor">
+        </ListView>
+    </RelativeLayout>
+
+
+</RelativeLayout>
+</layout>
