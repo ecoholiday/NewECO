@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/pageImageViewer"
@@ -10,6 +9,17 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"/>
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/txtImageSlider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alpine National Park"
+        android:typeface="serif"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textColor="@color/txtOnImage"
+        android:layout_margin="10sp"
+        android:textSize="25sp"/>
 
-</LinearLayout>
+</RelativeLayout>

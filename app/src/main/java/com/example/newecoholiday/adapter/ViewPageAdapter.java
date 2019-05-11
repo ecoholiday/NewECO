@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.newecoholiday.R;
@@ -16,7 +17,8 @@ public class ViewPageAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private  int []images={R.drawable.landing_hiking,R.drawable.landing_hiking,R.drawable.landing_hiking,R.drawable.landing_hiking};
+    private  int []images={R.drawable.alpine,R.drawable.grampians,R.drawable.wilsons,R.drawable.murray};
+    private String []parkNames = {"Alpine National Park","Grampians National Park","Wilsons Promontory National Park","Murray - Sunset National Park"};
 
     public ViewPageAdapter(Context context){
         this.context=context;
@@ -36,19 +38,25 @@ public class ViewPageAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container,final int position){
         layoutInflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.viewpager_imageview,null);
+        TextView txtImageSlider = (TextView)view.findViewById(R.id.txtImageSlider) ;
         ImageView imageView=(ImageView)view.findViewById(R.id.pageImageViewer);
         imageView.setImageResource(images[position]);
+        txtImageSlider.setText(parkNames[position]);
+
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if(position == 0) {
+
                     Toast.makeText(context, "Slide 1 Clicked ", Toast.LENGTH_SHORT).show();
                 }else if(position == 1) {
                     Toast.makeText(context, "Slide 2 Clicked ", Toast.LENGTH_SHORT).show();
+                }else if(position == 2) {
+                    Toast.makeText(context, "Slide 3 Clicked ", Toast.LENGTH_SHORT).show();
                 }else {
 
-                    Toast.makeText(context, "Slide 3 Clicked ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Slide 4 Clicked ", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -18,18 +18,19 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/landing_hiking"
-            android:scaleType="fitXY"/>
+            android:src="@drawable/camp_things"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lookouts"
             android:layout_margin="10sp"
-            android:typeface="sans"
+            android:typeface="serif"
+            app:fontFamily="cursive"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="20sp"/>
+            android:textColor="@color/txtOnImage"
+            android:textSize="22sp"/>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:id="@+id/cardCamping"
@@ -43,16 +44,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/landing_hiking"
-            android:scaleType="fitXY"/>
+            android:scaleType="centerCrop"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Camping"
-            android:typeface="sans"
+            android:typeface="serif"
+            app:fontFamily="cursive"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/txtOnImage"
             android:layout_margin="10sp"
-            android:textSize="20sp"/>
+            android:textSize="22sp"/>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:id="@+id/cardHiking"
@@ -65,17 +67,18 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/landing_hiking"
-            android:scaleType="fitXY"/>
+            android:src="@drawable/camp_things"
+            android:scaleType="centerCrop"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hiking"
-            android:typeface="sans"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:typeface="serif"
+            app:fontFamily="serif"
+            android:textStyle="bold|italic"
+            android:textColor="@color/txtOnImage"
             android:layout_margin="10sp"
-            android:textSize="20sp"/>
+            android:textSize="22sp"/>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>

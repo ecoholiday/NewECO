@@ -207,61 +207,6 @@ public class Home extends AppCompatActivity {
         });
         // popup filter
 
-        // toolbar changes
-        /* ImageButton imgExplore = (ImageButton) findViewById(R.id.imgExplore);
-        imgExplore.setImageResource(R.mipmap.explore_clicked);
-
-
-        final ImageButton imgStats = (ImageButton) findViewById(R.id.imgStats);
-        imgStats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentExplore = new Intent(Home.this, Statistics.class);
-                progressDialogueShowClose();
-                startActivity(intentExplore);
-
-            }
-        });
-
-        final ImageButton imgHelp = (ImageButton) findViewById(R.id.imgHelp);
-        imgHelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent imgHelp = new Intent(Home.this, Help.class);
-                progressDialogueShowClose();
-                startActivity(imgHelp);
-
-            }
-        });
-
-        final ImageButton imgChecklist = (ImageButton) findViewById(R.id.imgChecklist);
-        imgChecklist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent imgChecklist = new Intent(Home.this, CheckList.class);
-                progressDialogueShowClose();
-                startActivity(imgChecklist);
-
-            }
-        }); */
-
-        // toolbar changes
-
-        //enabling text search keypad
-        txtHomeSearch = (AutoCompleteTextView)findViewById(R.id.txtHomeSearch);
-        txtHomeSearch.setOnTouchListener(new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                v.setFocusable(true);
-                v.setFocusableInTouchMode(true);
-                return false;
-            }
-        });
-
-
-
         // list is updated
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
@@ -311,6 +256,19 @@ public class Home extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        //enabling text search keypad
+        txtHomeSearch = (AutoCompleteTextView)findViewById(R.id.txtHomeSearch);
+        txtHomeSearch.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                v.setFocusable(true);
+                v.setFocusableInTouchMode(true);
+                return false;
+            }
+        });
+
         NPAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,NationalParks);
 
 
@@ -333,7 +291,7 @@ public class Home extends AppCompatActivity {
 
                         editor.putInt("NPID",NPIDonSearch.get(NPSearch.indexOf(selectNPName)));
                         editor.apply();
-                        // startActivity(new Intent(Home.this,ParkActivity.class));
+                        startActivity(new Intent(Home.this,ParkPage.class));
                         break;
 
                     }
@@ -721,10 +679,6 @@ public class Home extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             String z = "SUCCESS";
-            int newArea = 700000;
-            //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
-
-
             try{
 
                 String query = "select * from tbl_NationalParksList where Distance <="+DistCount+" order by Distance ASC";
@@ -855,7 +809,9 @@ public class Home extends AppCompatActivity {
                         viewPager.setCurrentItem(1);
                     } else if(viewPager.getCurrentItem() == 1){
                         viewPager.setCurrentItem(2);
-                    } else
+                    } else if(viewPager.getCurrentItem() == 2){
+                        viewPager.setCurrentItem(3);
+                    }else
                     {
                         viewPager.setCurrentItem(0);
                     }

@@ -70,19 +70,16 @@ public class ParksAdapter extends BaseAdapter {
         area.setText(" "+item.getArea()+"ft2");
         distance.setText(" "+item.getDistance() + "KMs");
 
-        final SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString("ParkLatitude",item.getLatitude());
-        editor.putString("ParkLongitude", item.getLongitude());
-        editor.putString("ParkName",item.getNationalParks());
-        editor.putString("ParkArea",item.getArea());
-        editor.putString("ParkDistance",item.getDistance()+"");
-        editor.putInt("NPID",item.getNPID());
-        editor.commit();
-
-
         park_Navigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("ParkLatitude",item.getLatitude());
+                editor.putString("ParkLongitude", item.getLongitude());
+                editor.putString("ParkName",item.getNationalParks());
+                editor.putString("ParkArea",item.getArea());
+                editor.putString("ParkDistance",item.getDistance()+"");
+                editor.commit();
                 context.startActivity(new Intent(context, MapsActivity.class));
             }
         });
@@ -90,6 +87,14 @@ public class ParksAdapter extends BaseAdapter {
         listParkDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("ParkLatitude",item.getLatitude());
+                editor.putString("ParkLongitude", item.getLongitude());
+                editor.putString("ParkName",item.getNationalParks());
+                editor.putString("ParkArea",item.getArea());
+                editor.putString("ParkDistance",item.getDistance()+"");
+                editor.putInt("NPID",item.getNPID());
+                editor.commit();
                 context.startActivity(new Intent(context, ParkPage.class));
             }
         });

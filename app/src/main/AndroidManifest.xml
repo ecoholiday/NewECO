@@ -21,7 +21,7 @@
         <activity android:name=".Activity.Lookouts" />
         <activity android:name=".Activity.Hiking" />
         <activity android:name=".Activity.Camping" />
-        <activity android:name=".Activity.Main" />
+        <activity android:name=".Activity.CheckList" />
         <activity android:name=".Activity.Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

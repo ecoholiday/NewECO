@@ -15,109 +15,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listParkDetails"
-        app:cardBackgroundColor="@color/imageBackground"
         app:cardElevation="5dp"
         app:cardCornerRadius="12dp"
         app:cardUseCompatPadding="true"
         android:layout_margin="2dp">
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/imgPark"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20sp">
-            <ImageButton
-                android:id="@+id/smallButton"
-                android:layout_marginLeft="10dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="12dp"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/dot_for_parklist" />
-
-            <TextView
-                android:id="@+id/NParkName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:typeface="sans"
-                android:layout_toRightOf="@+id/smallButton"
-                android:layout_marginLeft="5dp"
-                app:fontFamily="sans-serif-condensed"
-                android:layout_marginBottom="10dp"
-                android:textSize="22dp"
-                android:textColor="#040404"
-                android:text="National Park"
-                android:textStyle="bold"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/NParkName"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                    android:id="@+id/imgDist"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    app:srcCompat="@drawable/ic_car" />
-
-                <TextView
-                    android:id="@+id/ParkDistance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:textColor="#1d69d2"
-                    android:textSize="18sp"
-                    android:text="100KMs"
-                    android:textStyle="bold"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/imgArea"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="10dp"
-                        app:srcCompat="@drawable/ic_area" />
-                    <TextView
-                        android:id="@+id/Area"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#da1616"
-                        android:layout_marginLeft="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:typeface="sans"
-                        android:textSize="18sp"
-                        android:text="Area"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </RelativeLayout>
-        <RelativeLayout
+            android:layout_height="200dp"
+            android:src="@drawable/camp_things"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:id="@+id/txtPark"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/btnNavigation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:background="@color/imageBackground"
-                app:srcCompat="@drawable/ic_directions" />
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:text="Aipine"
+            android:typeface="serif"
+            app:fontFamily="serif"
+            android:textStyle="bold|italic"
+            android:textColor="@color/txtOnImage"
+            android:layout_margin="10sp"
+            android:textSize="22sp"/>
 
     </android.support.v7.widget.CardView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imgDist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/ic_car" />
+
+            <TextView
+                android:id="@+id/ParkDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="#1d69d2"
+                android:textSize="18sp"
+                android:text="100KMs"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/btnNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@color/imageBackground"
+            app:srcCompat="@drawable/ic_directions" />
 
     </LinearLayout>
 
