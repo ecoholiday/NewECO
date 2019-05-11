@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ThingsTodo"></activity>
+        <activity android:name=".Activity.Savings"></activity>
+        <activity android:name=".Activity.ThingsTodo" />
         <activity android:name=".Activity.ParkPage" />
         <activity android:name=".Activity.Lookouts" />
         <activity android:name=".Activity.Hiking" />

@@ -117,7 +117,7 @@ public class ParkPage extends AppCompatActivity {
         cardSavings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ParkPage.this,MapsActivity.class));
+                startActivity(new Intent(ParkPage.this,Savings.class));
             }
         });
 

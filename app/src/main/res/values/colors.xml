@@ -30,4 +30,7 @@
     <color name="help">#6B76FC</color>
     <color name="savings">#FF5050</color>
 
+    <color name="carbonSaved">#259B24</color>
+    <color name="carbonSpent">#E66453</color>
+
 </resources>

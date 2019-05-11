@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.newecoholiday.Activity.Home;
 import com.example.newecoholiday.R;
 
 
@@ -36,6 +36,7 @@ public class ViewPageAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container,final int position){
+
         layoutInflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.viewpager_imageview,null);
         TextView txtImageSlider = (TextView)view.findViewById(R.id.txtImageSlider) ;
@@ -48,15 +49,14 @@ public class ViewPageAdapter extends PagerAdapter {
             public void onClick(View v) {
 
                 if(position == 0) {
+                    ((Home)context).checkForTheNP(parkNames[position]);
 
-                    Toast.makeText(context, "Slide 1 Clicked ", Toast.LENGTH_SHORT).show();
                 }else if(position == 1) {
-                    Toast.makeText(context, "Slide 2 Clicked ", Toast.LENGTH_SHORT).show();
+                    ((Home)context).checkForTheNP(parkNames[position]);
                 }else if(position == 2) {
-                    Toast.makeText(context, "Slide 3 Clicked ", Toast.LENGTH_SHORT).show();
+                    ((Home)context).checkForTheNP(parkNames[position]);
                 }else {
-
-                    Toast.makeText(context, "Slide 4 Clicked ", Toast.LENGTH_SHORT).show();
+                    ((Home)context).checkForTheNP(parkNames[position]);
                 }
             }
         });

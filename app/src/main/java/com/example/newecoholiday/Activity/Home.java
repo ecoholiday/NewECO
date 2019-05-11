@@ -143,7 +143,7 @@ public class Home extends AppCompatActivity {
         startImageSlider();
 
         //toolbarchanges
-        toolBarChanges();
+        //toolBarChanges();
 
         // popup filter
 
@@ -271,36 +271,17 @@ public class Home extends AppCompatActivity {
 
         NPAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,NationalParks);
 
-
         txtHomeSearch.setAdapter(NPAdapter);
+
         txtHomeSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 selectNPName = (String)parent.getItemAtPosition(position);
+                checkForTheNP(selectNPName);
 
-                int pos=-1;
-                for (int i = 0; i < NationalParks.size(); i++) {
-                    if (NationalParks.get(i).equals(selectNPName)) {
-
-                        SharedPreferences.Editor editor = sharedpreferences.edit();
-                        editor.putString("ParkLatitude",Latitude.get(i));
-                        editor.putString("ParkLongitude", Longitude.get(i));
-                        editor.putString("ParkName",NationalParks.get(i));
-                        editor.putString("ParkArea",Area.get(i));
-                        editor.putString("ParkDistance",Distance.get(i));
-
-                        editor.putInt("NPID",NPIDonSearch.get(NPSearch.indexOf(selectNPName)));
-                        editor.apply();
-                        startActivity(new Intent(Home.this,ParkPage.class));
-                        break;
-
-                    }
-                }
             }
         });
-
-
-
     }
     @Override
     protected void onActivityResult(int requestCode,
@@ -821,7 +802,7 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    public void toolBarChanges(){
+    /*public void toolBarChanges(){
         txtExploreToolbar = (TextView)findViewById(R.id.txtExploreToolbar);
         txtExploreToolbar.setVisibility(View.VISIBLE);
 
@@ -835,5 +816,25 @@ public class Home extends AppCompatActivity {
             }
         });
 
+    }*/
+
+    public void checkForTheNP(String selectNPName){
+        int pos=-1;
+        for (int i = 0; i < NationalParks.size(); i++) {
+            if (NationalParks.get(i).equals(selectNPName)) {
+
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("ParkLatitude",Latitude.get(i));
+                editor.putString("ParkLongitude", Longitude.get(i));
+                editor.putString("ParkName",NationalParks.get(i));
+                editor.putString("ParkArea",Area.get(i));
+                editor.putString("ParkDistance",Distance.get(i));
+                editor.putInt("NPID",NPIDonSearch.get(NPSearch.indexOf(selectNPName)));
+                editor.apply();
+                startActivity(new Intent(Home.this,ParkPage.class));
+                break;
+
+            }
+        }
     }
 }

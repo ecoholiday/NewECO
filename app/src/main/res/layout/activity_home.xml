@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     android:id="@+id/relHome"
     tools:context=".Activity.Home">
-    <include layout="@layout/toolbar"></include>
     <LinearLayout
         android:id="@+id/relHomeSearch"
         android:orientation="horizontal"
