@@ -24,4 +24,10 @@
     <color name="txtColor">#040404</color>
     <color name="txtArea">#da1616</color>
     <color name="txtDist">#1d69d2</color>
+
+    <color name="todo">#FFA700</color>
+    <color name="prepare">#9F7EF3</color>
+    <color name="help">#6B76FC</color>
+    <color name="savings">#FF5050</color>
+
 </resources>

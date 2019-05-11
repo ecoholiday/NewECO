@@ -39,9 +39,7 @@
 
     </android.support.v7.widget.CardView>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -58,25 +56,109 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textColor="#1d69d2"
+                android:textColor="@color/txtDist"
                 android:textSize="18sp"
                 android:text="100KMs"
                 android:textStyle="bold"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <ImageButton
+                android:id="@+id/btnNavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15sp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/ic_directions" />
         </LinearLayout>
-        <ImageButton
-            android:id="@+id/btnNavigation"
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgCalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
-            android:background="@color/imageBackground"
-            app:srcCompat="@drawable/ic_directions" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/ic_calendar" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3"
+            android:elevation="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp">
+
+            <TextView
+                android:id="@+id/edate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="3"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="5dp"
+            android:elevation="5dp">
+            <TextView
+                android:id="@+id/sdate"
+                android:focusable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginLeft="10sp"
+            android:layout_weight="2"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="5dp"
+            android:elevation="5dp">
+
+            <ImageView
+                android:id="@+id/imgWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:foregroundGravity="left"
+                app:srcCompat="@drawable/ic_weather" />
+            <TextView
+                android:id="@+id/txtWeather"
+                android:text="27*"
+                android:layout_marginRight="10sp"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </android.support.v7.widget.CardView>
+
+
 
     </LinearLayout>
 
     <LinearLayout
         android:baselineAligned="false"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -90,7 +172,7 @@
                 android:layout_weight="3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#FFA700"
+                app:cardBackgroundColor="@color/todo"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="5dp"
                 android:elevation="5dp">
@@ -102,51 +184,11 @@
 
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
-                android:id="@+id/cardPrepare"
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="#9F7EF3"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="5dp"
-                android:elevation="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Things to prepare"/>
-
-            </android.support.v7.widget.CardView>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardSavings"
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="#6B76FC"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="5dp"
-                android:elevation="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Savings"/>
-
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
                 android:id="@+id/cardHelp"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#FF5050"
+                app:cardBackgroundColor="@color/help"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="5dp"
 
@@ -158,6 +200,48 @@
                     android:text="help"/>
 
             </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardPrepare"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/prepare"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="5dp"
+                android:elevation="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Things to prepare"/>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardSavings"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/savings"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="5dp"
+                android:elevation="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Savings"/>
+
+            </android.support.v7.widget.CardView>
+
 
 
         </LinearLayout>

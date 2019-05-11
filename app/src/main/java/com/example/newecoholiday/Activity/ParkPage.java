@@ -10,24 +10,28 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.newecoholiday.R;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class ParkPage extends AppCompatActivity {
 
     SQLiteDatabase mDatabase;
-    TextView cDate,cWeather;
+
 
     //calendar
-    EditText sdate,edate;
+    TextView cDate,cWeather;
+    CardView cardStartDate,cardEndDate;
+    TextView sdate,edate;
     private static final DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     String dateTime;
     Calendar dateSelected = Calendar.getInstance();
@@ -117,6 +121,69 @@ public class ParkPage extends AppCompatActivity {
             }
         });
 
+
+        // dates code
+        sdate =(TextView) findViewById(R.id.sdate);
+        edate =(TextView) findViewById(R.id.edate);
+        cardStartDate = (CardView)findViewById(R.id.cardStartDate);
+        cardEndDate= (CardView)findViewById(R.id.cardEndDate);
+
+
+
+        final DatePickerDialog.OnDateSetListener startDate = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                startCalendar.set(Calendar.YEAR, year);
+                startCalendar.set(Calendar.MONTH, monthOfYear);
+                startCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateStartDate();
+            }
+
+        };
+
+        final DatePickerDialog.OnDateSetListener endDate = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+
+                endCalendar.set(Calendar.YEAR, year);
+                endCalendar.set(Calendar.MONTH, monthOfYear);
+                endCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateEndDate();
+            }
+
+        };
+
+        cardEndDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(sdate.getText().toString().equals("Start Date")){
+                    Toast.makeText(getApplicationContext(),"Please Select Start Date",Toast.LENGTH_LONG).show();
+                }else{
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(ParkPage.this, endDate, endCalendar
+                            .get(Calendar.YEAR), endCalendar.get(Calendar.MONTH),
+                            endCalendar.get(Calendar.DAY_OF_MONTH));
+                    datePickerDialog.getDatePicker().setMinDate(startCalendar.getTimeInMillis());
+                    datePickerDialog.show();
+                }
+            }
+        });
+        cardStartDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(ParkPage.this, startDate, startCalendar
+                        .get(Calendar.YEAR), startCalendar.get(Calendar.MONTH),
+                        startCalendar.get(Calendar.DAY_OF_MONTH));
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                datePickerDialog.show();
+            }
+        });
+
     }
 
     public void setNPImage(String name){
@@ -175,4 +242,18 @@ public class ParkPage extends AppCompatActivity {
 
 
     }
+
+    private void updateStartDate() {
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        sdate.setText(sdf.format(startCalendar.getTime()));
+    }
+    private void updateEndDate() {
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        edate.setText(sdf.format(endCalendar.getTime()));
+    }
+
 }
