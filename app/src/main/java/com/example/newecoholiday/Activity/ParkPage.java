@@ -117,7 +117,15 @@ public class ParkPage extends AppCompatActivity {
         cardSavings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ParkPage.this,Savings.class));
+
+                Intent intentReport = new Intent(ParkPage.this, Savings.class);
+
+                intentReport.putExtra("startDate", sdate.getText().toString());
+                intentReport.putExtra("endDate", edate.getText().toString());
+                intentReport.putExtra("distance", parkDistance);
+                intentReport.putExtra("NPname", parkName);
+
+                startActivity(intentReport);
             }
         });
 
@@ -181,6 +189,23 @@ public class ParkPage extends AppCompatActivity {
                         startCalendar.get(Calendar.DAY_OF_MONTH));
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 datePickerDialog.show();
+            }
+        });
+
+        ImageView imgWeather = (ImageView)findViewById(R.id.imgWeather);
+        imgWeather.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("ParkLatitude",latitude);
+                editor.putString("ParkLongitude", longitude);
+                editor.putString("ParkName",parkName);
+                editor.putString("ParkArea",area);
+                editor.putString("ParkDistance",parkDistance);
+                editor.apply();
+                startActivity(new Intent(ParkPage.this,WeatherActivity.class));
+
             }
         });
 

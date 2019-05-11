@@ -108,6 +108,35 @@ public class Home extends AppCompatActivity {
     List<String> TNPID = new ArrayList<String>();
     //
 
+    //lookouts table
+    List<String> LookoutSite = new ArrayList<String>();
+    List<String> LookLatitude = new ArrayList<String>();
+    List<String> LookLongitude = new ArrayList<String>();
+    List<String> LNPID = new ArrayList<String>();
+    //
+    //Facilities Data
+    List<String> NPCamping = new ArrayList<String>();
+    List<String> NPCanoeing = new ArrayList<String>();
+    List<String> NPFishing = new ArrayList<String>();
+    List<String> NPScienceDrive = new ArrayList<String>();
+    List<String> NPHorseRiding = new ArrayList<String>();
+    List<String> NPHunting = new ArrayList<String>();
+    List<String> NPTrekking = new ArrayList<String>();
+    List<String> NPCycling = new ArrayList<String>();
+    List<String> NPPicnicking = new ArrayList<String>();
+    List<String> NPSightSeeing = new ArrayList<String>();
+    List<String> NPSkiing = new ArrayList<String>();
+    List<String> NPWhiteWaterRafting = new ArrayList<String>();
+    List<String> NPCampFire = new ArrayList<String>();
+    List<String> NPSwimming = new ArrayList<String>();
+    List<String> NPSailing = new ArrayList<String>();
+    List<String> NPBBQ = new ArrayList<String>();
+    List<String> NPBirdWatching = new ArrayList<String>();
+    List<String> NPPlayGround = new ArrayList<String>();
+    List<String> NPID = new ArrayList<String>();
+    //Facilities Data
+
+
     public static final String MyPREFERENCES = "MyPrefs" ;
     //SharedPreferences sharedpreferences;
 
@@ -233,6 +262,33 @@ public class Home extends AppCompatActivity {
         TrackName = Arrays.asList(getResources().getStringArray(R.array.TrackName));
         TNPID = Arrays.asList(getResources().getStringArray(R.array.TNPID));
         //
+        // LookOut Data
+        LookoutSite = Arrays.asList(getResources().getStringArray(R.array.LookoutSite));
+        LookLatitude = Arrays.asList(getResources().getStringArray(R.array.LookLatitude));
+        LookLongitude = Arrays.asList(getResources().getStringArray(R.array.LookLongitude));
+        LNPID = Arrays.asList(getResources().getStringArray(R.array.LNPID));
+        //
+        NPCamping = Arrays.asList(getResources().getStringArray(R.array.NPCamping));
+        NPCanoeing = Arrays.asList(getResources().getStringArray(R.array.NPCanoeing));
+        NPFishing = Arrays.asList(getResources().getStringArray(R.array.NPFishing));
+        NPScienceDrive = Arrays.asList(getResources().getStringArray(R.array.NPScienceDrive));
+        NPHorseRiding = Arrays.asList(getResources().getStringArray(R.array.NPHorseRiding));
+        NPHunting = Arrays.asList(getResources().getStringArray(R.array.NPHunting));
+        NPTrekking = Arrays.asList(getResources().getStringArray(R.array.NPTrekking));
+        NPCycling = Arrays.asList(getResources().getStringArray(R.array.NPCycling));
+        NPPicnicking = Arrays.asList(getResources().getStringArray(R.array.NPPicnicking));
+        NPSightSeeing = Arrays.asList(getResources().getStringArray(R.array.NPSightSeeing));
+        NPSkiing = Arrays.asList(getResources().getStringArray(R.array.NPSkiing));
+        NPWhiteWaterRafting = Arrays.asList(getResources().getStringArray(R.array.NPWhiteWaterRafting));
+        NPCampFire = Arrays.asList(getResources().getStringArray(R.array.NPCampFire));
+        NPSwimming = Arrays.asList(getResources().getStringArray(R.array.NPSwimming));
+        NPSailing = Arrays.asList(getResources().getStringArray(R.array.NPSailing));
+        NPBBQ = Arrays.asList(getResources().getStringArray(R.array.NPBBQ));
+        NPBirdWatching = Arrays.asList(getResources().getStringArray(R.array.NPBirdWatching));
+        NPPlayGround = Arrays.asList(getResources().getStringArray(R.array.NPPlayGround));
+        NPID = Arrays.asList(getResources().getStringArray(R.array.NPID));
+
+        //Facilities Data
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
@@ -394,6 +450,41 @@ public class Home extends AppCompatActivity {
                             "   [Status] [varchar](100) ,\n" +
                             "   [CreatedDateTime] [smalldatetime] \n" +
                             ");"
+            );mDatabase.execSQL(
+                    "CREATE TABLE IF NOT EXISTS tbl_LookOut_Sites (\n" +
+                            "   [LookID] INTEGER NOT NULL CONSTRAINT PK_tbl_LookOut_Sites PRIMARY KEY AUTOINCREMENT,\n" +
+                            "   [NPID] [int],\n" +
+                            "   [LookOutSite] [varchar](1000),\n" +
+                            "   [Status] [varchar](100) ,\n" +
+                            "   [Latitude] [varchar](500),\n" +
+                            "   [Longitude] [varchar](500),\n" +
+                            "   [CreatedDateTime] [smalldatetime] \n" +
+                            ");"
+            );
+            mDatabase.execSQL(
+                    "CREATE TABLE IF NOT EXISTS tbl_NationalPark_Facilities (\n" +
+                            "   [NPFID] INTEGER NOT NULL CONSTRAINT PK_tbl_NationalPark_Facilities PRIMARY KEY AUTOINCREMENT,\n" +
+                            "   [NPID] [int],\n" +
+                            "   [Camping] [varchar] (10),\n" +
+                            "   [Canoeing] [varchar] (10) ,\n" +
+                            "   [Fishing] [varchar] (10),\n" +
+                            "   [ScienicDrive] [varchar] (10),\n" +
+                            "   [HorseRiding] [varchar] (10),\n" +
+                            "   [Hunting] [varchar] (10),\n" +
+                            "   [Trekking] [varchar] (10),\n" +
+                            "   [Cycling] [varchar] (10),\n" +
+                            "   [Picknicking] [varchar] (10),\n" +
+                            "   [SightSeeing] [varchar] (10),\n" +
+                            "   [Skiing] [varchar] (10),\n" +
+                            "   [whiteWaterRafting] [varchar] (10),\n" +
+                            "   [CampFire] [varchar] (10),\n" +
+                            "   [Swimming] [varchar] (10),\n" +
+                            "   [YachtingSailing] [varchar] (10),\n" +
+                            "   [BBQ] [varchar] (10),\n" +
+                            "   [BirdWatching] [varchar] (10),\n" +
+                            "   [Playground] [varchar] (10),\n" +
+                            "   [CreatedDateTime] [smalldatetime] \n" +
+                            ");"
             );
 //            pDialog.hide();
             isCreated =true;
@@ -496,6 +587,87 @@ public class Home extends AppCompatActivity {
                         }
                     }
                 }
+                for(int i=0;i<LookoutSite.size();i++){
+                    if(CheckIsDataAlreadyInDBorNotInt("tbl_LookOut_Sites",
+                            "LookOutSite",LookoutSite.get(i),
+                            "NPID",Integer.parseInt(LNPID.get(i)))){
+                        try{
+                            String insertSQL = "INSERT INTO tbl_LookOut_Sites \n" +
+                                    "(NPID, LookOutSite,Status,Latitude,Longitude,CreatedDateTime)\n" +
+                                    "VALUES \n" +
+                                    "("+Integer.parseInt(LNPID.get(i))+"," +
+                                    " '"+LookoutSite.get(i)+"'," +
+                                    " 'Active'," +
+                                    " '"+LookLatitude.get(i)+"'," +
+                                    " '"+LookLongitude.get(i)+"'," +
+                                    " '"+dateTime+"'" +
+                                    ");";
+
+
+                            mDatabase.execSQL(insertSQL);
+                        }catch (SQLException se){
+                            Toast.makeText(getApplicationContext(),"Track Table Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
+                            z="FAIL";
+                        }
+                    }
+                }
+                for(int i=0;i<NPCamping.size();i++){
+                    if(CheckIsDataAlreadyInDBorNotIntiger("tbl_NationalPark_Facilities",
+                            "NPID",Integer.parseInt(NPID.get(i)))){
+                        try{
+                            String insertSQL = "INSERT INTO tbl_NationalPark_Facilities \n" +
+                                    "(NPID, " +
+                                    "Camping," +
+                                    "Canoeing," +
+                                    "Fishing," +
+                                    "ScienicDrive," +
+                                    "HorseRiding," +
+                                    "Hunting," +
+                                    "Trekking," +
+                                    "Cycling," +
+                                    "Picknicking," +
+                                    "SightSeeing," +
+                                    "Skiing," +
+                                    "whiteWaterRafting," +
+                                    "CampFire," +
+                                    "Swimming," +
+                                    "YachtingSailing," +
+                                    "BBQ," +
+                                    "BirdWatching," +
+                                    "Playground," +
+                                    "CreatedDateTime)\n" +
+                                    "VALUES \n" +
+                                    "("+Integer.parseInt(NPID.get(i))+"," +
+                                    " '"+NPCamping.get(i)+"'," +
+                                    " '"+NPCanoeing.get(i)+"'," +
+                                    " '"+NPFishing.get(i)+"'," +
+                                    " '"+NPScienceDrive.get(i)+"'," +
+                                    " '"+NPHorseRiding.get(i)+"'," +
+                                    " '"+NPHunting.get(i)+"'," +
+                                    " '"+NPTrekking.get(i)+"'," +
+                                    " '"+NPCycling.get(i)+"'," +
+                                    " '"+NPPicnicking.get(i)+"'," +
+                                    " '"+NPSightSeeing.get(i)+"'," +
+                                    " '"+NPSkiing.get(i)+"'," +
+                                    " '"+NPWhiteWaterRafting.get(i)+"'," +
+                                    " '"+NPCampFire.get(i)+"'," +
+                                    " '"+NPSwimming.get(i)+"'," +
+                                    " '"+NPSailing.get(i)+"'," +
+                                    " '"+NPBBQ.get(i)+"'," +
+                                    " '"+NPBirdWatching.get(i)+"'," +
+                                    " '"+NPPlayGround.get(i)+"'," +
+                                    " '"+dateTime+"'" +
+                                    ");";
+
+
+                            mDatabase.execSQL(insertSQL);
+                        }catch (SQLException se){
+                            Toast.makeText(getApplicationContext(),"Track Table Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
+                            z="FAIL";
+                        }
+                    }
+                }
+
             }
             //mDatabase.close();
 
@@ -587,6 +759,19 @@ public class Home extends AppCompatActivity {
         }
         cursor.close();
         //mDatabase.close();
+        return true;
+    }
+    public boolean CheckIsDataAlreadyInDBorNotIntiger(String TableName,
+                                                      String dbfield,
+                                                      int fieldValue)
+    {
+        String Query = "Select * from " + TableName + " where " + dbfield + " = " + fieldValue;
+        Cursor cursor = mDatabase.rawQuery(Query, null);
+        if(cursor.getCount() > 0){
+            cursor.close();
+            return false;
+        }
+        cursor.close();
         return true;
     }
 

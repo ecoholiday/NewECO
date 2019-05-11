@@ -3,7 +3,6 @@
     <string name="title_activity_maps">ECO Holiday</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCG4Tc5v-7PBF4JO-6NKx2aX0xDNCZ4BVM</string>
 
-
     <string-array name="NationalParks">
         <item> Alpine National Park</item>
         <item>Barmah National Park</item>
@@ -32,6 +31,538 @@
         <item>Yarra Ranges National Park</item>
 
 
+    </string-array>
+
+    <string-array name="NPCamping">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPCanoeing">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPFishing">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPScienceDrive">
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPHorseRiding">
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item></item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPHunting">
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item></item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPTrekking">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPCycling">
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPPicnicking">
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPSightSeeing">
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item></item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPSkiing">
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item></item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPWhiteWaterRafting">
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPCampFire">
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPSwimming">
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPSailing">
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="NPBBQ">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPBirdWatching">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPPlayGround">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="NPID">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
     </string-array>
 
     <string-array name="Area">
@@ -63,6 +594,7 @@
 
 
     </string-array>
+
 
     <string-array name="Latitude">
         <item>-37.0317</item>
@@ -456,10 +988,300 @@
 
 
     </string-array>
+
+    <string-array name="LookoutSite">
+        <item>Rocky Valley Lookout</item>
+        <item>Ropers Lookout</item>
+        <item>Fainter Falls</item>
+        <item>Ropers Lookout</item>
+        <item>Dargo Lookout</item>
+        <item>Dannys Lookout</item>
+        <item>The Sentinels Lookout</item>
+        <item>Mt Baw Baw Summit</item>
+        <item>Thomson</item>
+        <item>Jays Lookout</item>
+        <item>Campbells Lookout</item>
+        <item>Genoa Peak</item>
+        <item>Burkes Lookout</item>
+        <item>Barnes Lookout</item>
+        <item>R.J. Hamer Arboretum</item>
+        <item>Woolrich Lookout</item>
+        <item>Mount Dandenong Observatory</item>
+        <item>Boroka Lookout</item>
+        <item>Reed Lookout</item>
+        <item>The Balconies</item>
+        <item>Pinnacle Lookout</item>
+        <item>Lakeview Lookout</item>
+        <item>Grampians Valley Lookout</item>
+        <item>Warepil Lookout</item>
+        <item>Scenic Winery Lookout</item>
+        <item>Bobs Rock Lookout</item>
+        <item>Mount Lookout</item>
+        <item>Murchison Gap Lookout</item>
+        <item>Viewing Rock Lookout</item>
+        <item>Mt Ida Lookout</item>
+        <item>Punt Hill Lookout</item>
+        <item>Den of Nargun</item>
+        <item>Fingal beach lookout</item>
+        <item>Cape Schanck Lighthouse</item>
+        <item>Blowhole Lookout</item>
+        <item>West Head Lookout</item>
+        <item>White Cliffs Lookout Rye</item>
+        <item>Murrays Lookout</item>
+        <item>Mount Eccles Lookout</item>
+        <item>Frank Lodge Scenic Lookout</item>
+        <item>World War Two Memorial Lookout Tower</item>
+        <item>Port Of Portland Lookout</item>
+        <item>Mopoke Hut</item>
+        <item>Warepil Lookout</item>
+        <item>Aircraft Viewing Area</item>
+        <item>Mutton Bird Lookout</item>
+        <item>island arch lookout</item>
+        <item>Loch Ard Gorge</item>
+        <item>Tom and Eva Lookout</item>
+        <item>The Razorback</item>
+        <item>Sparkes Gully Lookout</item>
+        <item>Mount Tassie Lookout</item>
+        <item>Mt Bishop</item>
+        <item>Pillar Point Lookout</item>
+        <item>Mount Oberon Summit</item>
+        <item>Norman Point Lookout</item>
+        <item>glennie lookout</item>
+        <item>Norman Lookout</item>
+        <item>Picnic Bay and Whisky Bay Lookout</item>
+        <item>Sparkes Lookout</item>
+        <item>Tongue Point</item>
+        <item>Prom Wildlife Walk</item>
+        <item>Vereker Outlook</item>
+        <item>Millers Landing</item>
+
+    </string-array>
+    <string-array name="LookLatitude">
+        <item>-36.869372</item>
+        <item>-36.852894</item>
+        <item>-36.812855</item>
+        <item>-36.764402</item>
+        <item>-36.992398</item>
+        <item>-36.970787</item>
+        <item>-37.492614</item>
+        <item>-37.789884</item>
+        <item>-37.78891</item>
+        <item>-37.813944</item>
+        <item>-36.114734</item>
+        <item>-37.509876</item>
+        <item>-37.831921</item>
+        <item>-37.871611</item>
+        <item>-37.859832</item>
+        <item>-37.859745</item>
+        <item>-37.825457</item>
+        <item>-37.122521</item>
+        <item>-37.140241</item>
+        <item>-37.145149</item>
+        <item>-37.154638</item>
+        <item>-37.167758</item>
+        <item>-37.401513</item>
+        <item>-34.6749</item>
+        <item>-36.966761</item>
+        <item>-37.384635</item>
+        <item>-37.038412</item>
+        <item>-37.225351</item>
+        <item>-36.888097</item>
+        <item>-36.837141</item>
+        <item>-38.029162</item>
+        <item>-37.677957</item>
+        <item>-38.476724</item>
+        <item>-38.488686</item>
+        <item>-38.481054</item>
+        <item>-38.478853</item>
+        <item>-38.360383</item>
+        <item>-38.340553</item>
+        <item>-38.048005</item>
+        <item>-38.274593</item>
+        <item>-38.302967</item>
+        <item>-38.335236</item>
+        <item>-34.764842</item>
+        <item>-34.675955</item>
+        <item>-37.63648</item>
+        <item>-38.647563</item>
+        <item>-38.647999</item>
+        <item>-38.646185</item>
+        <item>-38.647287</item>
+        <item>-38.649472</item>
+        <item>-38.630519</item>
+        <item>-38.386067</item>
+        <item>-39.015396</item>
+        <item>-39.036733</item>
+        <item>-39.038663</item>
+        <item>-39.051336</item>
+        <item>-39.015395</item>
+        <item>-39.013194</item>
+        <item>-39.01166</item>
+        <item>-38.993701</item>
+        <item>-38.989136</item>
+        <item>-38.937707</item>
+        <item>-38.91077</item>
+        <item>-38.891521</item>
+
+    </string-array>
+    <string-array name="LookLongitude">
+        <item>147.288249</item>
+        <item>147.296459</item>
+        <item>147.219146</item>
+        <item>147.21453</item>
+        <item>147.177019</item>
+        <item>147.113762</item>
+        <item>146.808803</item>
+        <item>146.280889</item>
+        <item>146.395218</item>
+        <item>146.435204</item>
+        <item>147.759137</item>
+        <item>149.62919</item>
+        <item>145.346974</item>
+        <item>146.434396</item>
+        <item>145.380519</item>
+        <item>145.381986</item>
+        <item>145.353446</item>
+        <item>142.502651</item>
+        <item>142.445925</item>
+        <item>142.458971</item>
+        <item>142.516305</item>
+        <item>142.520799</item>
+        <item>142.528037</item>
+        <item>142.307951</item>
+        <item>143.258889</item>
+        <item>145.171141</item>
+        <item>144.845996</item>
+        <item>145.172298</item>
+        <item>144.725076</item>
+        <item>144.710056</item>
+        <item>141.011943</item>
+        <item>147.359223</item>
+        <item>144.887525</item>
+        <item>144.887525</item>
+        <item>144.98974</item>
+        <item>145.026173</item>
+        <item>144.810007</item>
+        <item>144.949073</item>
+        <item>141.922951</item>
+        <item>141.61755</item>
+        <item>141.601206</item>
+        <item>141.604365</item>
+        <item>141.755349</item>
+        <item>142.399782</item>
+        <item>144.83336</item>
+        <item>143.065732</item>
+        <item>143.068837</item>
+        <item>143.070601</item>
+        <item>143.072556</item>
+        <item>143.07286</item>
+        <item>143.028967</item>
+        <item>146.559362</item>
+        <item>146.320342</item>
+        <item>146.305921</item>
+        <item>146.345067</item>
+        <item>146.318713</item>
+        <item>146.301805</item>
+        <item>146.299145</item>
+        <item>146.292795</item>
+        <item>146.286579</item>
+        <item>146.254791</item>
+        <item>146.277502</item>
+        <item>146.332918</item>
+        <item>146.311157</item>
+
+    </string-array>
+    <string-array name="LNPID">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>6</item>
+        <item>6</item>
+        <item>6</item>
+        <item>6</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>18</item>
+        <item>18</item>
+        <item>19</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>21</item>
+        <item>21</item>
+        <item>21</item>
+        <item>21</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+        <item>23</item>
+
+
+    </string-array>
+
+
     <string name="title_activity_navigation_home">NavigationHome</string>
     <string name="title_home">Home</string>
     <string name="title_checklist">Check list</string>
     <string name="title_stats">Stats</string>
     <string name="title_help">Help</string>
+
+    <string name="city_park">National Park</string>
+    <string name="city_country">Melbourne, AU</string>
+    <string name="date_today">Friday, 8 July</string>
+    <string name="current_temperature">26</string>
+    <string name="weather_information">Partly Cloud</string>
+    <string name="temp_information">26, partly cloudy</string>
+    <string name="wind">WIND</string>
+    <string name="wind_speed">18 km/h</string>
+    <string name="humidity">HUMIDITY</string>
+    <string name="humidity_rate">73%</string>
+    <string name="day_of_week">Mon</string>
+    <string name="location_hints">Type city or postcode</string>
+    <string name="location_example">Example Melbourn, Durban, Chennai...</string>
+    <string name="add_new_location">Add new location</string>
+    <string name="stored_location">You can only store 5 locations</string>
+    <string name="permission_notice">This permission is important but you can as well set your location on Location page</string>
+    <string name="go_to_location">Go to location setting</string>
 
 </resources>

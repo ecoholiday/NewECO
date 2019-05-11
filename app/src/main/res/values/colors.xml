@@ -33,4 +33,10 @@
     <color name="carbonSaved">#259B24</color>
     <color name="carbonSpent">#E66453</color>
 
+    <string name="delete_text">X</string>
+    <color name="colorBackground">#45FF02</color>
+    <color name="colorBottomBackground">#179101</color>
+    <color name="colorCircleStroke">#df9502</color>
+    <color name="colorSubTitle">#38455B</color>
+
 </resources>
