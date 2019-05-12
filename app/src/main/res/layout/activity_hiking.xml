@@ -28,11 +28,11 @@
             android:layout_height="wrap_content"
             android:text="Aipine"
             android:typeface="serif"
-            app:fontFamily="serif"
-            android:textStyle="bold|italic"
-            android:textColor="@color/txtOnImage"
+            app:fontFamily="cursive"
+            android:textStyle="bold"
+            android:textColor="@color/carbonSpent"
             android:layout_margin="10sp"
-            android:textSize="22sp"/>
+            android:textSize="30sp"/>
 
     </android.support.v7.widget.CardView>
 

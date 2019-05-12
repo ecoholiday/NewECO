@@ -46,8 +46,8 @@ public class Hiking extends AppCompatActivity {
         mDatabase = openOrCreateDatabase(Home.DATABASE_NAME, MODE_PRIVATE, null);
 
         lstActivity = (ListView) findViewById(R.id.lstHikeActivity);
-        TextView txtCampPage = (TextView)findViewById(R.id.txtHikePage) ;
-        //txtCampPage.setText(NPID);
+        TextView txtCampPage = (TextView)findViewById(R.id.txtHikePage);
+        txtCampPage.setText(parkName);
 
         new GetParksFacilityData().execute();
 

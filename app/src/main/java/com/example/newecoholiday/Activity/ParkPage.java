@@ -21,6 +21,7 @@ import com.example.newecoholiday.R;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class ParkPage extends AppCompatActivity {
@@ -70,14 +71,13 @@ public class ParkPage extends AppCompatActivity {
 
 
         ImageButton btnNavigation = (ImageButton) findViewById(R.id.btnNavigation);
-        //Toast.makeText(getApplicationContext()," "+ NPID +"",Toast.LENGTH_LONG).show();
 
         //set the image nd name of national park
         TextView txtPark = (TextView)findViewById(R.id.txtPark);
         TextView txtParkDistance = (TextView)findViewById(R.id.txtParkDistance);
         txtPark.setText(parkName);
         setNPImage(parkName);
-        txtParkDistance.setText(" " + parkDistance +"KMs");
+        txtParkDistance.setText(" " + parkDistance +" KMs");
 
 
         btnNavigation.setOnClickListener(new View.OnClickListener() {
@@ -132,8 +132,18 @@ public class ParkPage extends AppCompatActivity {
 
 
         // dates code
+
         sdate =(TextView) findViewById(R.id.sdate);
         edate =(TextView) findViewById(R.id.edate);
+
+        // auto setting the dates
+        Date today = dateSelected.getTime();
+        dateSelected.add(Calendar.DAY_OF_YEAR, 1);
+        Date tomorrow = dateSelected.getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        sdate.setText(sdf.format(today));
+        edate.setText(sdf.format(tomorrow));
+
         cardStartDate = (CardView)findViewById(R.id.cardStartDate);
         cardEndDate= (CardView)findViewById(R.id.cardEndDate);
 

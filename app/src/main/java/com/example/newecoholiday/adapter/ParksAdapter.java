@@ -67,8 +67,8 @@ public class ParksAdapter extends BaseAdapter {
         final ParkItems item = parksList.get(position);
 
         nationalParkName.setText(item.getNationalParks());
-        area.setText(" "+item.getArea()+"ft2");
-        distance.setText(" "+item.getDistance() + "KMs");
+        area.setText(" "+item.getArea()+" ft2");
+        distance.setText(" "+item.getDistance() + " KMs");
 
         park_Navigation.setOnClickListener(new View.OnClickListener() {
             @Override

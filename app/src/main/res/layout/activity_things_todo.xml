@@ -11,14 +11,14 @@
         android:id="@+id/cardLookouts"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:cardCornerRadius="12dp"
         app:cardUseCompatPadding="true"
         android:layout_margin="2dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/camp_things"
+            android:layout_height="match_parent"
+            android:src="@drawable/lookout_things"
             android:scaleType="centerCrop"/>
 
         <TextView
@@ -30,20 +30,20 @@
             app:fontFamily="cursive"
             android:textStyle="bold"
             android:textColor="@color/txtOnImage"
-            android:textSize="22sp"/>
+            android:textSize="30sp"/>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:id="@+id/cardCamping"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         app:cardCornerRadius="12dp"
         app:cardUseCompatPadding="true"
         android:layout_margin="2dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/landing_hiking"
+            android:layout_height="match_parent"
+            android:src="@drawable/camp_things"
             android:scaleType="centerCrop"/>
         <TextView
             android:layout_width="wrap_content"
@@ -54,31 +54,31 @@
             android:textStyle="bold"
             android:textColor="@color/txtOnImage"
             android:layout_margin="10sp"
-            android:textSize="22sp"/>
+            android:textSize="30sp"/>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:id="@+id/cardHiking"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         app:cardCornerRadius="12dp"
         app:cardUseCompatPadding="true"
         android:layout_margin="2dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/camp_things"
+            android:layout_height="match_parent"
+            android:src="@drawable/hike_things"
             android:scaleType="centerCrop"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hiking"
             android:typeface="serif"
-            app:fontFamily="serif"
-            android:textStyle="bold|italic"
+            app:fontFamily="cursive"
+            android:textStyle="bold"
             android:textColor="@color/txtOnImage"
             android:layout_margin="10sp"
-            android:textSize="22sp"/>
+            android:textSize="30sp"/>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
