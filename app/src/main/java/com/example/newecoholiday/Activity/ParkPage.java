@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -104,7 +107,7 @@ public class ParkPage extends AppCompatActivity {
         cardHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ParkPage.this,MapsActivity.class));
+                startActivity(new Intent(ParkPage.this,Help.class));
             }
         });
 
@@ -136,13 +139,28 @@ public class ParkPage extends AppCompatActivity {
         sdate =(TextView) findViewById(R.id.sdate);
         edate =(TextView) findViewById(R.id.edate);
 
-        // auto setting the dates
+        // initializing dates
         Date today = dateSelected.getTime();
-        dateSelected.add(Calendar.DAY_OF_YEAR, 1);
-        Date tomorrow = dateSelected.getTime();
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        sdate.setText(sdf.format(today));
-        edate.setText(sdf.format(tomorrow));
+        dateSelected.add(Calendar.MONTH, 1);
+        String tod = dateSelected.get(Calendar.DATE) + "/" + dateSelected.get(Calendar.MONTH) +"/" + (dateSelected.get(Calendar.YEAR));
+
+
+        //tod = tod.substring(0,tod.length()-2);
+        dateSelected.add(Calendar.DATE, 1);
+        String tom = dateSelected.get(Calendar.DATE) + "/" + dateSelected.get(Calendar.MONTH) +"/" + (dateSelected.get(Calendar.YEAR));
+        //tom = tom.substring(0,tod.length()-2);
+
+        sdate.setText(tod);
+        edate.setText(tom);
+
+        RotateAnimation anim = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        anim.setInterpolator(new LinearInterpolator());
+        anim.setRepeatCount(Animation.INFINITE);
+        anim.setDuration(2000);
+        final ImageView imgWeather = (ImageView) findViewById(R.id.imgWeather);
+        imgWeather.startAnimation(anim);
+
+
 
         cardStartDate = (CardView)findViewById(R.id.cardStartDate);
         cardEndDate= (CardView)findViewById(R.id.cardEndDate);
@@ -203,7 +221,6 @@ public class ParkPage extends AppCompatActivity {
             }
         });
 
-        ImageView imgWeather = (ImageView)findViewById(R.id.imgWeather);
         imgWeather.setOnClickListener(new View.OnClickListener() {
 
             @Override

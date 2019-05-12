@@ -73,10 +73,9 @@ public class ParkFacilityAdapter extends BaseAdapter {
                 editor.putFloat("TrackLength",item.getTrackLength());
                 editor.putFloat("TrackTime",item.getTrackTime());
 
-                if (item.getParkFacilitySourceType() == "Hiking"){
-
-                }
                 editor.apply();
+
+
                 context.startActivity(new Intent(context, CampSite.class));
             }
         });

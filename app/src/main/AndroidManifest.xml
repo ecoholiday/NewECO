@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.CampSite"></activity>
+        <activity android:name=".Activity.Help"></activity>
+        <activity android:name=".Activity.CampSite" />
         <activity android:name=".Activity.WeatherActivity" />
         <activity android:name=".Activity.Savings" />
         <activity android:name=".Activity.ThingsTodo" />
@@ -33,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.Home"></activity>
+        <activity android:name=".Activity.Home" />
         <activity android:name=".Activity.statistics" />
         <activity android:name=".Activity.MapsActivity" />
 

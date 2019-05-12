@@ -180,6 +180,8 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
         recyclerView = (RecyclerView)findViewById(R.id.weather_daily_list);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setHasFixedSize(true);
+
+
     }
 
 
@@ -194,7 +196,7 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
                 if (null == locationMapObject) {
                     Toast.makeText(getApplicationContext(), "Nothing was returned", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Response Good", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Response Good", Toast.LENGTH_LONG).show();
 
                     String city = locationMapObject.getName()+" , " + locationMapObject.getSys().getCountry();
                     String park = parkName;
@@ -313,7 +315,7 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
                 if (null == forecast) {
                     Toast.makeText(getApplicationContext(), "Nothing was returned", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Response Good", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Response Good", Toast.LENGTH_LONG).show();
 
                     int[] everyday = new int[]{0,0,0,0,0,0,0};
 

@@ -129,7 +129,9 @@ public class Lookouts extends AppCompatActivity {
                 }else{
                     lstActivity.setAdapter(null);
                     lstActivity.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(),"No Data Available for "+parkName,Toast.LENGTH_LONG).show();
+                    TextView txtNoData = (TextView)findViewById(R.id.txtNoData);
+                    txtNoData.setVisibility(View.VISIBLE);
+                    //Toast.makeText(getApplicationContext(),"No Data Available for "+parkName,Toast.LENGTH_LONG).show();
                 }
 
 

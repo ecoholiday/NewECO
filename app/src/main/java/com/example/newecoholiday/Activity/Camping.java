@@ -23,6 +23,26 @@ import java.util.ArrayList;
 
 public class Camping extends AppCompatActivity {
 
+    int NPCamping,
+            NPCanoeing,
+            NPFishing,
+            NPScienceDrive,
+            NPHorseRiding,
+            NPHunting,
+            NPTrekking,
+            NPCycling,
+            NPPicnicking,
+            NPSightSeeing,
+            NPSkiing,
+            NPWhiteWaterRafting,
+            NPCampFire,
+            NPSwimming,
+            NPYachtingSailing,
+            NPBBQ,
+            NPBirdWatching,
+            NPPlayground;
+    String facilities;
+
     Boolean firstTimeLoading = true;
     SQLiteDatabase mDatabase;
 
@@ -49,6 +69,8 @@ public class Camping extends AppCompatActivity {
         NPID = sharedpreferences.getInt("NPID", 0);
         parkName = sharedpreferences.getString("ParkName","");
 
+
+
         setTitle(parkName);
         ParkCampingFacilityList = new ArrayList<ParkFacilityListItem>();
         mDatabase = openOrCreateDatabase(Home.DATABASE_NAME, MODE_PRIVATE, null);
@@ -58,6 +80,9 @@ public class Camping extends AppCompatActivity {
         txtCampPage.setText(parkName);
 
         new GetParksFacilityData().execute();
+
+
+
 
 
     }
@@ -101,6 +126,41 @@ public class Camping extends AppCompatActivity {
                 } catch (Exception e) {
                     z = "FAIL";
                 }
+                try {
+
+                    String query = "select * from tbl_NationalPark_Facilities where NPID =" + NPID ;
+                    Cursor cursorFacility = mDatabase.rawQuery(query, null);
+
+                    if (cursorFacility.moveToFirst()) {
+                        do {
+
+                            NPCamping = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Camping")));
+                            NPCanoeing = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Canoeing")));
+                            NPFishing = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Fishing")));
+                            NPScienceDrive = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("ScienicDrive")));
+                            NPHorseRiding = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("HorseRiding")));
+                            NPHunting = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Hunting")));
+                            NPTrekking = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Trekking")));
+                            NPCycling = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Cycling")));
+                            NPPicnicking = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Picknicking")));
+                            NPSightSeeing = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("SightSeeing")));
+                            NPSkiing = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Skiing")));
+                            NPWhiteWaterRafting = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("whiteWaterRafting")));
+                            NPCampFire = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("CampFire")));
+                            NPSwimming = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Swimming")));
+                            NPYachtingSailing = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("YachtingSailing")));
+                            NPBBQ = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("BBQ")));
+                            NPBirdWatching = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("BirdWatching")));
+                            NPPlayground = Integer.parseInt(cursorFacility.getString(cursorFacility.getColumnIndex("Playground")));
+
+                        } while (cursorFacility.moveToNext());
+                    }
+
+                    cursorFacility.close();
+                } catch (Exception e) {
+                    z = "FAIL";
+                }
+
             }
 
             return z;
@@ -134,8 +194,35 @@ public class Camping extends AppCompatActivity {
                 }else{
                     lstActivity.setAdapter(null);
                     lstActivity.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(),"No Data Available for "+parkName,Toast.LENGTH_LONG).show();
+                    TextView txtNoData = (TextView)findViewById(R.id.txtNoData);
+                    txtNoData.setVisibility(View.VISIBLE);
+                    //Toast.makeText(getApplicationContext(),"No Data Available for "+parkName,Toast.LENGTH_LONG).show();
                 }
+
+                if(NPCamping ==1){ facilities = facilities + "Camping | ";}
+                if(NPCanoeing ==1){ facilities = facilities + "Canoeing | ";}
+                if(NPFishing ==1){ facilities = facilities + "Fishing | ";}
+                if(NPScienceDrive ==1){ facilities = facilities + "ScienceDrive | ";}
+                if(NPHorseRiding ==1){ facilities = facilities + "HorseRiding | ";}
+                if(NPHunting ==1){ facilities = facilities + "Hunting | ";}
+                if(NPTrekking ==1){ facilities = facilities + "Trekking | ";}
+                if(NPCycling ==1){ facilities = facilities + "Cycling | ";}
+                if(NPPicnicking ==1){ facilities = facilities + "Picnicking | ";}
+                if(NPSightSeeing ==1){ facilities = facilities + "SightSeeing | ";}
+                if(NPSkiing ==1){ facilities = facilities + "Skiing | ";}
+                if(NPWhiteWaterRafting ==1){ facilities = facilities + "WhiteWaterRafting | ";}
+                if(NPCampFire ==1){ facilities = facilities + "CampFire | ";}
+                if(NPSwimming ==1){ facilities = facilities + "Swimming | ";}
+                if(NPYachtingSailing ==1){ facilities = facilities + "YachtingSailing | ";}
+                if(NPBBQ ==1){ facilities = facilities + "BBQ | ";}
+                if(NPBirdWatching ==1){ facilities = facilities + "BirdWatching | ";}
+                if(NPPlayground ==1){ facilities = facilities + "Playground | ";}
+
+                facilities = facilities.replace("null", "");
+
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("CampFacilities", facilities);
+                editor.apply();
 
 
             }else{

@@ -185,6 +185,16 @@ public class Home extends AppCompatActivity {
         //toolBarChanges();
 
         // popup filter
+        imgStats = (ImageButton) findViewById(R.id.imgStats);
+        imgStats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this,statistics.class));
+
+
+            }
+        });
+
 
         ImageButton imgfilter = (ImageButton) findViewById(R.id.imgfilter);
         posPopup = (RelativeLayout) findViewById(R.id.relHome);
@@ -396,7 +406,7 @@ public class Home extends AppCompatActivity {
                     locationB.setLongitude(Double.parseDouble(Longitude.get(i)));
 
                     float dist = locationA.distanceTo(locationB);
-                    double ditKM = round(dist/1000.0);
+                    int ditKM = (int)round(dist/1000.0);
                     Distance1.add(ditKM+"");
                     Latitude1.add(Latitude.get(i));
                     Longitude1.add(Longitude.get(i));
@@ -1014,7 +1024,7 @@ public class Home extends AppCompatActivity {
                 editor.putString("ParkLongitude", Longitude.get(i));
                 editor.putString("ParkName",NationalParks.get(i));
                 editor.putString("ParkArea",Area.get(i));
-                editor.putString("ParkDistance",Distance.get(i));
+                editor.putString("ParkDistance", Distance1.get(i));
                 editor.putInt("NPID",NPIDonSearch.get(NPSearch.indexOf(selectNPName)));
                 editor.apply();
                 startActivity(new Intent(Home.this,ParkPage.class));

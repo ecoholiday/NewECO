@@ -5,45 +5,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/rareColor"
+    android:background="@color/fourth_black"
     android:orientation="vertical"
     tools:context=".Activity.WeatherActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_weight="3"
         android:orientation="vertical">
         <TextView
+            android:layout_margin="5sp"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:typeface="serif"
             android:id="@+id/city_park"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="city_park"
             android:textAlignment="center"
-            android:textSize="22dp"
+            android:textSize="30sp"
+
             android:layout_marginTop="16sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
         <TextView
+            android:layout_margin="5sp"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:typeface="serif"
             android:id="@+id/city_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="city_country"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:layout_marginTop="8sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
 
         <TextView
+            android:layout_margin="5sp"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:typeface="serif"
             android:id="@+id/current_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="date_today"
-            android:textSize="14sp"
+            android:textSize="20sp"
             android:layout_marginTop="10sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
 
         <ImageView
             android:id="@+id/weather_icon"
@@ -54,32 +67,11 @@
             android:src="@drawable/sun"
             android:layout_marginTop="16sp"/>
 
-
-        <com.github.pavlospt.CircleView
-            android:id="@+id/weather_result"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:layout_marginTop="8sp"
-            app:cv_titleSubtitleSpace="40"
-            app:cv_fillColor="@color/colorBackground"
-            app:cv_strokeColorValue="@color/colorCircleStroke"
-            app:cv_backgroundColorValue="@color/colorCircleStroke"
-            app:cv_titleColor="@color/white"
-            app:cv_titleSize="50sp"
-            app:cv_titleText="current_temperature"
-            app:cv_subtitleSize="12sp"
-            app:cv_subtitleText="weather_information"
-            android:layout_gravity="center_horizontal"/>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_marginTop="12sp"
-            android:layout_gravity="center_horizontal">
-
+            android:layout_height="wrap_content">
             <LinearLayout
+                android:layout_gravity="center_vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -87,23 +79,88 @@
                 android:layout_weight="1">
 
                 <TextView
+                    android:layout_gravity="center"
+                    android:layout_margin="5sp"
+                    android:fontFamily="cursive"
+                    android:typeface="serif"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorSubTitle"
-                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
                     android:textStyle="bold"
-                    android:text="wind"/>
+                    android:text="Wind"/>
 
                 <TextView
+                    android:layout_gravity="center"
+                    android:layout_margin="5sp"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"
+                    android:typeface="serif"
                     android:id="@+id/wind_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textColor="@color/txtDist"
+                    android:textSize="18sp"
                     android:layout_marginTop="4sp"
                     android:text="wind_speed"/>
 
             </LinearLayout>
+
+
+        <com.github.pavlospt.CircleView
+            android:id="@+id/weather_result"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:layout_marginTop="8sp"
+            app:cv_titleSubtitleSpace="40"
+            app:cv_fillColor="@color/imageBackgroundClicked"
+            app:cv_strokeColorValue="@color/imageBackgroundClicked"
+            app:cv_backgroundColorValue="@color/fourth_black"
+            app:cv_titleColor="@color/black"
+            app:cv_titleSize="50sp"
+            app:cv_titleText="temp"
+            app:cv_subtitleSize="12sp"
+            app:cv_subtitleText="weather_information"
+            android:layout_gravity="center_horizontal"/>
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="16sp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_margin="5sp"
+                    android:fontFamily="cursive"
+                    android:typeface="serif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold"
+                    android:text="Humidity"/>
+
+                <TextView
+                    android:layout_margin="5sp"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:id="@+id/humidity_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtDist"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:layout_marginTop="4sp"
+                    android:text="humidity_rate"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -114,55 +171,30 @@
                 <ImageButton
                     android:id="@+id/add_location"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="15dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12sp"
                     android:background="@android:color/transparent"
                     android:elevation="4sp"
-                    android:layout_marginTop="12sp"
-                    android:src="@drawable/cross"/>
+                    android:src="@drawable/cross"
+                    android:visibility="invisible" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingRight="16sp"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorSubTitle"
-                    android:textSize="14sp"
-                    android:layout_gravity="right"
-                    android:textStyle="bold"
-                    android:text="humidity"/>
-
-                <TextView
-                    android:id="@+id/humidity_result"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4sp"
-                    android:text="humidity_rate"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:background="@color/colorBottomBackground"
+        app:cardBackgroundColor="@color/imageBackgroundClicked"
+        android:elevation="10sp"
+        app:cardCornerRadius="12sp"
+        app:cardUseCompatPadding="true"
         android:orientation="vertical">
 
         <android.support.v7.widget.RecyclerView
+            android:layout_margin="10sp"
             android:id="@+id/weather_daily_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -170,6 +202,6 @@
             android:orientation="vertical"
             android:scrollbars="none"/>
 
-    </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

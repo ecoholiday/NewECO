@@ -35,10 +35,16 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
+            android:background="#ffffff"
+            app:srcCompat="@drawable/ic_filter"/>
+        <ImageButton
+            android:id="@+id/imgStats"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
             android:layout_alignParentRight="true"
             android:background="#ffffff"
-            app:srcCompat="@drawable/ic_filter"
-            />
+            app:srcCompat="@drawable/ic_stats"/>
     </LinearLayout>
     <RelativeLayout
         android:id="@+id/relImgSlider"

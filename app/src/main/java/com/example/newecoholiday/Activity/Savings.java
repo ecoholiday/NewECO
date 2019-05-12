@@ -3,6 +3,8 @@ package com.example.newecoholiday.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.newecoholiday.R;
@@ -112,11 +114,32 @@ public class Savings extends AppCompatActivity {
         TotalDistance.setText(dist+" KMs");
         EUsed.setText(ElectricityUsed+" KWh");
         MSaved.setText(MoneySaved+"");
-        CSaved.setText(CarbonSaved+"");
+        CSaved.setText(CarbonSaved+" g");
         FConsumed.setText(FuelConsumed+" L");
         MConsumed.setText(MoneyConsumed+"");
-        CCreated.setText(CarbonConsumed+"");
+        CCreated.setText(CarbonConsumed+" g");
+        TextView txtNegative = (TextView)findViewById(R.id.txtNegative);
+        TextView txtNetSavings = (TextView)findViewById(R.id.txtNetSavings);
+
+        if (TotalMoneySaving<0){
+            TMSaving.setTextColor(getColor(R.color.carbonSpent));
+            txtNetSavings.setTextColor(getColor(R.color.carbonSpent));
+            TotalMoneySaving = TotalMoneySaving * (-1);
+            txtNegative.setVisibility(View.VISIBLE);
+            ImageView imgTotalMoney = (ImageView)findViewById(R.id.imgTotalMoney);
+            imgTotalMoney.setImageResource(R.drawable.ic_dollar_spent);
+        }
+        if (TotalCarbonSaving<0){
+            TCSaving.setTextColor(getColor(R.color.carbonSpent));
+            txtNetSavings.setTextColor(getColor(R.color.carbonSpent));
+            TotalCarbonSaving = TotalCarbonSaving*(-1);
+            txtNegative.setVisibility(View.VISIBLE);
+            ImageView imgTotalCarbon = (ImageView)findViewById(R.id.imgTotalCarbon);
+            imgTotalCarbon.setImageResource(R.drawable.ic_carbon_spent);
+        }
+
         TMSaving.setText(TotalMoneySaving+"");
-        TCSaving.setText(TotalCarbonSaving+"");
+        TCSaving.setText(TotalCarbonSaving+" g");
+
     }
 }

@@ -1,7 +1,6 @@
 package com.example.newecoholiday.Activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,7 +8,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -87,6 +85,7 @@ public class Hiking extends AppCompatActivity {
                             lookItem.setTrackLength(cursorCamping.getFloat(cursorCamping.getColumnIndex("Length")));
                             lookItem.setParkFacilitySourceType("Hiking");
                             ParkCampingFacilityList.add(lookItem);
+
                         } while (cursorCamping.moveToNext());
                     }
 
@@ -112,7 +111,7 @@ public class Hiking extends AppCompatActivity {
                     lstActivity.setVisibility(View.VISIBLE);
                     ParkFacilityAdapter parkListAdapter = new ParkFacilityAdapter(Hiking.this,ParkCampingFacilityList);
                     lstActivity.setAdapter(parkListAdapter);
-                    lstActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    /*lstActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             ParkFacilityListItem parkListItem = ParkCampingFacilityList.get(position);
@@ -120,14 +119,15 @@ public class Hiking extends AppCompatActivity {
                             editor.putInt("FacilityNPID",NPID);
                             editor.putString("ParkName",parkName);
                             editor.apply();
-
                             startActivity(new Intent(Hiking.this,FacilityListActivity.class));
                         }
-                    });
+                    });*/
                 }else{
                     lstActivity.setAdapter(null);
                     lstActivity.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(),"No Data Available for "+parkName,Toast.LENGTH_LONG).show();
+                    TextView txtNoData = (TextView)findViewById(R.id.txtNoData);
+                    txtNoData.setVisibility(View.VISIBLE);
+                    //Toast.makeText(getApplicationContext(),"No Data Available for "+parkName,Toast.LENGTH_LONG).show();
                 }
 
 
