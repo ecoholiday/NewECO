@@ -68,15 +68,16 @@ public class ParkPage extends AppCompatActivity {
         latitude = sharedpreferences.getString("ParkLatitude","");
         longitude = sharedpreferences.getString("ParkLongitude","");
 
-        final TextView ParkDistance = (TextView)findViewById(R.id.ParkDistance);
-        TextView Area = (TextView)findViewById(R.id.Area);
+
         ImageButton btnNavigation = (ImageButton) findViewById(R.id.btnNavigation);
         //Toast.makeText(getApplicationContext()," "+ NPID +"",Toast.LENGTH_LONG).show();
 
         //set the image nd name of national park
         TextView txtPark = (TextView)findViewById(R.id.txtPark);
+        TextView txtParkDistance = (TextView)findViewById(R.id.txtParkDistance);
         txtPark.setText(parkName);
         setNPImage(parkName);
+        txtParkDistance.setText(" " + parkDistance +"KMs");
 
 
         btnNavigation.setOnClickListener(new View.OnClickListener() {

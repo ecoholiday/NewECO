@@ -687,240 +687,136 @@
     </string-array>
 
     <string-array name="Camping">
-        <item>Dogmans Hut - Tom Groggin</item>
-        <item>Johnston Hut</item>
-        <item>Kelly Hut - Holmes Plain</item>
-        <item>Tawonga Huts</item>
-        <item>Weston Hut</item>
-        <item>Young Hut</item>
-        <item>Rogers Hut</item>
+        <item>Dogmans Hut (Tom Groggin)</item>
+        <item>King Hut</item>
+        <item>Bennies Camping Area</item>
+        <item>Taylor’s Crossing campground</item>
+        <item>Talbotville</item>
+        <item>Limestone Creek Camping area</item>
         <item>Bluff Hut</item>
-        <item>Ritchies Hut</item>
+        <item>Ritchie Hut</item>
         <item>Davies Plain Hut</item>
-        <item>Kennedy Hut</item>
-        <item>Rover Scout Chalet</item>
-        <item>Cairn Creek Hut</item>
-        <item>Edmondson Hut</item>
-        <item>Wallace Hut</item>
-        <item>Country Roads Board Hut</item>
-        <item>Maddisons Huts</item>
-        <item>Campbells Yards Huts - Feed Store Nth</item>
-        <item>Tawonga Huts - Feed Store - Hut closest to falls creek</item>
-        <item>Campbells Yards Huts - Quarters</item>
-        <item>Bindaree Hut</item>
-        <item>Gattamurh Creek Hut</item>
-        <item>Gardners Hut</item>
-        <item>Lankey Plain Hut</item>
-        <item>Top Crossing Hut</item>
-        <item>Lazy H Hut</item>
-        <item>King River Hut</item>
-        <item>Howitt Plains Hut</item>
-        <item>Guys Hut and Yards</item>
-        <item>Lake Cobbler Hut</item>
-        <item>Moroka Hut</item>
-        <item>Vallejo Gantner Hut</item>
-        <item>Campbell Yard Hut</item>
-        <item>Cope Hut</item>
-        <item>Cope Saddle Hut</item>
-        <item>Faithfulls Hut</item>
-        <item>Langford Gap Hut</item>
-        <item>McNamara Hut</item>
-        <item>Tawonga Hut Complex</item>
-        <item>McNamara Hut</item>
-        <item>Miller Hut</item>
-        <item>Blairs Hut</item>
-        <item>J.B. Plain Hut</item>
-        <item>Melbourne Uni Mountaineering Club Hut</item>
-        <item>Davies Plain Hut</item>
-        <item>Biplane Hut</item>
-        <item>Wonnangatta Hut - Refuge Only</item>
-        <item>Quart Pot Flat Hut</item>
-        <item>Wombat Post Office Hut</item>
-        <item>Dibbins Hut</item>
-        <item>Fitzgeralds Hut</item>
-        <item>Michell Hut</item>
-        <item>Pretty Valley Hut</item>
-        <item>Federation Hut</item>
-        <item>Bogong Jack Saddle Hut</item>
-        <item>Kellys Hut at Alpine NP</item>
-        <item>Pikes Flat Hut - Refuge</item>
-        <item>EMS - Rover Chalet</item>
-        <item>Mc.Michael Hut</item>
-        <item>Mt Benambra - Towermans Hut</item>
-        <item>Lankey Plain Hut - Refuge only</item>
-        <item>Bivouac Hut</item>
-        <item>Ropers Hut</item>
-        <item>Huts - Aberfeldy River</item>
-        <item>N B W Hut</item>
-        <item>J.W. McMahon Rover Hut or Rover Hut</item>
-        <item>Heatherlie - Mt Difficult Quarry - Cottage - East</item>
-        <item>Heatherlie - Mt Difficult Quarry - Cottage - West</item>
-        <item>Heatherlie - Mt Difficult Quarry - Cottage - Central</item>
-        <item>Teddington Hut</item>
-        <item>Shelter</item>
-        <item>Battersbys Walkers Shelter</item>
-        <item>Pattersons Walkers Camp Shelter</item>
-        <item>Lower Glenelg National Park</item>
-        <item>Mopoke Hut</item>
-        <item>Refuge Cove Rangers hut</item>
-        <item>Sealers Cove Rangers Hut</item>
-        <item>Halfway Hut</item>
-        <item>Wonga Hut</item>
+        <item>Miller hut</item>
+        <item>Barmah Lakes Camping and Picnic Ground</item>
+        <item>Mushroom Rocks Campground</item>
+        <item>Blue Gum Campground</item>
+        <item>Bluff Creek Campground</item>
+        <item>Thurra River Campground</item>
+        <item>mueller inlet camping area</item>
+        <item>Wingan Inlet Campground and Boat Ramp</item>
+        <item>Shipwreck Creek Campground</item>
+        <item>Peachtree Creek Reserve Campground</item>
+        <item>Choof Choof Campground</item>
+        <item>Ada River Camping Area</item>
+        <item>Buandik Campground</item>
+        <item>Boreang Campground</item>
+        <item>Bugiga Hiker Camp</item>
+        <item>First Wannon Remote Campground</item>
+        <item>Lake Mournful campsite</item>
+        <item>Rocket Lake Campground</item>
+        <item>Mt Crozier Campground, Murray-Sunset National Park.</item>
+        <item>Teddington Camping Area</item>
+        <item>Regular Camp</item>
+        <item>Number One Camp</item>
+        <item>Mountaineer Inlet Boat Camp</item>
+        <item>Dumbells Camp Ground</item>
+        <item>Jimmy Bend Camp Ground</item>
+        <item>Raids Inlet Camp Ground</item>
+        <item>Owens Hill Camp Ground</item>
+        <item>Parkers Flat Camp Ground</item>
+        <item>Harrops flats Camp Ground</item>
+        <item>North Maintongoon Camp Ground</item>
+        <item>The Island Camp Ground Lake Eildon</item>
+        <item>Ewarts Camp Ground</item>
+        <item>Kiata Campground</item>
+        <item>Yellow Gum Walkers Camp</item>
+        <item>Horseshoe Bend Campground</item>
+        <item>Ackle Bend</item>
+        <item>Pritchards Landing</item>
+        <item>Moleside Creek</item>
+        <item>Battersbys Camp</item>
+        <item>Red Gum Landing</item>
+        <item>Georges Rest Canoe Camp</item>
+        <item>Lees Creek Camp Site</item>
+        <item>Budj Bim Campground</item>
+        <item>Lake Crosbie</item>
+        <item>Mt Crozier Campground, Murray-Sunset National Park.</item>
+        <item>Rocket Lake Campground</item>
+        <item>Pheenys Campground</item>
+        <item>Shearers Quarters, Murray-Sunset National Park.</item>
+        <item>Tidal River Campground</item>
+        <item>Wonga Campground</item>
+
+
+    </string-array>
+
+    <string-array name="CampDesc">
+        <item>Dogman Hut is Located in the northeast of the park, not far from the Murray river, dogman cottage is a great place to camp and watch the sunset. Four-wheel drive drivers often use the area as a stopover for running in the nearby Pinnibar mountains.Access for four-wheel-drive cars is provided by Tom Groggin Track;From new south wales you can reach dogman through the Alpine Way.</item>
+        <item>King Hut isThe kings lodge is located on the western edge of the alpine national park, about 15km north of Stirling in shandong province, by the kings river.The four-wheel-drive entry route is along speculative road, which is closed by a circuit from about 6km southwest of Craigs cabin.There are stables for brave explorers.The cottage itself is in good condition and was recently rebuilt.</item>
+        <item>Bennies is located in the southwest of the Alps national park, between the Buhler mountains and the town of Whitfield - from Whitfield, follow Rose river road (Whitfield - Motford road), then follow Rose river road, then turn along lake shoe store road, the distance is 29 kilometers.The camp is located near the Ross river, where you can have a pleasant walk along the river.If you have a four-wheel-drive car, walk along cobblestone paths and look up at the cliffs of cobblestone mountain.</item>
+        <item>There are 2 ways of getting here: in a 4WD along Four Mile Creek Track, or in a 2WD from the direction of Uplands. The latter route requires you to carry your camping gear across a pedestrian swing bridge to the campsites. Note: the toilets are on the other side of the river from the campsites, in the day-use area.</item>
+        <item>You’ll find dispersed camping on grassy sites at Talbotville down by Crooked River, almost 16 km along McMillan Rd from the Dargo High Plains Rd turn-off. Wander around the old Talbotville Cemetery or inspect the rusty ore carts at the nearby New Good Hope Mine. Note: reaching the latter entails numerous river crossings. You can also follow McMillans Track into adjacent Alpine National Park. Note: McMillans Rd is suitable for 2WD only in dry weather; off-road camper trailers can be towed in by a 4WD.</item>
+        <item>Limestone Creek flows within untouched woodlands on the Davies High Plain. Horseriders plod slowly through the area along the Bicentennial Nature Trail, while others camp beside the creek to float a fishing line, or let their feet lead them down nearby vehicular and walking tracks. The Limestone Creek camping area is accessed via Limestone Creek Track, 2.4 km north of the junction with Black Mountain Rd.</item>
+        <item>Within a few hundred metres of the Bluff hut, a bush was camping among the snow stumps;Rebuild a 1950s hut that burned down in 2007.The trail begins on an eight-mile stretch of smooth old road, wandering through the Bluff summit - from where you can gaze at taibrle - and then snaking through the Alpine meadows through the four-wheel-drive trail (Bluff Trail, Block Trail) before hiking to the start of the trail.The rider also went in this direction</item>
+        <item>Ritchies Hut, in the mountains along the Hawkwa river in 14-mile creek, was built in late 1947 by Jeffrey richs son, Robert, with the help of Fred fry.Geoffrey Ritchie and Antoinette Ritchie first moved to Delatite, near Mansfield, in 1902 and bought Wonnangatta Station in 1914.Ritchies Hut burned down in January 2007 and was rebuilt in May 2009.</item>
+        <item>Camp in the snow near the historic Davies Plains Hut, 16 kilometers south of the nearest Murray river and 13 kilometers north of the Charles river plain.The Davis Plains Hut is the domain of four-wheel-drive cars and drivers who take advantage of nearby tracks.If youre lucky, you can even see some wild horses here.It is a good stopover for tourism and a good base for exploring the north and south.</item>
+        <item>The Miller Hut is one of many emergency shelters in the park, with an open camp nearby for those who have just passed through.Youll need a four-wheel-drive car to get here along the tracks of mount Wellington, which branches off Moroka road 17 kilometers southeast of Abakkiel.A rough path leads from here to mount Wellington.</item>
+        <item>Just to the east of the relatively flat surface of the Balma Laks camp is the Dalnia Interpretive Centre (closed indefinitely), with its many jungle trails.These include the self-guided Yamiyabuk expedition, which traverses the remains of Indigenous cultures and longer lakes.If walking isnt your thing, try rowing or canoeing on the lake.Drive here from Balma via lake Moira road.</item>
+        <item>The Mushroon Rocks Campgroud is near the mushroom Rocks. The walk to Mushroom Rocks is approximately 3 km (2 hrs return).</item>
+        <item>This large campsite can accommodate large groups of up to 100 people as well as traditional car campers.In Tai Yeung Au District, 14 km west of Residential valley drive, access to the camp is through a locked gate. For details, please contact the park office.This is best if you have a four-wheel-drive car, although traditional cars can be driven carefully in dry weather.Drinking water;Order and pay 2 weeks in advance.</item>
+        <item>The camp is on Bluff Falls road, near the entrance to the park.There are not many scenic spots, so arrive early in the peak season of the holiday.From here, walk 2 km through the Eucalyptus forest to brough falls.Cliff falls are most spectacular in spring.</item>
+        <item>The large open-air camp on the Serra river is the best place to hike to the nearby historic point hicks lighthouse station.It was built in 1890.You can stay in the watchmans cabin.Much of the macrame in crockingolon is not conducive to traction, but pickup trucks allow it to follow the serra road at patam boone road and evra point.There is no running water, so you need to bring your own water.</item>
+        <item>Mueller Inlet has eight campsites, shaded by shrub-covered dunes, three of which are within walking distance of the parking lot. No fire is allowed here.For a nice four-wheel-drive ride, take the nearby Cicada trail.Follow Royal Boulevard along Tambourine road, turn at the corner of Hicks road, and follow the Bare Mountain road to Muellers bay. </item>
+        <item>Its sandy beaches and tropical rainforest environment make it a perfect stop.Walk through Fern Canyons, check out the winn rapids, take walks along boardwalks, fly coves, cross Banksias forests, and discover (less elusive) lakes.Go west to Rajah avenue.</item>
+        <item>Shipwreck Creek has only five camps, located in the forest above an isolated bay.The flat terrain makes it easy to pitch a tent. Walk along the beach and look out over Gabo Island.You can also follow the 3km trail to Seal Creek, which is decorated with rock pools.From nearby alakuta, take the Betka road and then take the Central track.</item>
+        <item>Peachtree Creek is one of the most popular campgrounds in  Croajingolong. The adjacent Taboon bay has good water flow, but be aware that the entrance may be affected by strong currents.You can take a caravan to Peachtree creek, but be careful on the rough gravel road.Follow Fishman out of Hicks road.</item>
+        <item>Choof Choof Camping and Picnic Area is situated on a backwater of the Cann River, adjacent to Lake Furnell 20km south of the Cann River Township within the Tamboon State Forest, which is managed by the Department of Sustainability and Environment (DSE). Choof Choof Picnic and Camping Area provides an ideal base location to set up camp and then go fishing, swimming, walking, or exploring the Tamboon Inlet, one of the regions beautiful coastal attractions, which can be reached by boat, with a boat ramp located at nearby Furnells Landing.</item>
+        <item>Ada river camping status in the southern border of the charming Errinundra national park, has a broad temperate rain forest landscape and limpid streams, rocks.View panoramic view from HaiYangGuan lookout and stroll through the ancient forest in Errinundra saddle.From the princes highway, north of Club Terrace, along the Club Terrace - combienbar road, then turn to Errinundra Valley road.</item>
+        <item>Situated on the western border of the grampia mountains, the buandikerou camp consists of two indigenous cultural heritages-bil threshold a in the north and Manja in the south.Surrounding manga is the heather, which is a pleasant outing through the boardwalk.The campsite itself is in the forest by billima creek.Turn off Henty Hwy road on glen island to Billywing road.</item>
+        <item>From Hall Gap to Boreang, follow Victory road west and then turn to Victoria valley road.There are dazzling views.From the balcony, there is a 1km track through eucalyptus trees and beautiful reeds, which can be seen from the parking lot.</item>
+        <item>Bugiga is a distinctive high-quality hiker camp exclusive to the Grampians Peaks Trail. The camp is located high in the Wonderland Range and has spectacular views of Mount Rosea.</item>
+        <item>First Wannon Hiker Camp is a small clearing with limited space best positioned for small, single groups or individual walkers undertaking the remote overnight hike across the Major Mitchell Plateau. This camp is sheltered in a saddle at the head of First Wannon Creek and has minimal facilities.</item>
+        <item>There are two designated campgrounds in the park with basic facilities, including non-flush toilets, fireplaces and picnic tables. They are at Lake Mournpall and Lake Hattah.</item>
+        <item>Rocket Lake is a salt lake at the northeast corner of the national park.You can cross the Nowingi track at Calder Hwy.Or, look at the pink lake, and then go north and connect to the Rocket lake orbit.On the way into or through dusk, you may see groups of red kangaroos breeding in the area</item>
+        <item>The Mt Crozier on the surrounding plain offers a beautiful view.The camp retains the basics: toilets, fireplaces and picnic tables.To get here, drive your four-wheel-drive or cross-country camping trailer along the sandy corozell mountain trail 23 kilometers north of Lake Becking.</item>
+        <item>The banks of the Upper Teddington Reservoir provide a pleasant venue for camping and picnics. Camp only in designated camping areas and at least 40m from the reservoir. Facilities include, flushing toilets, wood barbeques and picnic tables. Visitors are required to bring their own drinking water and firewood. There are only a small number of fireplaces so please come prepared to use gas instead. Currently no fees apply.</item>
+        <item>It is not far away from the south of No. 1 Camp on Main Mountain Rd, at the southern end of the park, its a short and easy walk from Blair house to the top of disappointment hill, where you can look back at Melbourne and port Phillip bay.</item>
+        <item>Horsemen and other large groups often congregate at camp one, a spacious open space where you may be accompanied if you stay.Turn east at the hiscot junction of Hume Fwy, Hume, and follow the main road to its junction with Flowerdale Rd, where the camp is open</item>
+        <item>Mountaineer Inlet is located in the north of lake Elton national park, where you can get away from everything.The camp is located in the Stone Bay and is accessible only by boat or on foot.Whether you plan to canoe across the lake or hike along bushy tracks, talk to the ranger about access and conditions first.</item>
+        <item>This is one of many camp sites located within the Delatite Arm Reserve. The reserve is situated along the shores of Lake Eildon and is adjacent to bushland, pine plantation and revegetated forest areas. It is popular for camping, water sports, scenic views and fishing. A network of forest tracks provides opportunities for 4WDriving, trail bike riding, mountain bike riding and bush walking.</item>
+        <item>The origin of the name Jimmy Bullocks is a mystery, but the campsite itself is easy to find -- it is at the northern end of the Big River Rd, near the junction with the eilden-jamieson Rd.</item>
+        <item>It is located in the Lake Eildon national park in the Delatite Plantation Road, Lake Eildon</item>
+        <item>The reserve is located on the shore of lake Elton, adjacent to shrubs, pine forests and new growth areas.It is popular for camping and can also do water sports, scenery and fishing.</item>
+        <item>This is one of many camp sites located within the Delatite Arm Reserve. The reserve is situated along the shores of Lake Eildon and is adjacent to bushland, pine plantation and revegetated forest areas. It is popular for camping, water sports, scenic views and fishing. A network of forest tracks provides opportunities for 4WDriving, trail bike riding, mountain bike riding and bush walking.</item>
+        <item>Located about 190 km northeast of Melbourne, via Mansfield or jamieson.The road to the Delatite peninsula is via Walshs road, near the town of gaves Bay.</item>
+        <item>This is one of many camp sites located within the Delatite Arm Reserve. The reserve is situated along the shores of Lake Eildon and is adjacent to bushland, pine plantation and revegetated forest areas. It is popular for camping, water sports, scenic views and fishing. A network of forest tracks provides opportunities for 4WDriving, trail bike riding, mountain bike riding and bush walking.</item>
+        <item>This is one of many camp sites located within the Delatite Arm Reserve. The reserve is situated along the shores of Lake Eildon and is adjacent to bushland, pine plantation and revegetated forest areas. It is popular for camping, water sports, scenic views and fishing. A network of forest tracks provides opportunities for 4WDriving, trail bike riding, mountain bike riding and bush walking.</item>
+        <item> It is located at Delatite Plantation Road, Victoria, Australia. Campsites do not belong to a single urban area</item>
+        <item>Kiata camping is located on the eastern block of Little Desert national park.It is located at the end of Kiata south road, extending from Western Hwy between Nhill and Dimboola.Head to the nearby picnic area and enjoy a half-hour nature reserve,Sanctuary–Keith Hateley Nature Walk, or observe the thriving birds, including mallee birds and bush Robins.</item>
+        <item>Yellow Gums Walkers Camp is located on the southern loop of the Little Desert Discovery Walk, the cross point of  Kiata and Horseshoe Bend camping areas.</item>
+        <item>Near by the town of Merbein, 10 km north-west of MiLdura.This stretch of the Murray river has many jungle campsites that give you the feeling of being away from city life.All stops are accessible through signposts on old Wentworth road, which is close to the local racecourse and winery and not far from River Ave in merbein.</item>
+        <item>Ackle Bend is located on the Wimmera river, in the east block of Little Rivers national park, south of Horseshoe Bay. Walking north along the river, you can see some beautiful scenery.There are other recreational activities, including swimming and fishing</item>
+        <item>One of the campsites that can accommodate caravans and campers has 11 to 20 locations.To get to pritchard, turn north from Portland nelson road to Nelson Winthrop road at wade junction and drive 9 kilometers to the camps 1 kilometer trail.</item>
+        <item>Moleside is 22km west of Fitzroy camp and 17km east of Battersbys camp.The road to Moleside leads through Lower Glenelg National Park and past the Inkpots.Another way to get here is by canoeing along the Glenelg River.</item>
+        <item>Located in the middle of the national park, this is a comfortable camping area with only a few locations.Just to the south of here is Bulley Ranges with a beautiful view of the surrounding countryside.The 300-meter-long entry track is located at a signpost outside Dr. Glenelg, about 16 kilometers east of the north Nelson track.</item>
+        <item>Drive 15 km south from  Dartmoor along the Wanwin road, then turn to the sign marked red gum.After 3km, turn west to the track of the river fire line. Drive along the track of the river fire line for 2km and reach the signpost passage of the camp.Youll find a large, open red gum camp, 200 meters from the fire line on the river.</item>
+        <item>Georges Rest can only be reached by boat. Located plum in the middle of the national park, is used as an overnight camp for canoeists working along the lower reaches of the Grengel river.</item>
+        <item>The Lees Creek area, 28 km north of Briagolong., is a focal point for intensive alluvial gold mining and is worth the trip to Alistair Fieldings for a walking tour of ancient Aquatic, Dam and Residential sites.</item>
+        <item>Nestled in the tranquil forest of manna gum, not far from the equally tranquil crater lake, it is a delightful place.The trail leads you along the lava channels, along the rim of the crater, to the end of the lake.Booking is required for major public holidays.</item>
+        <item>Located on the southern shore of Lake Crosby, the largest of the four pink lakes that make up one of the highlights of the Murray sunset.The best way to see these colorful salt lakes is to drive or bike along Pioneer Dr. Between them.The camping site is located in Linga, on the southern edge of the park Mallee Hwy, along a gravel road that runs for 12 kilometres.</item>
+        <item>Drive your four-wheel-drive or cross-country camping trailer along the sandy Corozell mountain track 23 kilometers north of Lake baker.The Mt Crozier on the surrounding plain offers a beautiful view.The camp retains the basics: toilets, fireplaces and picnic tables.</item>
+        <item>Rocket lake is a salt lake in the northeast of the national park.You can start at Nowingi, cross the Nowingi line, cross Calder Hwy on the  Raak Plain.Or, look at the pink lake, and then go north and connect to the Rocket lake orbit.On the way into or through dusk, you may see groups of red kangaroos breeding in the area.</item>
+        <item>The campsite, located in the far west of the national park, is a good spot for a four-wheel-drive vehicle to drive along the Pheenys Track during the parks famous desert sunset.If you are going this way, take plenty of water and fuel.</item>
+        <item>Go from Sturt Hwy via the North-South Settlement road, a four-wheel drive track.You need a reservation in advance to stay here.There are a dozen bunks, cooking facilities and the luxury of the wilderness - a hot bath.The camp is also here, 150 meters from the cabin.</item>
+        <item>Tidal river, at the end of cape Wilson road, is a huge, fully equipped campsite.In this area, you can take short walks, including a nature walk in lily puley canyon and a walk along the tannin-contaminated tidal river.Watch the sunset from the Norman observatory.</item>
+        <item>After entering the national park from Yappeet, you will find the Wonga camp at main entrance.Many great walks start here.Take the 4km backhaul trail as an example to introduce the landscape of Mallee;Then head to Lake Brambruk, passing through some sand dunes along the way.</item>
 
 
     </string-array>
 
     <string-array name="CNPID">
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>3</item>
-        <item>3</item>
-        <item>3</item>
-        <item>8</item>
-        <item>8</item>
-        <item>8</item>
-        <item>10</item>
-        <item>13</item>
-        <item>14</item>
-        <item>14</item>
-        <item>14</item>
-        <item>19</item>
-        <item>23</item>
-        <item>23</item>
-        <item>23</item>
-        <item>24</item>
-    </string-array>
 
-    <string-array name="TrackName">
-        <item>Australian Alps Walking Track</item>
-        <item>Bicentennial National Trail</item>
-        <item>Bryce Gorge Trail</item>
-        <item>Howqua River the Bluff Trail</item>
-        <item>Mt Bogong Trail</item>
-        <item>Mt Feathertop via Razorback Trail</item>
-        <item>Mt Hotham Dinner Plain Ski Trail</item>
-        <item>Tali Karng Trail</item>
-        <item>Wallaces Hut to Cope Hut Trail</item>
-        <item>Barmah Lakes Loop Track</item>
-        <item>Mount St Gwinear Trail</item>
-        <item>Bluff Falls Nature Walk</item>
-        <item>White Box Walking Trail</item>
-        <item>Genoa Peak Trail</item>
-        <item>Thurra River Walks</item>
-        <item>Wilderness Coast Walk</item>
-        <item>Kokoda Walk - Dandenong Ranges National Park</item>
-        <item>Sherbrooke Falls Trail - Dandenong Ranges National Park</item>
-        <item>Errinundra Saddle Rainforest Walk</item>
-        <item>Beehive Falls Trail</item>
-        <item>Beeripmo Walk - Beaufort</item>
-        <item>Eureka Trail</item>
-        <item>Great Dividing Trail</item>
-        <item>Lake Wendouree Trail</item>
-        <item>MacKenzie Falls Trail</item>
-        <item>Mt Abrupt - Mt Murdadjoog Trail</item>
-        <item>Mt Rosea Trail</item>
-        <item>Mt William - Mt Duwil Trail</item>
-        <item>Mt Wudjub-Guyan - Hollow Mountain Trail</item>
-        <item>Red Gum Walk</item>
-        <item>Wonderland Loop Walk</item>
-        <item>Bugle Ridge Track</item>
-        <item>Camel Pad Track</item>
-        <item>Mason Falls - Mt Sugarloaf - Kinglake National Park</item>
-        <item>Lake Eildon Walks</item>
-        <item>Desert Discovery Walk</item>
-        <item>Pritchards to Post and Rail Trail</item>
-        <item>Den of Nargun Walk</item>
-        <item>Bushrangers Bay Trail</item>
-        <item>Point Nepean Trail</item>
-        <item>Crater Rim Nature Walk</item>
-        <item>Benwerrin Nature Walk</item>
-        <item>Gorge Heritage Walk</item>
-        <item>The Horn Trail</item>
-        <item>Cape Bridgewater Seal Walk</item>
-        <item>Pink Lakes Trail</item>
-        <item>Cape Otway to Rainbow Falls Trail</item>
-        <item>Maits Rest Rainforest Trail</item>
-        <item>Triplet Falls Heritage Trail</item>
-        <item>Wreck Beach Trail</item>
-        <item>Loch Ard Gorge Short Walks</item>
-        <item>Port Campbell Discovery Walk</item>
-        <item>Fern Gully Nature Walk</item>
-        <item>Lilly Pilly Gully Nature Walk</item>
-        <item>Millers Landing-Vereker Outlook Trail</item>
-        <item>Prom Lighthouse Trek</item>
-        <item>Tidal River to Squeaky Beach Trail</item>
-        <item>Tongue Point Trail</item>
-        <item>Wilsons Prom Circuit Trail</item>
-        <item>Tyakil Nature Walk</item>
-        <item>Cumberland Walk - Marysville</item>
-        <item>Lake Mountain Summit Walk - Yarra Ranges National Park</item>
-        <item>Steavenson Falls Walk - Marysville</item>
-        <item>The Beeches trail - Yarra Ranges National Park</item>
-
-    </string-array>
-
-    <string-array name="TNPID">
+        <item>1</item>
         <item>1</item>
         <item>1</item>
         <item>1</item>
@@ -937,7 +833,294 @@
         <item>5</item>
         <item>5</item>
         <item>5</item>
-        <item>6</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>7</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>9</item>
+        <item>9</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>11</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>14</item>
+        <item>14</item>
+        <item>14</item>
+        <item>14</item>
+        <item>14</item>
+        <item>15</item>
+        <item>17</item>
+        <item>19</item>
+        <item>19</item>
+        <item>19</item>
+        <item>19</item>
+        <item>19</item>
+        <item>23</item>
+        <item>24</item>
+    </string-array>
+    <string-array name="CampLat">
+        <item>-36.535391</item>
+        <item>-37.082221</item>
+        <item>-37.049481</item>
+        <item>-36.82593</item>
+        <item>-37.333959</item>
+        <item>-36.951577</item>
+        <item>-37.215785</item>
+        <item>-37.194862</item>
+        <item>-36.651414</item>
+        <item>-37.539905</item>
+        <item>-35.957921</item>
+        <item>-37.88438</item>
+        <item>-36.116197</item>
+        <item>-36.120536</item>
+        <item>-37.776401</item>
+        <item>-37.775881</item>
+        <item>-37.739065</item>
+        <item>-37.634828</item>
+        <item>-37.733577</item>
+        <item>-37.712346</item>
+        <item>-37.403673</item>
+        <item>-37.25255</item>
+        <item>-37.172782</item>
+        <item>-37.179037</item>
+        <item>-37.320969</item>
+        <item>-34.704362</item>
+        <item>-34.638113</item>
+        <item>-34.909672</item>
+        <item>-36.845096</item>
+        <item>-37.332086</item>
+        <item>-37.32136</item>
+        <item>-37.139176</item>
+        <item>-37.129181</item>
+        <item>-37.124934</item>
+        <item>-37.115022</item>
+        <item>-37.115738</item>
+        <item>-37.117946</item>
+        <item>-37.124623</item>
+        <item>-37.147925</item>
+        <item>-37.124841</item>
+        <item>-37.137735</item>
+        <item>-36.444725</item>
+        <item>-36.553267</item>
+        <item>-36.498517</item>
+        <item>-36.503006</item>
+        <item>-38.056258</item>
+        <item>-38.05408</item>
+        <item>-38.046135</item>
+        <item>-38.043106</item>
+        <item>-38.04161</item>
+        <item>-37.659092</item>
+        <item>-38.056661</item>
+        <item>-35.054756</item>
+        <item>-34.856533</item>
+        <item>-34.597699</item>
+        <item>-34.66328</item>
+        <item>-34.525296</item>
+        <item>-39.030162</item>
+        <item>-35.583773</item>
+
+
+    </string-array>
+    <string-array name="CampLong">
+
+        <item>148.132623</item>
+        <item>146.486836</item>
+        <item>146.626248</item>
+        <item>147.661276</item>
+        <item>147.066607</item>
+        <item>147.215181</item>
+        <item>146.523993</item>
+        <item>146.475223</item>
+        <item>148.125847</item>
+        <item>146.822082</item>
+        <item>144.95852</item>
+        <item>146.356412</item>
+        <item>147.765402</item>
+        <item>147.777284</item>
+        <item>149.308282</item>
+        <item>149.324879</item>
+        <item>149.497421</item>
+        <item>149.700181</item>
+        <item>149.137858</item>
+        <item>149.126777</item>
+        <item>148.893299</item>
+        <item>142.278697</item>
+        <item>142.417721</item>
+        <item>142.5086</item>
+        <item>142.588591</item>
+        <item>142.335749</item>
+        <item>141.831715</item>
+        <item>141.704986</item>
+        <item>143.263342</item>
+        <item>145.157287</item>
+        <item>145.172309</item>
+        <item>145.859813</item>
+        <item>145.90822</item>
+        <item>145.910786</item>
+        <item>145.912667</item>
+        <item>145.915063</item>
+        <item>145.919217</item>
+        <item>145.938802</item>
+        <item>145.916315</item>
+        <item>145.963259</item>
+        <item>145.978652</item>
+        <item>141.79864</item>
+        <item>141.873774</item>
+        <item>142.017971</item>
+        <item>142.019425</item>
+        <item>141.217787</item>
+        <item>141.268862</item>
+        <item>141.159964</item>
+        <item>141.161444</item>
+        <item>141.159728</item>
+        <item>147.142268</item>
+        <item>141.92354</item>
+        <item>141.731185</item>
+        <item>141.692681</item>
+        <item>141.844743</item>
+        <item>141.278473</item>
+        <item>141.275383</item>
+        <item>146.322489</item>
+        <item>142.053274</item>
+
+    </string-array>
+
+
+    <!--  Hiking data is as below-->
+
+
+    <string-array name="TrackName">
+        <item>Paradise falls</item>
+        <item>Eagles Peaks</item>
+        <item>The Bluff</item>
+        <item>Ritchie’s Hut</item>
+        <item>Mt Cobbler</item>
+        <item>Mt Howitt</item>
+        <item>Bryce Gorge Circuit</item>
+        <item>Upper Pioneer Trail</item>
+        <item>Mount Wills</item>
+        <item>Harrington’s Track</item>
+        <item>Yamyabuc Discovery Trail</item>
+        <item>Lakes Loop Track</item>
+        <item>Broken Creek Loop Track</item>
+        <item>Beech Gully Track</item>
+        <item>Mount St Gwinear Trac</item>
+        <item>Mushroom Rocks</item>
+        <item>Bluff Creek Nature Trail</item>
+        <item>Campbells Lookout track</item>
+        <item>Ross Lookout track</item>
+        <item>Rocky Knob</item>
+        <item>Pine Mountain summit</item>
+        <item>Hinces Saddle</item>
+        <item>The Pimple</item>
+        <item>Mt Burrowa summit</item>
+        <item>Wilderness Coast Walk</item>
+        <item>1000 steps</item>
+        <item>ellery creek track</item>
+        <item>Mt Zero</item>
+        <item>Mt Stapylton</item>
+        <item>Hollow Mountain</item>
+        <item>Fish Falls</item>
+        <item>MacKenzie Falls River Walk</item>
+        <item>Beehive Falls</item>
+        <item>Hattah Nature Walk</item>
+        <item>Warepil Lookout Walk</item>
+        <item>Woodlands Walk</item>
+        <item>Mournpall Lake Loop Track</item>
+        <item>Devil Cove to Lakeside Track</item>
+        <item>Candlebark Gully and Perfect Cure Creek Nature Trails</item>
+        <item>Wallaby Bay Track - Cook Point</item>
+        <item>Wallaby Bay Track - School Point</item>
+        <item>Cook Point</item>
+        <item>School Point</item>
+        <item>Merlo---s Lookout</item>
+        <item>Devil River Track to Skyline Rd</item>
+        <item>Estate Spur Track</item>
+        <item>Stringybark Walk</item>
+        <item>Sanctuary-Keith Hateley Nature Walk</item>
+        <item>Pomponderoo Hill Nature Walk </item>
+        <item>Yanipy Walk</item>
+        <item>Kiata Campground Walks - Red Gum Loop</item>
+        <item>Kiata Campground Walks - Albrechts Mill Loop</item>
+        <item>Kiata Campground Walks - Trig Point Loop</item>
+        <item>Desert Discovery Walk</item>
+        <item>Great South West Walk</item>
+        <item>Mitchell River Walking Track</item>
+        <item>Baldrys Short Circuit</item>
+        <item>Baldrys Long Circuit</item>
+        <item>Long Point Circuit</item>
+        <item>Two bays Walking Track</item>
+        <item>Benwerrin Nature Walk</item>
+        <item>Noels Walk</item>
+        <item>West Walk</item>
+        <item>Keilor Plains / Lookout Walk</item>
+        <item>Twelve Apostles Walk</item>
+        <item>Corrigan Suspension Bridge</item>
+        <item>Lyrebird Ridge Track</item>
+        <item>Forest Track</item>
+        <item>Ash Track</item>
+        <item>Fern Gully Nature Walk</item>
+        <item>Scenic Track</item>
+        <item>Norman Beach, Tidal Overlook, Squeaky Beach, Picnic Bay, Whisky Bay</item>
+        <item>Darby River to Tongue Point</item>
+        <item>Darby Saddle to Tongue Point</item>
+        <item>Darby River, Fairy Cove, Tongue Point, Darby Saddle</item>
+        <item>Mount Oberon Summit</item>
+        <item>Telegraph Saddle to Tidal River, via Oberon Bay</item>
+        <item>Sealers Cove</item>
+        <item>Discovery Walk</item>
+        <item>Tyakil</item>
+        <item>Desert Walk</item>
+        <item>Mt Donna Buang to 10 Mile Picnic Area</item>
+        <item>Mt Donna Buang to Mt Boobyalla</item>
+        <item>Mt Donna Buang return via Mt Victoria and 10 Mile</item>
+
+    </string-array>
+
+    <string-array name="TNPID">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>5</item>
         <item>6</item>
         <item>7</item>
         <item>8</item>
@@ -946,33 +1129,43 @@
         <item>8</item>
         <item>8</item>
         <item>8</item>
-        <item>8</item>
-        <item>8</item>
-        <item>8</item>
-        <item>8</item>
-        <item>8</item>
-        <item>8</item>
         <item>9</item>
         <item>9</item>
-        <item>11</item>
+        <item>9</item>
+        <item>9</item>
         <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
         <item>13</item>
         <item>14</item>
         <item>15</item>
         <item>16</item>
         <item>16</item>
-        <item>17</item>
+        <item>16</item>
+        <item>16</item>
         <item>18</item>
         <item>18</item>
         <item>18</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>20</item>
-        <item>20</item>
         <item>20</item>
         <item>21</item>
-        <item>21</item>
+        <item>22</item>
+        <item>22</item>
+        <item>22</item>
+        <item>22</item>
+        <item>22</item>
         <item>22</item>
         <item>23</item>
         <item>23</item>
@@ -980,26 +1173,462 @@
         <item>23</item>
         <item>23</item>
         <item>23</item>
+        <item>23</item>
+        <item>24</item>
+        <item>24</item>
         <item>24</item>
         <item>25</item>
         <item>25</item>
         <item>25</item>
-        <item>25</item>
-
 
     </string-array>
+
+    <string-array name="TrackLength">
+        <item>0.5</item>
+        <item>11.5</item>
+        <item>2</item>
+        <item>5.5</item>
+        <item>10</item>
+        <item>14</item>
+        <item>8</item>
+        <item>3.5</item>
+        <item>6</item>
+        <item>20</item>
+        <item>1.5</item>
+        <item>4</item>
+        <item>3.5</item>
+        <item>0.5</item>
+        <item>6</item>
+        <item>3</item>
+        <item>4</item>
+        <item>1.4</item>
+        <item>6</item>
+        <item>2</item>
+        <item>12</item>
+        <item>14</item>
+        <item>3</item>
+        <item>15</item>
+        <item>100</item>
+        <item>3</item>
+        <item>3</item>
+        <item>1.4</item>
+        <item>2.3</item>
+        <item>1.1</item>
+        <item>2.3</item>
+        <item>7</item>
+        <item>1.4</item>
+        <item>1.2</item>
+        <item>0.6</item>
+        <item>2.5</item>
+        <item>10</item>
+        <item>3.5</item>
+        <item>2</item>
+        <item>2.5</item>
+        <item>7</item>
+        <item>5</item>
+        <item>4.6</item>
+        <item>3.6</item>
+        <item>2.8</item>
+        <item>2.2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2.3</item>
+        <item>4</item>
+        <item>11</item>
+        <item>74</item>
+        <item>250</item>
+        <item>18</item>
+        <item>1.6</item>
+        <item>3.6</item>
+        <item>4</item>
+        <item>8.9</item>
+        <item>2.5</item>
+        <item>2.3</item>
+        <item>2.8</item>
+        <item>0.8</item>
+        <item>0.5</item>
+        <item>1.2</item>
+        <item>2.4</item>
+        <item>4.4</item>
+        <item>0.68</item>
+        <item>0.72</item>
+        <item>1</item>
+        <item>6</item>
+        <item>3.8</item>
+        <item>5.6</item>
+        <item>9.4</item>
+        <item>3.4</item>
+        <item>16.9</item>
+        <item>9.5</item>
+        <item>4</item>
+        <item>4.4</item>
+        <item>6</item>
+        <item>1.2</item>
+        <item>2.5</item>
+        <item>6</item>
+
+    </string-array>
+    <string-array name="TrackTime">
+        <item>0.5</item>
+        <item>8</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3.5</item>
+        <item>5</item>
+        <item>2.5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>16</item>
+        <item>0.5</item>
+        <item>1.75</item>
+        <item>1.5</item>
+        <item>0.5</item>
+        <item>3</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>4</item>
+        <item>1</item>
+        <item>7</item>
+        <item>7</item>
+        <item>2</item>
+        <item>10</item>
+        <item>9999</item>
+        <item>1.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2.5</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>3</item>
+        <item>1.5</item>
+        <item>0.5</item>
+        <item>0.5</item>
+        <item>2</item>
+        <item>4</item>
+        <item>1.5</item>
+        <item>1.5</item>
+        <item>1.5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>4</item>
+        <item>2.5</item>
+        <item>1.5</item>
+        <item>1.5</item>
+        <item>0.5</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1.75</item>
+        <item>4.5</item>
+        <item>9999</item>
+        <item>9999</item>
+        <item>10</item>
+        <item>9999</item>
+        <item>9999</item>
+        <item>9999</item>
+        <item>9999</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>0.75</item>
+        <item>0.5</item>
+        <item>0.8</item>
+        <item>0.75</item>
+        <item>1.5</item>
+        <item>0.45</item>
+        <item>0.5</item>
+        <item>0.75</item>
+        <item>3</item>
+        <item>2</item>
+        <item>2.5</item>
+        <item>4</item>
+        <item>1</item>
+        <item>5.5</item>
+        <item>3</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2.5</item>
+        <item>0.5</item>
+        <item>1.5</item>
+        <item>3</item>
+
+    </string-array>
+    <string-array name="TrackkLat">
+        <item>-36.86857</item>
+        <item>-37.19572</item>
+        <item>-37.209263</item>
+        <item>-37.20194</item>
+        <item>-38.05147</item>
+        <item>-37.183</item>
+        <item>-37.28299</item>
+        <item>-38.15744</item>
+        <item>-36.81176</item>
+        <item>-36.512</item>
+        <item>-35.962341</item>
+        <item>-35.95781</item>
+        <item>-35.962653</item>
+        <item>-37.23766</item>
+        <item>-37.82711</item>
+        <item>-37.934929</item>
+        <item>-36.11639</item>
+        <item>-36.11639</item>
+        <item>-36.11639</item>
+        <item>-35.99049</item>
+        <item>-35.99049</item>
+        <item>-36.08591</item>
+        <item>-36.08611</item>
+        <item>-36.08611</item>
+        <item>-37.765438</item>
+        <item>-37.888838</item>
+        <item>-37.35487</item>
+        <item>-37.09576</item>
+        <item>-36.89584</item>
+        <item>-36.89183</item>
+        <item>-38.67455</item>
+        <item>-37.11029</item>
+        <item>-36.976521</item>
+        <item>-34.77056</item>
+        <item>-34.84919</item>
+        <item>-34.74657</item>
+        <item>-34.705191</item>
+        <item>-37.172229</item>
+        <item>-37.17551</item>
+        <item>-38.385238</item>
+        <item>-38.385238</item>
+        <item>-38.385238</item>
+        <item>-38.385238</item>
+        <item>-37.167024</item>
+        <item>-37.189675</item>
+        <item>-37.186087</item>
+        <item>-36.458725</item>
+        <item>-36.512212</item>
+        <item>-36.512212</item>
+        <item>-36.512212</item>
+        <item>-36.444152</item>
+        <item>-36.444152</item>
+        <item>-36.444152</item>
+        <item>-36.512212</item>
+        <item>-38.050533</item>
+        <item>-37.694089</item>
+        <item>38.431338</item>
+        <item>38.431338</item>
+        <item>38.431338</item>
+        <item>38.431338</item>
+        <item>-38.484891</item>
+        <item>-38.3095</item>
+        <item>-38.263752</item>
+        <item>-37.667436</item>
+        <item>-38.746357</item>
+        <item>-38.42555</item>
+        <item>-38.430078</item>
+        <item>-38.435424</item>
+        <item>-38.426944</item>
+        <item>-38.429363</item>
+        <item>-38.425353</item>
+        <item>-39.016126</item>
+        <item>-38.993829</item>
+        <item>-38.993829</item>
+        <item>-38.991158</item>
+        <item>-39.038304</item>
+        <item>-39.032638</item>
+        <item>-39.020433</item>
+        <item>-35.585004</item>
+        <item>-35.583778</item>
+        <item>-35.583778</item>
+        <item>-37.706909</item>
+        <item>-37.706909</item>
+        <item>-37.706909</item>
+
+    </string-array>
+    <string-array name="TrackLong">
+        <item>146.4384</item>
+        <item>146.35918</item>
+        <item>146.525586</item>
+        <item>146.45122</item>
+        <item>145.26311</item>
+        <item>146.65</item>
+        <item>146.725616</item>
+        <item>146.33313</item>
+        <item>147.47365</item>
+        <item>146.55539</item>
+        <item>144.955826</item>
+        <item>144.958497</item>
+        <item>144.955722</item>
+        <item>143.23797</item>
+        <item>146.33893</item>
+        <item>146.403351</item>
+        <item>147.78031</item>
+        <item>147.78031</item>
+        <item>147.78031</item>
+        <item>147.8438</item>
+        <item>147.8438</item>
+        <item>147.77377</item>
+        <item>147.72679</item>
+        <item>147.72679</item>
+        <item>148.981613</item>
+        <item>145.317616</item>
+        <item>148.759</item>
+        <item>142.52434</item>
+        <item>142.38398</item>
+        <item>142.38344</item>
+        <item>146.10092</item>
+        <item>142.41005</item>
+        <item>142.453812</item>
+        <item>142.40045</item>
+        <item>142.334518</item>
+        <item>142.29972</item>
+        <item>142.334217</item>
+        <item>145.839458</item>
+        <item>145.840907</item>
+        <item>144.921035</item>
+        <item>144.921035</item>
+        <item>144.921035</item>
+        <item>144.921035</item>
+        <item>145.846547</item>
+        <item>145.838342</item>
+        <item>145.858955</item>
+        <item>141.656542</item>
+        <item>141.781881</item>
+        <item>141.781881</item>
+        <item>141.781881</item>
+        <item>141.798325</item>
+        <item>141.798325</item>
+        <item>141.798325</item>
+        <item>141.781881</item>
+        <item>141.285943</item>
+        <item>147.369275</item>
+        <item>144.934196</item>
+        <item>144.934196</item>
+        <item>144.934196</item>
+        <item>144.934196</item>
+        <item>143.913247</item>
+        <item>144.072749</item>
+        <item>141.427515</item>
+        <item>144.765763</item>
+        <item>143.395315</item>
+        <item>146.572361</item>
+        <item>146.571015</item>
+        <item>146.576461</item>
+        <item>146.57148</item>
+        <item>146.56633</item>
+        <item>146.568889</item>
+        <item>146.292963</item>
+        <item>146.253691</item>
+        <item>146.253691</item>
+        <item>146.266082</item>
+        <item>146.351183</item>
+        <item>146.355534</item>
+        <item>146.436038</item>
+        <item>142.052029</item>
+        <item>142.053248</item>
+        <item>142.053248</item>
+        <item>145.680876</item>
+        <item>145.680876</item>
+        <item>145.680876</item>
+
+    </string-array>
+    <string-array name="TrackDesc">
+        <item>Paradise Falls, near Whitfield, cascade an uninterrupted 31 metres and are most spectacular in spring, early summer or after rain. The walk to the viewing platform is a well‐made stepped track perfect for all ability levels.</item>
+        <item>This challenging but rewarding walk begins in Davons Flat and finishes at Eight Mile Gap. Along the way you will encounter spectacular vistas of Mt Buller, The Bluff and Mt McDonald. For a shorter walk to Eagles peaks, start at 8 Mile Gap.</item>
+        <item>One of the highest and most recognisable peaks in the area, The Bluff offers breathtaking views from the top. This challenging steep walk through the crags starts at The Bluff Carpark, near Refrigerator Gap. Alternatively, visitors can reach The Bluff from The Bluff Hut. This option is longer, approximately.</item>
+        <item>This gentle and pleasant walk follows the Howqua High Track along the Howqua River. The track begins at Eight Mile Flat, which is only accessible to four‐wheel drive vehicles. Those with two‐wheel drive cars can park at Seven Mile Camping Area and walk from there.</item>
+        <item>Mt Cobbler is an exposed, rocky alpine summit, so be prepared for the onset of cold, wet and windy conditions at any time of the year. From the camping area at Lake Cobbler, the track enters the forest and dips into a creek gully, before starting the steady climb to an open snow plain. At the intersection turn right (north) to Mt Cobbler peak. The other walking track returns to a 4WD track across the Cobbler Plateau. The walk to the summit is well worthwhile for both the views and wildflowers you will encounter along the way.</item>
+        <item>Mt Cobbler is an exposed, rocky alpine summit, so be prepared for the onset of cold, wet and windy conditions at any time of the year. From the camping area at Lake Cobbler, the track enters the forest and dips into a creek gully, before starting the steady climb to an open snow plain. At the intersection turn right (north) to Mt Cobbler peak. The other walking track returns to a 4WD track across the Cobbler Plateau. The walk to the summit is well worthwhile for both the views and wildflowers you will encounter along the way.</item>
+        <item>The Bryce Gorge Circuit hike starts at the carpark on the Howitt Road, 23.5km north of Arbuckle Junction (46.5 km north of Licola via Tamboritha Road). From the carpark follow the well defined track across open snow plains for about 1.7km to the waterfall on Pieman Creek. The best view is from a lookout about 50 metres beyond the sign.</item>
+        <item>Upper Pioneer Trail in Pioneer Mine Historic Area passes through a magnificent stand of Brittle Gum and offers excellent views of the Pioneer Mine and the Mitta Valley. Keep an eye out for the myriad of water races that supplied water to the mining operations. Please stay well away from the steep edge of the Pioneer Mine. A moderately steep descent takes you back to the Omeo Highway 1km south of the hamlet.</item>
+        <item>This track starts at Mount Wills Carpark, just off Omeo Highway. It is a challenging climb but the views are well worth it. The rocky granite summit offers stunning alpine scenery among Snow Gums and fragrant herb fields.</item>
+        <item>This historic bridle trail stretches along the Murray River from Tom Groggin to Bunroy Station. The walk is steep and challenging at times but rewards with spectacular views of the Main Range and the Murray River Valley. This trail is also  popular with horse riders.</item>
+        <item>This self-guided walk begins at the Dharnya carpark and will introduce you to some of the natural and cultural features of the Barmah forest. The walk includes evidence of Aboriginal and European occupation, the Barmah muster yards and aspects of park management, forestry operations and water regulation.</item>
+        <item>Begin this circular walk at the Dharnya carpark or join at the the Barmah Lakes campground, day visitor area or Rices Bridge. The walk passes through mature and regrowth River Red Gum trees past a number of Aboriginal oven (cooking) mounds. It skirts the edge  of Barmah Lake, eventually reaching the Murray River and Broken Creek.</item>
+        <item>This circular walk begins behind the Visitor Centre and skirts Dharnya swamp, a low area subject to seasonal flooding. Walk through River Red Gum and Grey Box woodland to Broken Creek. Continue downstream along Broken Creek where you can see pelicans, ducks, egrets and darters. There are a number of Aboriginal oven (cooking) mounds on the way to Rices Weir. See the fish ladder that allows fish to go back upstream past the weir. Return via Sandridge Track or continue on the Lakes Loop track to Dharnya.</item>
+        <item>Starting at the Mount Erica carpark, the Beech Gully Nature Walk provides an excellent introduction to the plants and wildlife of the Mountain Ash forests and cool temperate rainforests of the southern slopes of the Baw Baws.</item>
+        <item>Short walks or longer hikes are some of the best ways to explore the park. Walkers and hikers should be aware that the weather can deteriorate suddenly and without warning. Don---t hesitate to turn back if the trip becomes too difficult or the weather deteriorates. Be sure to wear strong footwear, pack a snack, carry drinking water and a jacket.</item>
+        <item>Commencing at the Mount Erica carpark, this popular walk along a section of the Australian Alps Walking Track leads to a maze of giant granite tors – a great site for rock climbing and abseiling.</item>
+        <item>This walk links the Bluff Creek visitor area with Bluff Falls and can be walked in either direction. For much of its route the track follows closely beside Bluff Creek through moist, ferny gullies and tall stands of blue gum trees. Interpretative panels along the way provide information on features of interest.</item>
+        <item>This track departs from the Bluff Falls carpark and initially climbs up to the smaller Top Falls where Bluff Creek cascades into a narrow, wet gully. The track rises again to Campbells Lookout, a rocky escarpment that overlooks the steep cliffs and scree-covered slopes of Cudgewa Bluff. The turnoff to Ross Lookout is signposted and the track continues on up a broad ridge through wild cherry trees and black cypress pines.</item>
+        <item>This walking track departs from Hinces Creek campsite and initially follows a 4WD track to Hinces Clearing. The walking track then rises steadily beside Hinces Creek, a delightful ferny and secluded haven for a variety of bird life. A small seasonal waterfall is located on a tributary along the way.</item>
+        <item>The walk to Pine Mountain is long and strenuous, with a number of climbs and descents. The summit area offers panoramic views of the surrounding Murray River valleys. Rock cairns mark the track as it traverses large, granite outcrops fringed with black cypress pine and other rare and interesting vegetation. For the less adventurous it is possible to experience the special atmosphere of Pine Mountain with a shorter walk to Rocky Knob.</item>
+        <item>The walk to Pine Mountain is long and strenuous, with a number of climbs and descents. The summit area offers panoramic views of the surrounding Murray River valleys. Rock cairns mark the track as it traverses large, granite outcrops fringed with black cypress pine and other rare and interesting vegetation. For the less adventurous it is possible to experience the special atmosphere of Pine Mountain with a shorter walk to Rocky Knob.</item>
+        <item>This walking track departs from Hinces Creek campsite and initially follows a 4WD track to Hinces Clearing. The walking track then rises steadily beside Hinces Creek, a delightful ferny and secluded haven for a variety of bird life. A small seasonal waterfall is located on a tributary along the way.</item>
+        <item>The walk to Mt Burrowa is long and strenuous and the track may be poorly defined in places. The track climbs steeply from The Ridge carpark to The Pimple. The track continues on to the summit of Mt Burrowa with a number of very steep climbs and descents. The peak offers excellent views over some of the more remote and rugged areas of the park.</item>
+        <item>The walk to Mt Burrowa is long and strenuous and the track may be poorly defined in places. The track climbs steeply from The Ridge carpark to The Pimple. The track continues on to the summit of Mt Burrowa with a number of very steep climbs and descents. The peak offers excellent views over some of the more remote and rugged areas of the park.</item>
+        <item>The Wilderness Coast Walk extends 100km from the eastern shores of Sydenham Inlet in Croajingolong National Park, to Wonboyn in the Nadgee Nature Reserve, NSW. The walk can be accessed from a number of locations along the coastline. Two-wheel drive access is available at Bemm River, Thurra River, Wingan Inlet and Shipwreck Creek. Please check on road conditions prior to entering the park. Parks Victoria and the NSW National Parks and Wildlife Service require walkers to book in order to manage numbers and minimise visitor impact on these remote areas.</item>
+        <item>Meandering and criss-crossing the cool, clear waters of the Sassafras, Woori Yallock and Menzies Creeks is the 17 kilometre Dandenong Ranges Tourist Track. This intimate track passes through fern-filled gullies, eucalypt covered ridges and over numerous bridges and boardwalks. The walk can be undertaken from either direction, starting from the quaint little township of Sassafras, or from Emerald. You can also break up the walk into shorter sections, stopping off at any of the picnic grounds along the way. The walk is graded moderate to easy with some undulating terrain and some steeper sections.</item>
+        <item>ellery creek track is in the southern border of the charming Errinundra national park, has a broad temperate rain forest landscape and limpid streams, rocks.View panoramic view from HaiYangGuan lookout and stroll through the ancient forest in Errinundra saddle.From the princes highway, north of Club Terrace, along the Club Terrace - combienbar road, then turn to Errinundra Valley road.</item>
+        <item>From the picnic area, carefully cross the Halls Gap-Mt Zero Road and track markers will guide you up the rocky hillside. Near the top of the ridge the track becomes steeper to rock steps that lead up to the summit. Enjoy views of Mt Stapylton and the surrounding Wimmera plains. Return by the same route.</item>
+        <item>This walk, suitable for fit and energetic walkers and can involve slippery track surfaces, rock hopping and rock scrambling. Signs and track markers guide the way up the steep rock slope of Flat Rock to a splendid vantage point overlooking a natural amphitheatre. The track descends to the base of Taipan Wall before continuing along rock terraces to an intersection. Follow signs and track markers to the final steep ascent. The view from the summit is spectacular, taking in much of the park and surrounding plains. Return by the same route.</item>
+        <item>This walk is suitable for fit and energetic walkers and can involve slippery track surfaces, rock hopping and rock scrambling. From the car park, follow the sign-posted gravel track as it climbs gradually through a wide open gully surrounded by rocky cliffs. Once on rock, the track climbs steeply over rocky ledges and past wind scoured caverns to a rocky summit which offers views over Mt Stapylton Amphitheatre and the Wimmera Plains. Return by the same route.</item>
+        <item>A lovely walk to a small waterfall that flows all year round on the MacKenzie River. The track from Zumsteins will take you to the terraced base of Fish Falls.</item>
+        <item>Follow the track to Fish Falls where the track becomes steeper, meandering through a large gorge beside the river to the base of MacKenzie Falls.</item>
+        <item>A short walk follows Mud Hut Creek upstream to a series of rock steps to Beehive Falls. A lovely small waterfall with surrounding rock pools. Return the same route.</item>
+        <item>This self-guided walk highlights Mallee ecosystem and begins from the carpark near the park entrance off the Hattah-Robinvale Road.</item>
+        <item>Start from the Old Calder Highway carpark and take a short stroll up the steady incline to the lookout tower. You will be rewarded with great views of the surrounding Mallee Region. Look north-west and see the vast Murray Sunset National Park. This is a great place to witness the magnificent Mallee sunsets.</item>
+        <item>This walk starts at the Hattah- Kulkyne National Park Visitor Centre carpark and connects to the Camel Pad Track. It allows you to walk the 8km to Lake Mournpall Campground avoiding the car traffic on Mournpall Track.</item>
+        <item>This loop walk with interpretive signs follows the northern edge of Lake Mournpall before circling north around Lake Konardin passing through Red Gum flood plains and Mallee dunes.</item>
+        <item>A gentle, shady track follows the edge of the lake, connecting all camping and day visitor areas.</item>
+        <item>These short, self-guided trails introduce the park’s natural features and history. They incorporate a variety of forest types and include remains from the gold mining era.</item>
+        <item>This gentle, shady walk follows the lake edge and gives access to these delightful scenic points. For a strenuous return, link into Cook Point, School Point or Merlo’s Lookout walking tracks. These walks begin along Keg Spur Track, with an initial steep climb up to High Camp.</item>
+        <item>This gentle, shady walk follows the lake edge and gives access to these delightful scenic points. For a strenuous return, link into Cook Point, School Point or Merlo’s Lookout walking tracks. These walks begin along Keg Spur Track, with an initial steep climb up to High Camp.</item>
+        <item>From High Camp, the walk heads east along Blowhard Spur to the Summit, providing views from one of the Fraser areas highest points. The track gradually descends through light forest to Wallaby Bay Track. A gentle walk takes you out to the point.</item>
+        <item>This track descends sharply north from Blowhard Spur (800m past High Camp) down Devass Gully Track. An easy 1km walk leads to School Point along the Wallaby Bay Track.</item>
+        <item>From Blowhard Summit, the track descends steeply to Merlo’s Lookout.</item>
+        <item>This delightful forest walk winds through a moist gully and follows the old park entrance road.</item>
+        <item>From the information shelter, the track climbs to the top of the hill and intersects the main spur. To the left, the track is open and undulating giving expansive views and descends to Point Mibus or Lakeside. To the right, the track becomes well shaded and descends to Bedrock Creek and Bolte Bay Track. Return along Bolte Bay Track for a pleasant lake walk.</item>
+        <item>Located on the Harrow - Nhill Road, this short walk show cases the diversity of Little Desert. there is a brochure at the start of the walk will guide you.</item>
+        <item>Start in the picnic area, 10km south of Kiata. There is a Park Note explains the abundant plant and bird life in this area, including the rarely sighted Malleefowl</item>
+        <item>This walk is on the park’s northern boundary, 4km south of Dimboola. It loops around typical desert vegetation. A lookout gives an excellent view of the park, Wimmera River and the surrounding area.</item>
+        <item>Explore the plant and animal diversity on a self - guided walk around the Yanipy School Reserve.</item>
+        <item>Several tracks start from the campground. Brochures are available at the start of these walks.</item>
+        <item>This pleasant walk takes you through a diverse array of vegetation including areas of Silky Tea Tree, Stringybark, tall Broom bush and Mallee. The walk makes its way south-easterly before meeting with the Pump Jack Track.</item>
+        <item>This walk will take you in a south-westerly direction through thick Stringybark scrub. From here you will make a slow ascent up onto a sandstone ridge; follow this until you reach the Trig Point Lookout. The Trig Point is a remnant of days gone by when the early surveyors used high points, on rises and hills such as this one, as benchmarks from which they could obtain bearings</item>
+        <item>Long distance walkers can tackle all or part of the 74 km Desert Discovery Walk. Options of one to four days duration are possible. Overnight walkers are asked to register their details in advance at the Park Office. There are two overnight camps along the way, accessible only by walkers. This walk is a great opportunity to experience some of the park’s diversity on foot. It is especially colourful in spring.</item>
+        <item>The  Great South West Walk allows for a number of short or longer walks. Starting and ending at Portland, the 250km route passes through forest and heathlands, along rivers and via wind-swept coastal cliffs and beaches. A brochure covering the entire walk is available from Visitor Centres at Portland and Nelson or visit the website www.greatsouthwestwalk.com.</item>
+        <item>This walk is best completed in two days, though  for energetic walkers it can be completed in a day. The walk starts at Angusvale and broadly follows the Mitchell River as it winds its way down the gorge. There are spectacular views from the river to the top of the gorge top. Please take time to plan your walk and always let someone know your trip intentions.</item>
+        <item>A short but rewarding walk that takes you through eucalypt forest. Peppermint, Messmate and Manna Gum are the dominant overstorey species. Depart from Baldry Crossing (Melway map 254 G6).</item>
+        <item>This track weaves further into the forest. There are several creek crossings, and the green, moist fern gullies are a welcome contrast to the drier forest. Depart from Baldry Crossing (Melway map 254 G6).</item>
+        <item>Accessed off the Two Bays Track, or midway between Highfield and Gate 3 on Rogers Road, this circuit passes through eucalypt woodlands with views across open grasslands and shady gullies of Coast Banksia and Blackwoods.</item>
+        <item>This longer walk, an excellent way to see Greens Bush, is a link in the 26 km bush corridor from Dromana to Cape Schanck. There are several highlights along the trail - eucalypt forest mixed with spectacular stands of grasstree (the taller grasstrees may be over 200 years old), pockets of tea-tree thicket alive with birds, picturesque fern gullies and open grasslands. The Two Bays Walking Track is identified by a circular symbol displaying a Blue Wren, which can be seen on signage along the track.</item>
+        <item>This self-guided walk is recommended for all visitors. Information is available at the picnic ground where the walk begins.</item>
+        <item>Descends through tall stringybark forest to peppermint and Swamp Gum open forest at the base of the mountain. The last section is fairly steep.</item>
+        <item>Featuring good ocean view through stunted stringybarks and open heathland. The track may be wet in places in winter and spring.</item>
+        <item>The path leads to the lookout walk and the two vantage points that look out over the Keilor Plains and down onto the deep valley cut by Jacksons creek. The path is level around the ridge top and is hard packed fine gravel. The total distance is 800 meters. The path meets the main Organ Pipes access path just behind the picnic area.</item>
+        <item>Stop and visit the Twelve Apostles Centre before taking the walk to view the amazing Twelve Apostles coastline. The Centre offers insightful cultural heritage stories, shelter and toilets. Walk the short distance (500m) through the tunnel, under the Great Ocean Road to various lookouts offering expansive, breathtaking views.</item>
+        <item>Walk to the impressive Corrigan Suspension Bridge, which stretches through the rainforest canopy, affording spectacular views of the lush fern gully on the forest floor below. Follow the signs from the Visitor Centre Carpark via Lyrebird Ridge, Ash and Wills Tracks.</item>
+        <item>Commencing at the Visitor Information Centre, this track leads through regenerating and mature Mountain Ash forests. Rest on the seats provided and listen to the sounds of the forest.</item>
+        <item>Starting at the end of the Lyrebird Ridge Track, this longer walk completes a circuit back to the Visitor Centre via part of the Old Yarram - Balook Road. This track winds its way through Mountain Ash forest, a rainforest gully and an unusual thicket of Hazel omaderris. This track contains some steeper sections, is unsurfaced and is recommended for the more serious walker.</item>
+        <item>Branching off the Lyrebird Ridge Track, this track leads through regenerating Mountain Ash forest to the beginning of the Fern Gully Nature Walk. Look for remnants of logging that occurred here in the early 1900s. Eucalypts are now growing to replace them.</item>
+        <item>The Fern Gully Nature Walk begins where the Ash Track meets the Wills Track and provides an excellent introduction to the plants and wildlife of the Mountain Ash Forests and Cool Temperate Rainforests of the Strzelecki Ranges. Interpretive signs along this track explain the features seen.</item>
+        <item>This walk takes you through tall Mountain Ash forest and patches of Cool Temperate Rainforest. It commences at the Corrigan’s Suspension Bridge and finishes at the Bulga entrance. From here you can continue back to the Visitor Centre or walk down the road to the Bulga Carpark.</item>
+        <item>An Easy/moderate walk. This spectacular four beach walk allows the walker to fully experience the beauty of both land and sea at the Prom. Travel alternates between track and beach walking.</item>
+        <item>ffering magnificent views of Darby Swamp, Vereker Range and Darby and Cotters Beach, this walk climbs gently through wind swept coastal vegetation before following the headland towards Tongue Point, a coastal headland jewelled with stacks of weathered granite. The track ends prior to the semi-attached island. For your safety don’t attempt to cross over to it. Just before the Darby Saddle track junction, a short side track with some steps leads down to the delightful and secluded Fairy Cove. For your safety, check tides before you go. This walk commences at the southern end of Darby River carpark</item>
+        <item>The track from Darby Saddle provides spectacular coastal and forest scenery as it climbs uphill through stringybark and casuarina forest. At 2.1 km a side track (300 metres) leads up to Sparkes Lookout which offers views as far as the pyramid-shaped Rodondo Island in the south and Shallow Inlet in the north.</item>
+        <item>his track allows visitors to fully enjoy the stunning Tongue Point coastal area. The walk can be done in either direction however walkers will need to organise a car shuttle.</item>
+        <item>Starting from the Telegraph Saddle car park, this iconic Prom walk follows the management vehicle track up Mount Oberon. Steps below the rocky summit lead to postcard perfect, panoramic views over Tidal River, the coast and offshore islands. Be prepared - even in summer months the summit can be windy, cool and clouded. Beware of unprotected cliffs.</item>
+        <item>From Telegraph Saddle car park, follow Telegraph Track for 6 km and turn right to Oberon Bay. From Oberon Bay, the walk to Tidal River alternates between beach and track. Once at Norman Beach, either return to Tidal River along the beach or take the track signposted to Tidal River. Make arrangements to collect your car.</item>
+        <item>One of the most popular walks at the Prom, the Sealers track climbs steadily to Windy Saddle and then downhill through beautiful forest to a boardwalk over Sealers Swamp to Sealers Cove</item>
+        <item>Start at the Wonga Campground, eastern toilet block and follow the ---lifting the lid--- signs detailing the mallee environment</item>
+        <item>Start at Black Flat carpark, 4km from the western end of the Wonga Campground. There are interpretive signs on the Mallee along the track.</item>
+        <item>Start at the Nine Mile Square carpark, west of the entrance road (4.5km from Wonga Campground). Walk west along the track from the carpark for 450m, then turn left along the Desert Walk. The track eventually loops back near the start of the Nine Mile Square Track. There are excellent views across to Big Desert and Outlet Creek on this walk.</item>
+        <item>It is moderate level of walk and it allows more time if starting from the bottom or in inclement weather.</item>
+        <item>It is moderate level of walk and it allows more time if starting from the bottom or in inclement weather.</item>
+        <item>It is moderate level of walk and it allows more time if starting from the bottom or in inclement weather.</item>
+
+    </string-array>
+
+    <!-- Lookout data is as below-->
 
     <string-array name="LookoutSite">
         <item>Rocky Valley Lookout</item>
         <item>Ropers Lookout</item>
         <item>Fainter Falls</item>
-        <item>Ropers Lookout</item>
         <item>Dargo Lookout</item>
-        <item>Dannys Lookout</item>
-        <item>The Sentinels Lookout</item>
+        <item>Danny---s Lookout</item>
         <item>Mt Baw Baw Summit</item>
-        <item>Thomson</item>
-        <item>Jays Lookout</item>
+        <item>Jay---s Lookout</item>
         <item>Campbells Lookout</item>
         <item>Genoa Peak</item>
         <item>Burkes Lookout</item>
@@ -1015,7 +1644,7 @@
         <item>Grampians Valley Lookout</item>
         <item>Warepil Lookout</item>
         <item>Scenic Winery Lookout</item>
-        <item>Bobs Rock Lookout</item>
+        <item>Bob---s Rock Lookout</item>
         <item>Mount Lookout</item>
         <item>Murchison Gap Lookout</item>
         <item>Viewing Rock Lookout</item>
@@ -1032,9 +1661,7 @@
         <item>Frank Lodge Scenic Lookout</item>
         <item>World War Two Memorial Lookout Tower</item>
         <item>Port Of Portland Lookout</item>
-        <item>Mopoke Hut</item>
         <item>Warepil Lookout</item>
-        <item>Aircraft Viewing Area</item>
         <item>Mutton Bird Lookout</item>
         <item>island arch lookout</item>
         <item>Loch Ard Gorge</item>
@@ -1060,12 +1687,9 @@
         <item>-36.869372</item>
         <item>-36.852894</item>
         <item>-36.812855</item>
-        <item>-36.764402</item>
         <item>-36.992398</item>
         <item>-36.970787</item>
-        <item>-37.492614</item>
         <item>-37.789884</item>
-        <item>-37.78891</item>
         <item>-37.813944</item>
         <item>-36.114734</item>
         <item>-37.509876</item>
@@ -1099,9 +1723,7 @@
         <item>-38.274593</item>
         <item>-38.302967</item>
         <item>-38.335236</item>
-        <item>-34.764842</item>
         <item>-34.675955</item>
-        <item>-37.63648</item>
         <item>-38.647563</item>
         <item>-38.647999</item>
         <item>-38.646185</item>
@@ -1127,12 +1749,9 @@
         <item>147.288249</item>
         <item>147.296459</item>
         <item>147.219146</item>
-        <item>147.21453</item>
         <item>147.177019</item>
         <item>147.113762</item>
-        <item>146.808803</item>
         <item>146.280889</item>
-        <item>146.395218</item>
         <item>146.435204</item>
         <item>147.759137</item>
         <item>149.62919</item>
@@ -1166,9 +1785,7 @@
         <item>141.61755</item>
         <item>141.601206</item>
         <item>141.604365</item>
-        <item>141.755349</item>
         <item>142.399782</item>
-        <item>144.83336</item>
         <item>143.065732</item>
         <item>143.068837</item>
         <item>143.070601</item>
@@ -1196,9 +1813,6 @@
         <item>1</item>
         <item>1</item>
         <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>3</item>
         <item>3</item>
         <item>3</item>
         <item>4</item>
@@ -1234,8 +1848,6 @@
         <item>18</item>
         <item>18</item>
         <item>19</item>
-        <item>19</item>
-        <item>20</item>
         <item>21</item>
         <item>21</item>
         <item>21</item>
@@ -1256,6 +1868,67 @@
         <item>23</item>
         <item>23</item>
 
+    </string-array>
+    <string-array name="LookDesc">
+        <item>Rocky Valley Lookout is a great place to stop for a picnic, taking a picture and enjoying the beautiful scenery all around. Also a nice place to park your vehicle and hop on your bike.</item>
+        <item>Ropers Lookout is formalised with a levelled area on the crest of a rocky knoll. It has two kilometre walk located on the Bogong High Plains, which provides a spectacular view from across the Kiewa Valley to Falls Creek alpine village</item>
+        <item>Faiter Falls is a magnificent place and must visit for your eyes only. One thing needs to be care is that googling Fainter Falls will only take you to cliff. Thus to get to the walking path, it is better to google Fainter Falls Car Park. It---s an easy walk with a slight gradient and only takes you around 15 minutes.</item>
+        <item>Dargo Lookout is a nice lookout place with an easy short walk. Here you can get an overview of the surrounding area.</item>
+        <item>Danny---s Lookout is a greate place to give you a sense of standing on the top of the world. It located a couple of k---s from Mt Hotham, providing you with fantastic photo opportunities to take the views home.</item>
+        <item>Mt Baw Baw Summit is a great mountain for beginners and the car park is next to the Village and it is no need for buses at most of time.  It has beautiful wildflowers, giving you a great place to escape from a hot day. It is also a good place for hiking.</item>
+        <item>Jay---s Lookout is an awesome spot with an awesome view.</item>
+        <item>Campbells Lookout is an amazing lookout place in Burrowa-Pine Mountain National Park, with 1.4km return hike on its own and it provides a steel safety barrier marking the end of the track.</item>
+        <item>North west of Mallacoota, Genoa Peak offers magnificent views of the Wilderness Coast, the Thurra Dunes and Mallacoota Inlet. To access Genoa Peak, a gravel road from the Princes Highway leads to a picnic area, where a walking track provides access to the summit. The walk is 1.5km in length and a moderate level of fitness is required.</item>
+        <item>Burkes Lookout is a great place to get a beautiful sunset view. It offers panoramas of the Melbourne area and nearby walking tracks. It only takes you a short walk from the car park and there is a spot showing the whole view of Melbourne along the track.</item>
+        <item>Barnes Lookout is at the south of Mount Dandenong and close to Dandenong Ranges, which has an elevation of 600 metres. It is a small summit area, a good place to get a whole view of surrounding scenery.</item>
+        <item>R.J. Hamer Arboretum is a good place for picnic. It has magnificent view of deciduous trees. Autumn tones is starting to awaken in the mid of April. Dogs on leash is allowed.</item>
+        <item>Woolrich Lookout is a one of the greatest place to connect with the nature not so far for the metropolitan Melbourne. It is also a good place for short walks and picnic.</item>
+        <item>Mount Dandenong Observatory gives you a nice overview of Melbourne City and also priveds you with a great area for picnics. Only $7 is needed for car parking and you can get a nice view and walk around a lovely garden. key landmarks is pointed out by helpful signs there.</item>
+        <item>Boroka Lookout is a great lookout, giving you an entire view of the area while you are looking  on the Halls Gap surroundings. It is a must traveling place in Grampians National Park.</item>
+        <item>Reed Lookout is a quite different lookout, which gives you lots of rock scrambling opportunities. There is a fire tower in this Lookout, helping you get a spectacular view of the surroundings. There is a nice car park, but toilets and water are not available there.</item>
+        <item>The Balconies is one of the easiest place for walking in the Grampians National Park. You are able to get a great view from the car park. Only 10 minutes walk are needed to take you to the lookout place. Eagles and other wildlife can be found when the place is quiet for a few moments. Toilets and water are not available there.</item>
+        <item>Pinnacle Lookout is a great place to get a nice view of surrounding area, wth a bit challenging trekking tracks. It is a good place to do some climbings.</item>
+        <item>Lakeview Lookout is a good place with a very short and easy walk. It is a underrated lookout for most travel guide. It is worth having a nice trek there and get an magnificent overview of the mountain.</item>
+        <item>Grampians Valley Lookout is another challenging place for most tourists, which takes you around 30 mins steep walk to get there from an unmarked bush track. Need to be well prepared before you go.</item>
+        <item>Warepil Lookout is a nice lookout place with little short walk. Here you can get an overview of the surrounding area.</item>
+        <item>Scenic Winery Lookout is a great lookout place with a little short walk. Here you can get an overview of the surrounding area.</item>
+        <item>Bird Rock Lookout is nice place to have a great view on the coastline and the veiw of Jan Juc Beach. Along the track to Bells or Torquay beaches, you are able to get various view of surronding area. This is also a good place to watch the paragliding off the nearby cliff.</item>
+        <item>Mount Lookout is a nice lookout place with little short walk. Here you can get an overview of the surrounding area.</item>
+        <item>Murchison Gap Lookout is dry in summer. It is a good lookout place for winter traveling.</item>
+        <item>Viewing Rock Lookout is a great place giving you a great circuit walk. During the circuit walk, you can enjoy your trip of viewing rock, powder magazine and Devils cave.</item>
+        <item>Mt Ida Lookout is a nice short walk place and it suits for people of all ages. There is a really nice picnic table there. Make sure to bring enough water and an empty bladder when decide to go there since there is no amenities there.</item>
+        <item>Punt Hill Lookout is a nice lookout place with little short walk. Here you can get an overview of the surrounding area.</item>
+        <item>Den of Nargun is a great lookout place with very steep walks, so make sure to wear grippy shoes. The valley is breathtakingly beautiful. It is a good place for famliy walk. Take enough water before you go.</item>
+        <item>Fingal beach lookout is a nice short walk place and it suits for people of all ages. Here you can get an overview of the beautiful beach.</item>
+        <item>Cape Schanck Lighthouse is really a great place to visit. It is one of the hidden gems on the Mornington Peninsula. There are plenty of parking there, but can get busy at peak time. A good place to take bridal photos. It is also a good place to conduct your family trip</item>
+        <item>Blowhole Lookout give you a beautiful site along the Flinders Coastal area. Here can be really busy during peak Holifay times.</item>
+        <item>West Head Lookout is an absolutely nice place with perfect parling. It is also a good place to enjoy a meal while taking in the views or just for a bit of peace and quiet.</item>
+        <item>White Cliffs Lookout Rye is a wonderful vantage lookout point in quaint Rye beach township. It is a good place to take a short walk and admire the Rye beach</item>
+        <item>Murrays Lookout is a good place to take in the beauty of nature. There many parkings along the way. It is a very nice and refreshing experience with lots of beautiful scenery.</item>
+        <item>Mount Eccles Lookout is a nice lookout place with little short walk. Here you can get an overview of the surrounding area.</item>
+        <item>Frank Lodge Scenic Lookout is a good place to stop by and provides you a very good view of the Portland </item>
+        <item>World War Two Memorial Lookout Tower provides you lots of wonderful views from the top and important historical information on the way up</item>
+        <item>Port Of Portland Lookout is a good place to stop by and provides you a very good view of the Portland </item>
+        <item>Warepil Lookout is a nice lookout place with little short walk. Here you can get an overview of the surrounding area.</item>
+        <item>Mutton Bird Lookout is a great lookout along the great ocean road. It is a must stop lookout place. There is a very short and pleasant walk to the various lookouts. Wheelchair is accessible there.</item>
+        <item>Island arch lookout is a great lookout along the great ocean road. It is a must stop lookout place. There is a very short and pleasant walk to the various lookouts.</item>
+        <item>Loch Ard Gorge is a great lookout along the great ocean road. It is a must stop lookout place. There is a very short and pleasant walk to the various lookouts.</item>
+        <item>Tom and Eva Lookout is a great lookout along the great ocean road. It is a must stop lookout place. There is a very short and pleasant walk to the various lookouts.</item>
+        <item>The Razorback is a great lookout along the great ocean road. It is a must stop lookout place. There is a very short and pleasant walk to the various lookouts. Wheelchair is accessible there.</item>
+        <item>Sparkes Gully Lookout is a great lookout along the great ocean road. However,  it is very dangerous if you venture out onto the tip area.</item>
+        <item>Mount Tassie Lookout is a great lookout place to get an overview of the power stations and  Latrobe Valley</item>
+        <item>Mt Bishop is a good place for family walk. The view along the road is spectacular and it is suggested to wear good or old boots since the track is muddy in some parts.</item>
+        <item>Pillar Point Lookout is a nice lookout place with easy short walk. Here you can get an overview of of both beaches.</item>
+        <item>Mount Oberon Summit is a nice lookout place. Here you can get an overview of the surrounding area.</item>
+        <item>Norman Point Lookout is a spectacular Lookout place. It breaks up the trek from Norman Beach to Oberon Beach. It is a nice spot to have a rest and recover while marvelling at the rock formations.</item>
+        <item>glennie lookout is a wonderful look out place with easy short walk. It is a good place to get a nice view of bushes meet the ocean.</item>
+        <item>Norman Lookout is a great lookout spot, which gives you an magnificent view of the surrounding area. It is a nice visit spot no matter what the weather is.</item>
+        <item>Picnic Bay and Whisky Bay Lookout is a great lookout place with easy short walk. Here you can get an overview of the surrounding area and view lots of bush.</item>
+        <item>Sparkes Lookout is a good place to condut an enjoyable family trip. There are parkings in the Darby Saddle carpark. It mainly takes you uphill 2.4Km walk tracking through the native bush to reach Sparkes lookout from the carpark.</item>
+        <item>Tongue Point is another nice walk in Wilsons Promontory National Park. You should be prepared to walk a while to reach tongue point. It is a nice long walk place and you can get various beautiful views along the way.</item>
+        <item>Prom Wildlife Walk is a great lookout place as there is a short walk to see various native animals such as wombats, kangaroos and emus. It is suggested to visit there at early morning and time closer to sunset.</item>
+        <item>Vereker Outlook is a nice lookout place with little short walk. Here you can get an overview of the surrounding area.</item>
+        <item>Millers Landing is a quiet place on the corner inlet in Wilson---s Promontory National Park. Here you can view a lot of waterbirds. It is also a good place to conduct a pleasant short walk. Remeber to bring enough water and snacks for a enjoyable trip as there is no facilities there.</item>
 
     </string-array>
 

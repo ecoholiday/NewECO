@@ -1,11 +1,10 @@
 package com.example.newecoholiday.Item;
 
 public class ParkFacilityListItem {
-    private String parkFacilityName;
-    private String ParkFacilityLatitude;
-    private String parkFacilityLongitude;
-    private String parkFacilitySourceType;
+    private String parkFacilityName,ParkFacilityLatitude;
+    private String parkFacilityLongitude,parkFacilitySourceType,description;
     private int parkFacilityID;
+    private float trackLength,trackTime;
 
     public String getParkFacilitySourceType() {
         return parkFacilitySourceType;
@@ -38,6 +37,14 @@ public class ParkFacilityListItem {
     public void setParkFacilityName(String parkFacilityName) {
         this.parkFacilityName = parkFacilityName;
     }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 
     public int getParkFacilityID() {
         return parkFacilityID;
@@ -45,5 +52,21 @@ public class ParkFacilityListItem {
 
     public void setParkFacilityID(int parkFacilityID) {
         this.parkFacilityID = parkFacilityID;
+    }
+
+    public float getTrackLength() {
+        return trackLength;
+    }
+
+    public void setTrackLength(float trackLength) {
+        this.trackLength = trackLength;
+    }
+
+    public float getTrackTime() {
+        return trackTime;
+    }
+
+    public void setTrackTime(float trackTime) {
+        this.trackTime = trackTime;
     }
 }

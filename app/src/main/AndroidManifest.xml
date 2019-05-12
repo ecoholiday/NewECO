@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.WeatherActivity"></activity>
+        <activity android:name=".Activity.CampSite"></activity>
+        <activity android:name=".Activity.WeatherActivity" />
         <activity android:name=".Activity.Savings" />
         <activity android:name=".Activity.ThingsTodo" />
         <activity android:name=".Activity.ParkPage" />
@@ -24,6 +25,7 @@
         <activity android:name=".Activity.Hiking" />
         <activity android:name=".Activity.Camping" />
         <activity android:name=".Activity.CheckList" />
+        <activity android:name=".Activity.FacilityListActivity" />
         <activity android:name=".Activity.LandingPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,9 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.Home">
-
-        </activity>
+        <activity android:name=".Activity.Home"></activity>
         <activity android:name=".Activity.statistics" />
         <activity android:name=".Activity.MapsActivity" />
 

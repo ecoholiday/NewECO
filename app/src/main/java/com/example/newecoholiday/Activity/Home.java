@@ -103,9 +103,18 @@ public class Home extends AppCompatActivity {
 
     // camping and treking tables
     List<String> CampingName = new ArrayList<String>();
-    List<String> TrackName = new ArrayList<String>();
     List<String> CNPID = new ArrayList<String>();
+    List<String> CampDesc = new ArrayList<String>();
+    List<String> CampLatitude = new ArrayList<String>();
+    List<String> CampLongitude= new ArrayList<String>();
+
     List<String> TNPID = new ArrayList<String>();
+    List<String> TrackName = new ArrayList<String>();
+    List<String> TrackDesc = new ArrayList<String>();
+    List<String> TrackLength = new ArrayList<String>();
+    List<String> TrackTime = new ArrayList<String>();
+    List<String> TrackLat = new ArrayList<String>();
+    List<String> TrackLong= new ArrayList<String>();
     //
 
     //lookouts table
@@ -113,6 +122,7 @@ public class Home extends AppCompatActivity {
     List<String> LookLatitude = new ArrayList<String>();
     List<String> LookLongitude = new ArrayList<String>();
     List<String> LNPID = new ArrayList<String>();
+    List<String> LookDesc = new ArrayList<String>();
     //
     //Facilities Data
     List<String> NPCamping = new ArrayList<String>();
@@ -259,14 +269,24 @@ public class Home extends AppCompatActivity {
         // camping and treking data
         CampingName = Arrays.asList(getResources().getStringArray(R.array.Camping));
         CNPID = Arrays.asList(getResources().getStringArray(R.array.CNPID));
+        CampDesc = Arrays.asList(getResources().getStringArray(R.array.CampDesc));
+        CampLatitude = Arrays.asList(getResources().getStringArray(R.array.CampLat));
+        CampLongitude = Arrays.asList(getResources().getStringArray(R.array.CampLong));
+
         TrackName = Arrays.asList(getResources().getStringArray(R.array.TrackName));
         TNPID = Arrays.asList(getResources().getStringArray(R.array.TNPID));
+        TrackDesc = Arrays.asList(getResources().getStringArray(R.array.TrackDesc));
+        TrackLength = Arrays.asList(getResources().getStringArray(R.array.TrackLength));
+        TrackTime = Arrays.asList(getResources().getStringArray(R.array.TrackTime));
+        TrackLat = Arrays.asList(getResources().getStringArray(R.array.TrackkLat));
+        TrackLong = Arrays.asList(getResources().getStringArray(R.array.TrackLong));
         //
         // LookOut Data
         LookoutSite = Arrays.asList(getResources().getStringArray(R.array.LookoutSite));
         LookLatitude = Arrays.asList(getResources().getStringArray(R.array.LookLatitude));
         LookLongitude = Arrays.asList(getResources().getStringArray(R.array.LookLongitude));
         LNPID = Arrays.asList(getResources().getStringArray(R.array.LNPID));
+        LookDesc=Arrays.asList(getResources().getStringArray(R.array.LookDesc));
         //
         NPCamping = Arrays.asList(getResources().getStringArray(R.array.NPCamping));
         NPCanoeing = Arrays.asList(getResources().getStringArray(R.array.NPCanoeing));
@@ -428,37 +448,39 @@ public class Home extends AppCompatActivity {
                             "   [Area] [varchar](100),\n" +
                             "   [Latitude] [varchar](500),\n" +
                             "   [Longitude] [varchar](500),\n" +
-                            "   [Distance] [REAL],\n" +
-                            "   [Status] [varchar](100) ,\n" +
-                            "   [CreatedDateTime] [smalldatetime] \n" +
+                            "   [Distance] [REAL] \n" +
                             ");"
             );
             mDatabase.execSQL(
-                    "CREATE TABLE IF NOT EXISTS tbl_Camping (\n" +
-                            "   [CampID] INTEGER NOT NULL CONSTRAINT PK_tbl_Camping PRIMARY KEY AUTOINCREMENT,\n" +
+                    "CREATE TABLE IF NOT EXISTS tbl_Camping_Sites (\n" +
+                            "   [CampID] INTEGER NOT NULL CONSTRAINT PK_tbl_Camping_Sites PRIMARY KEY AUTOINCREMENT,\n" +
                             "   [NPID] [int],\n" +
+                            "   [CampingName] [varchar](100),\n" +
                             "   [CampingDescription] [varchar](1000),\n" +
-                            "   [Status] [varchar](100) ,\n" +
-                            "   [CreatedDateTime] [smalldatetime] \n" +
+                            "   [Latitude] [varchar](500),\n" +
+                            "   [Longitude] [varchar](500)\n" +
                             ");"
             );
             mDatabase.execSQL(
-                    "CREATE TABLE IF NOT EXISTS tbl_Treck_Trail (\n" +
-                            "   [TID] INTEGER NOT NULL CONSTRAINT PK_tbl_Treck_Trail PRIMARY KEY AUTOINCREMENT,\n" +
+                    "CREATE TABLE IF NOT EXISTS tbl_Treck_Sites (\n" +
+                            "   [TID] INTEGER NOT NULL CONSTRAINT PK_tbl_Treck_Sites PRIMARY KEY AUTOINCREMENT,\n" +
                             "   [NPID] [int],\n" +
                             "   [TrackName] [varchar](1000),\n" +
-                            "   [Status] [varchar](100) ,\n" +
-                            "   [CreatedDateTime] [smalldatetime] \n" +
+                            "   [Description] [varchar](1000) ,\n" +
+                            "   [Length] [REAL],\n" +
+                            "   [Time] [REAL],\n" +
+                            "   [Latitude] [varchar](500),\n" +
+                            "   [Longitude] [varchar](500)\n" +
                             ");"
-            );mDatabase.execSQL(
+            );
+            mDatabase.execSQL(
                     "CREATE TABLE IF NOT EXISTS tbl_LookOut_Sites (\n" +
                             "   [LookID] INTEGER NOT NULL CONSTRAINT PK_tbl_LookOut_Sites PRIMARY KEY AUTOINCREMENT,\n" +
                             "   [NPID] [int],\n" +
                             "   [LookOutSite] [varchar](1000),\n" +
-                            "   [Status] [varchar](100) ,\n" +
+                            "   [Description] [varchar](1000) ,\n" +
                             "   [Latitude] [varchar](500),\n" +
-                            "   [Longitude] [varchar](500),\n" +
-                            "   [CreatedDateTime] [smalldatetime] \n" +
+                            "   [Longitude] [varchar](500)\n" +
                             ");"
             );
             mDatabase.execSQL(
@@ -482,8 +504,7 @@ public class Home extends AppCompatActivity {
                             "   [YachtingSailing] [varchar] (10),\n" +
                             "   [BBQ] [varchar] (10),\n" +
                             "   [BirdWatching] [varchar] (10),\n" +
-                            "   [Playground] [varchar] (10),\n" +
-                            "   [CreatedDateTime] [smalldatetime] \n" +
+                            "   [Playground] [varchar] (10)\n" +
                             ");"
             );
 //            pDialog.hide();
@@ -512,7 +533,6 @@ public class Home extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
 
             if(NationalParks.size()>0){
                 Calendar cal = Calendar.getInstance();
@@ -524,15 +544,13 @@ public class Home extends AppCompatActivity {
                             "Area",Area.get(i))){
                         try{
                             String insertSQL = "INSERT INTO tbl_NationalParksList \n" +
-                                    "(NationalPark, Area, Latitude, Longitude,Distance,Status,CreatedDateTime)\n" +
+                                    "(NationalPark, Area, Latitude, Longitude,Distance)\n" +
                                     "VALUES \n" +
                                     "('"+NationalParks.get(i)+"'," +
                                     " '"+Area.get(i)+"'," +
                                     " '"+Latitude.get(i)+"'," +
                                     " '"+Longitude.get(i)+"'," +
-                                    " "+Double.parseDouble(Distance.get(i))+"," +
-                                    " 'Active'," +
-                                    " '"+dateTime+"'" +
+                                    " "+Double.parseDouble(Distance.get(i)) +
                                     ");";
 
 
@@ -544,17 +562,18 @@ public class Home extends AppCompatActivity {
                     }
                 }
                 for(int i=0;i<CampingName.size();i++){
-                    if(CheckIsDataAlreadyInDBorNotInt("tbl_Camping",
+                    if(CheckIsDataAlreadyInDBorNotInt("tbl_Camping_Sites",
                             "CampingDescription",CampingName.get(i),
                             "NPID",Integer.parseInt(CNPID.get(i)))){
                         try{
-                            String insertSQL = "INSERT INTO tbl_Camping \n" +
-                                    "(NPID, CampingDescription,Status,CreatedDateTime)\n" +
+                            String insertSQL = "INSERT INTO tbl_Camping_Sites \n" +
+                                    "(NPID, CampingName,CampingDescription,Latitude,Longitude)\n" +
                                     "VALUES \n" +
                                     "("+Integer.parseInt(CNPID.get(i))+"," +
                                     " '"+CampingName.get(i)+"'," +
-                                    " 'Active'," +
-                                    " '"+dateTime+"'" +
+                                    " '"+CampDesc.get(i)+"'," +
+                                    " '"+CampLatitude.get(i)+"'," +
+                                    " '"+CampLongitude.get(i) + "'"+
                                     ");";
 
 
@@ -566,17 +585,20 @@ public class Home extends AppCompatActivity {
                     }
                 }
                 for(int i=0;i<TrackName.size();i++){
-                    if(CheckIsDataAlreadyInDBorNotInt("tbl_Treck_Trail",
+                    if(CheckIsDataAlreadyInDBorNotInt("tbl_Treck_Sites",
                             "TrackName",TrackName.get(i),
                             "NPID",Integer.parseInt(TNPID.get(i)))){
                         try{
-                            String insertSQL = "INSERT INTO tbl_Treck_Trail \n" +
-                                    "(NPID, TrackName,Status,CreatedDateTime)\n" +
+                            String insertSQL = "INSERT INTO tbl_Treck_Sites \n" +
+                                    "(NPID, TrackName,Description,Length,Time,Latitude,Longitude)\n" +
                                     "VALUES \n" +
                                     "("+Integer.parseInt(TNPID.get(i))+"," +
                                     " '"+TrackName.get(i)+"'," +
-                                    " 'Active'," +
-                                    " '"+dateTime+"'" +
+                                    " '"+TrackDesc.get(i)+"'," +
+                                    " "+Double.parseDouble(TrackLength.get(i))+"," +
+                                    " "+Double.parseDouble(TrackTime.get(i))+ ","+
+                                    " '"+TrackLat.get(i)+"'," +
+                                    " '"+TrackLong.get(i) + "'"+
                                     ");";
 
 
@@ -593,20 +615,18 @@ public class Home extends AppCompatActivity {
                             "NPID",Integer.parseInt(LNPID.get(i)))){
                         try{
                             String insertSQL = "INSERT INTO tbl_LookOut_Sites \n" +
-                                    "(NPID, LookOutSite,Status,Latitude,Longitude,CreatedDateTime)\n" +
+                                    "(NPID, LookOutSite,Description,Latitude,Longitude)\n" +
                                     "VALUES \n" +
                                     "("+Integer.parseInt(LNPID.get(i))+"," +
                                     " '"+LookoutSite.get(i)+"'," +
-                                    " 'Active'," +
+                                    " '"+LookDesc.get(i)+"'," +
                                     " '"+LookLatitude.get(i)+"'," +
-                                    " '"+LookLongitude.get(i)+"'," +
-                                    " '"+dateTime+"'" +
+                                    " '"+LookLongitude.get(i)+ "'"+
                                     ");";
-
 
                             mDatabase.execSQL(insertSQL);
                         }catch (SQLException se){
-                            Toast.makeText(getApplicationContext(),"Track Table Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Lookouts Table Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
                             z="FAIL";
                         }
                     }
@@ -634,8 +654,7 @@ public class Home extends AppCompatActivity {
                                     "YachtingSailing," +
                                     "BBQ," +
                                     "BirdWatching," +
-                                    "Playground," +
-                                    "CreatedDateTime)\n" +
+                                    "Playground )"+
                                     "VALUES \n" +
                                     "("+Integer.parseInt(NPID.get(i))+"," +
                                     " '"+NPCamping.get(i)+"'," +
@@ -655,8 +674,7 @@ public class Home extends AppCompatActivity {
                                     " '"+NPSailing.get(i)+"'," +
                                     " '"+NPBBQ.get(i)+"'," +
                                     " '"+NPBirdWatching.get(i)+"'," +
-                                    " '"+NPPlayGround.get(i)+"'," +
-                                    " '"+dateTime+"'" +
+                                    " '"+NPPlayGround.get(i)+"'" +
                                     ");";
 
 
@@ -669,7 +687,6 @@ public class Home extends AppCompatActivity {
                 }
 
             }
-            //mDatabase.close();
 
 
             return z;
@@ -986,22 +1003,6 @@ public class Home extends AppCompatActivity {
             });
         }
     }
-
-    /*public void toolBarChanges(){
-        txtExploreToolbar = (TextView)findViewById(R.id.txtExploreToolbar);
-        txtExploreToolbar.setVisibility(View.VISIBLE);
-
-        imgStats = (ImageButton)findViewById(R.id.imgStats);
-        imgStats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, statistics.class);
-                progressDialogueShowClose();
-                startActivity(intent);
-            }
-        });
-
-    }*/
 
     public void checkForTheNP(String selectNPName){
         int pos=-1;

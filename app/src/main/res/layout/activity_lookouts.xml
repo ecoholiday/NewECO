@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.Lookouts">
 
-</android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardLookPage"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="2dp">
+        <ImageView
+            android:id="@+id/imgLookPage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/camp_things"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:id="@+id/txtLookPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aipine"
+            android:typeface="serif"
+            app:fontFamily="serif"
+            android:textStyle="bold|italic"
+            android:textColor="@color/txtOnImage"
+            android:layout_margin="10sp"
+            android:textSize="22sp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_below="@+id/cardLookPage">
+        <ListView
+            android:id="@+id/lstLookActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
+    </LinearLayout>
+
+</RelativeLayout>

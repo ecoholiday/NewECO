@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.newecoholiday.Item.ParkFacilityListItem;
@@ -47,16 +48,16 @@ public class Camping extends AppCompatActivity {
         sharedpreferences = getSharedPreferences(Home.MyPREFERENCES, Context.MODE_PRIVATE);
         NPID = sharedpreferences.getInt("NPID", 0);
         parkName = sharedpreferences.getString("ParkName","");
-        parkDistance = sharedpreferences.getString("ParkDistance","");
-        area = sharedpreferences.getString("ParkArea","");
-        latitude = sharedpreferences.getString("ParkLatitude","");
-        longitude = sharedpreferences.getString("ParkLongitude","");
 
         setTitle(parkName);
         ParkCampingFacilityList = new ArrayList<ParkFacilityListItem>();
         mDatabase = openOrCreateDatabase(Home.DATABASE_NAME, MODE_PRIVATE, null);
 
         lstActivity = (ListView) findViewById(R.id.lstCampActivity);
+        TextView txtCampPage = (TextView)findViewById(R.id.txtCampPage) ;
+        txtCampPage.setText(parkName);
+
+        new GetParksFacilityData().execute();
 
 
     }
@@ -64,11 +65,11 @@ public class Camping extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(Camping.this);
+            /*pDialog = new ProgressDialog(Camping.this);
             pDialog.setMessage("Data Loading...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
-            pDialog.show();
+            pDialog.show(); */
             ParkCampingFacilityList.clear();
         }
 
@@ -80,13 +81,14 @@ public class Camping extends AppCompatActivity {
                 firstTimeLoading = false;
                 try {
 
-                    String query1 = "select * from tbl_Camping_Sites where NPID =" + NPID + " order by CampingDescription ASC";
+                    String query1 = "select * from tbl_Camping_Sites where NPID =" + NPID + " order by CampingName ASC";
                     Cursor cursorCamping = mDatabase.rawQuery(query1, null);
 
                     if (cursorCamping.moveToFirst()) {
                         do {
                             final ParkFacilityListItem campItem = new ParkFacilityListItem();
-                            campItem.setParkFacilityName(cursorCamping.getString(cursorCamping.getColumnIndex("CampingDescription")));
+                            campItem.setDescription(cursorCamping.getString(cursorCamping.getColumnIndex("CampingDescription")));
+                            campItem.setParkFacilityName(cursorCamping.getString(cursorCamping.getColumnIndex("CampingName")));
                             campItem.setParkFacilityLatitude(cursorCamping.getString(cursorCamping.getColumnIndex("Latitude")));
                             campItem.setParkFacilityLongitude(cursorCamping.getString(cursorCamping.getColumnIndex("Longitude")));
                             campItem.setParkFacilityID(cursorCamping.getInt(cursorCamping.getColumnIndex("CampID")));
@@ -108,11 +110,12 @@ public class Camping extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            pDialog.hide();
+            //pDialog.hide();
 
             if(result.equals("SUCCESS")){
 
                 if(ParkCampingFacilityList.size()>0){
+                    //Toast.makeText(getApplicationContext(),""+ NPID,Toast.LENGTH_LONG).show();
                     lstActivity.setVisibility(View.VISIBLE);
                     ParkFacilityAdapter parkListAdapter = new ParkFacilityAdapter(Camping.this,ParkCampingFacilityList);
                     lstActivity.setAdapter(parkListAdapter);
@@ -120,25 +123,12 @@ public class Camping extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             ParkFacilityListItem parkListItem = ParkCampingFacilityList.get(position);
-                            if(parkListItem.getParkFacilitySourceType().equals("Camping")){
-                                SharedPreferences.Editor editor = sharedpreferences.edit();
-                                editor.putInt("FacilityNPID",NPID);
-                                editor.putString("ParkName",parkName);
-                                editor.apply();
-                                startActivity(new Intent(Camping.this,FacilityListActivity.class));
-                                //Toast.makeText(getApplicationContext(),"Camping Under Development",Toast.LENGTH_LONG).show();
-                            }else if(parkListItem.getParkFacilitySourceType().equals("Trekking")){
-                                Toast.makeText(getApplicationContext(),"Trekking Under Development",Toast.LENGTH_LONG).show();
-                            }else if(parkListItem.getParkFacilitySourceType().equals("Lookout")){
-                                SharedPreferences.Editor editor = sharedpreferences.edit();
-                                editor.putString("ParkLatitude",parkListItem.getParkFacilityLatitude());
-                                editor.putString("ParkLongitude", parkListItem.getParkFacilityLongitude());
-                                editor.putString("ParkName",parkName+" ( "+parkListItem.getParkFacilityName()+" ) ");
-                                editor.putString("ParkArea",area);
-                                editor.putString("ParkDistance",parkDistance);
-                                editor.apply();
-                                startActivity(new Intent(Camping.this,MapsActivity.class));
-                            }
+                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                            editor.putInt("FacilityNPID",NPID);
+                            editor.putString("ParkName",parkName);
+                            editor.apply();
+
+                            startActivity(new Intent(Camping.this,FacilityListActivity.class));
                         }
                     });
                 }else{

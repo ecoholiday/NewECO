@@ -317,7 +317,7 @@ public class MapsActivity extends AppCompatActivity implements GoogleApiClient.C
             });
 
             place1 = new MarkerOptions().position(new LatLng(Double.parseDouble(originLatitude), Double.parseDouble(originLongitude))).title(originAddress).icon(BitmapDescriptorFactory.fromResource(R.drawable.current));;
-            place2 = new MarkerOptions().position(new LatLng(Double.parseDouble(destinationLatitude), Double.parseDouble(destinationLongitude))).title(destinationAddress+" ( "+parkArea+" ) ").icon(BitmapDescriptorFactory.fromResource(R.drawable.park));
+            place2 = new MarkerOptions().position(new LatLng(Double.parseDouble(destinationLatitude), Double.parseDouble(destinationLongitude))).title(destinationAddress).icon(BitmapDescriptorFactory.fromResource(R.drawable.park));
             mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mapNearBy);
             mapFragment.getMapAsync(this);
             isFirstTime = false;
