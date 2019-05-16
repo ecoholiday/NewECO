@@ -27,10 +27,10 @@
             android:text="Lookouts"
             android:layout_margin="10sp"
             android:typeface="serif"
-            app:fontFamily="cursive"
-            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:textStyle="bold|italic"
             android:textColor="@color/txtOnImage"
-            android:textSize="30sp"/>
+            android:textSize="22sp"/>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:id="@+id/cardCamping"
@@ -50,11 +50,11 @@
             android:layout_height="wrap_content"
             android:text="Camping"
             android:typeface="serif"
-            app:fontFamily="cursive"
-            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:textStyle="bold|italic"
             android:textColor="@color/txtOnImage"
             android:layout_margin="10sp"
-            android:textSize="30sp"/>
+            android:textSize="22sp"/>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:id="@+id/cardHiking"
@@ -74,11 +74,11 @@
             android:layout_height="wrap_content"
             android:text="Hiking"
             android:typeface="serif"
-            app:fontFamily="cursive"
-            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:textStyle="bold|italic"
             android:textColor="@color/txtOnImage"
             android:layout_margin="10sp"
-            android:textSize="30sp"/>
+            android:textSize="22sp"/>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>

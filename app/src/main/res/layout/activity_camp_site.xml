@@ -38,25 +38,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_gravity="center"
-                        android:textStyle="bold"
-                        android:fontFamily="cursive"
-                        android:textColor="@color/carbonSaved"
-                        android:textSize="28sp"
-                        android:id="@+id/txtParkCampSite"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_gravity="center"
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:textColor="@color/carbonSaved"
+                    android:textSize="22sp"
+                    android:id="@+id/txtParkCampSite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:layout_gravity="center"
-                        android:textStyle="bold"
-                        android:fontFamily="cursive"
-                        android:textColor="@color/carbonSaved"
-                        android:textSize="28sp"
-                        android:id="@+id/txtCampSite"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_gravity="center"
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:textColor="@color/carbonSaved"
+                    android:textSize="22sp"
+                    android:id="@+id/txtCampSite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
                 <LinearLayout
                     android:id="@+id/linLenTime"
@@ -69,8 +69,8 @@
                         android:src="@drawable/ic_hike"/>
                     <TextView
                         android:id="@+id/txtLength"
-                        android:textStyle="bold"
-                        android:fontFamily="cursive"
+                        android:textStyle="bold|italic"
+                        android:fontFamily="serif"
                         android:textColor="@color/txtDist"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -82,8 +82,8 @@
                         android:src="@drawable/ic_time"/>
                     <TextView
                         android:id="@+id/txtTime"
-                        android:textStyle="bold"
-                        android:fontFamily="cursive"
+                        android:textStyle="bold|italic"
+                        android:fontFamily="serif"
                         android:textColor="@color/txtDist"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -96,11 +96,11 @@
                     <TextView
                         android:layout_margin="10sp"
                         android:layout_gravity="center"
-                        android:textStyle="bold"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:fontFamily="cursive"
+                        android:fontFamily="serif"
                         android:textColor="@color/txtDist"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:id="@+id/txtFacilities"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -110,11 +110,11 @@
                 <TextView
                     android:layout_margin="10sp"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
+                    android:textStyle="bold|italic"
                     android:typeface="serif"
-                    android:fontFamily="cursive"
+                    android:fontFamily="serif"
                     android:textColor="@color/txtDist"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:id="@+id/txtCampSiteDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -16,14 +16,14 @@
         android:orientation="vertical">
         <TextView
             android:layout_margin="5sp"
-            android:fontFamily="cursive"
-            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textStyle="bold|italic"
             android:typeface="serif"
             android:id="@+id/city_park"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="city_park"
+            android:text="@string/city_park"
             android:textAlignment="center"
             android:textSize="30sp"
 
@@ -31,14 +31,14 @@
             android:textColor="@color/black"/>
         <TextView
             android:layout_margin="5sp"
-            android:fontFamily="cursive"
-            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textStyle="bold|italic"
             android:typeface="serif"
             android:id="@+id/city_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="city_country"
+            android:text="@string/city_country"
             android:textAlignment="center"
             android:textSize="25dp"
             android:layout_marginTop="8sp"
@@ -46,14 +46,14 @@
 
         <TextView
             android:layout_margin="5sp"
-            android:fontFamily="cursive"
-            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textStyle="bold|italic"
             android:typeface="serif"
             android:id="@+id/current_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="date_today"
+            android:text="@string/date_today"
             android:textSize="20sp"
             android:layout_marginTop="10sp"
             android:textColor="@color/black"/>
@@ -81,20 +81,20 @@
                 <TextView
                     android:layout_gravity="center"
                     android:layout_margin="5sp"
-                    android:fontFamily="cursive"
+                    android:fontFamily="serif"
                     android:typeface="serif"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic"
                     android:text="Wind"/>
 
                 <TextView
                     android:layout_gravity="center"
                     android:layout_margin="5sp"
-                    android:fontFamily="cursive"
-                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:textStyle="bold|italic"
                     android:typeface="serif"
                     android:id="@+id/wind_result"
                     android:layout_width="wrap_content"
@@ -102,26 +102,26 @@
                     android:textColor="@color/txtDist"
                     android:textSize="18sp"
                     android:layout_marginTop="4sp"
-                    android:text="wind_speed"/>
+                    android:text="1 km/hr"/>
 
             </LinearLayout>
 
 
-        <com.github.pavlospt.CircleView
-            android:id="@+id/weather_result"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:layout_marginTop="8sp"
-            app:cv_titleSubtitleSpace="40"
-            app:cv_fillColor="@color/imageBackgroundClicked"
-            app:cv_strokeColorValue="@color/imageBackgroundClicked"
-            app:cv_backgroundColorValue="@color/fourth_black"
-            app:cv_titleColor="@color/black"
-            app:cv_titleSize="50sp"
-            app:cv_titleText="temp"
-            app:cv_subtitleSize="12sp"
-            app:cv_subtitleText="weather_information"
-            android:layout_gravity="center_horizontal"/>
+            <com.github.pavlospt.CircleView
+                android:id="@+id/weather_result"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:layout_marginTop="8sp"
+                app:cv_titleSubtitleSpace="40"
+                app:cv_fillColor="@color/imageBackgroundClicked"
+                app:cv_strokeColorValue="@color/imageBackgroundClicked"
+                app:cv_backgroundColorValue="@color/fourth_black"
+                app:cv_titleColor="@color/black"
+                app:cv_titleSize="50sp"
+                app:cv_titleText="temp"
+                app:cv_subtitleSize="12sp"
+                app:cv_subtitleText="weather_information"
+                android:layout_gravity="center_horizontal"/>
             <LinearLayout
                 android:layout_gravity="center_vertical"
                 android:layout_width="0dp"
@@ -132,20 +132,20 @@
 
                 <TextView
                     android:layout_margin="5sp"
-                    android:fontFamily="cursive"
+                    android:fontFamily="serif"
                     android:typeface="serif"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="22sp"
                     android:layout_gravity="right"
-                    android:textStyle="bold"
+                    android:textStyle="bold|italic"
                     android:text="Humidity"/>
 
                 <TextView
                     android:layout_margin="5sp"
-                    android:fontFamily="cursive"
-                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:textStyle="bold|italic"
                     android:typeface="serif"
                     android:id="@+id/humidity_result"
                     android:layout_width="wrap_content"
@@ -154,7 +154,7 @@
                     android:layout_gravity="center_horizontal"
                     android:textSize="18sp"
                     android:layout_marginTop="4sp"
-                    android:text="humidity_rate"/>
+                    android:text="58%"/>
 
             </LinearLayout>
 
@@ -162,24 +162,24 @@
 
 
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
 
-                <ImageButton
-                    android:id="@+id/add_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="12sp"
-                    android:background="@android:color/transparent"
-                    android:elevation="4sp"
-                    android:src="@drawable/cross"
-                    android:visibility="invisible" />
+            <ImageButton
+                android:id="@+id/add_location"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12sp"
+                android:background="@android:color/transparent"
+                android:elevation="4sp"
+                android:src="@drawable/cross"
+                android:visibility="invisible" />
 
-            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -16,10 +16,10 @@
         android:layout_height="wrap_content"
         android:text="Alpine National Park"
         android:typeface="serif"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textStyle="bold|italic"
         android:textColor="@color/txtOnImage"
         android:layout_margin="10sp"
-        android:textSize="25sp"/>
+        android:textSize="22sp"/>
 
 </RelativeLayout>

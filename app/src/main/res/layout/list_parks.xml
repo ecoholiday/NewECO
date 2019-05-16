@@ -35,14 +35,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:typeface="serif"
-                app:fontFamily="cursive"
+                app:fontFamily="serif"
                 android:layout_toRightOf="@+id/smallButton"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textColor="@color/txtColor"
                 android:text="National Park"
-                android:textStyle="bold"/>
+                android:textStyle="bold|italic"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +63,8 @@
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/txtDist"
                     android:typeface="serif"
-                    app:fontFamily="cursive"
+                    app:fontFamily="serif"
+                    android:textStyle="italic"
                     android:textSize="18sp"
                     android:text="100km"/>
                 <ImageView
@@ -79,7 +80,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/txtArea"
                     android:typeface="serif"
-                    app:fontFamily="cursive"
+                    app:fontFamily="serif"
+                    android:textStyle="italic"
                     android:layout_gravity="center_vertical"
                     android:textSize="18sp"
                     android:text="Area" />

@@ -2,7 +2,6 @@ package com.example.newecoholiday.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -114,7 +112,7 @@ public class Lookouts extends AppCompatActivity {
                     lstActivity.setVisibility(View.VISIBLE);
                     ParkFacilityAdapter parkListAdapter = new ParkFacilityAdapter(Lookouts.this,ParkCampingFacilityList);
                     lstActivity.setAdapter(parkListAdapter);
-                    lstActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    /*lstActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             ParkFacilityListItem parkListItem = ParkCampingFacilityList.get(position);
@@ -125,7 +123,7 @@ public class Lookouts extends AppCompatActivity {
 
                             startActivity(new Intent(Lookouts.this,FacilityListActivity.class));
                         }
-                    });
+                    });*/
                 }else{
                     lstActivity.setAdapter(null);
                     lstActivity.setVisibility(View.GONE);

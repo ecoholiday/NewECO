@@ -32,9 +32,10 @@
             android:gravity="center"
             android:text="plan a holiday"
             android:textColor="#ffffff"
-            android:textSize="40dp"
+            android:textSize="25dp"
+            android:textStyle="italic|bold"
             android:typeface="serif"
-            app:fontFamily="cursive" />
+            app:fontFamily="serif" />
         <TextView
             android:id="@+id/txtLandingMoney"
             android:layout_width="wrap_content"
@@ -42,9 +43,10 @@
             android:gravity="center"
             android:text="save money"
             android:textColor="#ffffff"
-            android:textSize="40dp"
+            android:textSize="25dp"
             android:typeface="serif"
-            app:fontFamily="cursive" />
+            android:textStyle="bold|italic"
+            app:fontFamily="serif" />
         <TextView
             android:id="@+id/txtLandingEnvi"
             android:layout_width="wrap_content"
@@ -52,9 +54,10 @@
             android:gravity="center"
             android:text="save environment"
             android:textColor="#ffffff"
-            android:textSize="40dp"
+            android:textSize="25dp"
             android:typeface="serif"
-            app:fontFamily="cursive" />
+            android:textStyle="italic|bold"
+            app:fontFamily="serif" />
 
     </LinearLayout>
 

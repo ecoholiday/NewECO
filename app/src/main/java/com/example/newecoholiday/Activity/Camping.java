@@ -2,7 +2,6 @@ package com.example.newecoholiday.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -124,6 +122,7 @@ public class Camping extends AppCompatActivity {
 
                     cursorCamping.close();
                 } catch (Exception e) {
+                    //Log.d("test", ""+e);
                     z = "FAIL";
                 }
                 try {
@@ -179,18 +178,19 @@ public class Camping extends AppCompatActivity {
                     lstActivity.setVisibility(View.VISIBLE);
                     ParkFacilityAdapter parkListAdapter = new ParkFacilityAdapter(Camping.this,ParkCampingFacilityList);
                     lstActivity.setAdapter(parkListAdapter);
-                    lstActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    /*lstActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             ParkFacilityListItem parkListItem = ParkCampingFacilityList.get(position);
-                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                            SharedPreferences.Editor ed
+                            itor = sharedpreferences.edit();
                             editor.putInt("FacilityNPID",NPID);
                             editor.putString("ParkName",parkName);
                             editor.apply();
 
                             startActivity(new Intent(Camping.this,FacilityListActivity.class));
                         }
-                    });
+                    });*/
                 }else{
                     lstActivity.setAdapter(null);
                     lstActivity.setVisibility(View.GONE);
