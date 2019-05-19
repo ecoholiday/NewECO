@@ -39,7 +39,7 @@ public class Camping extends AppCompatActivity {
             NPBBQ,
             NPBirdWatching,
             NPPlayground;
-    String facilities;
+    String facilities = "null";
 
     Boolean firstTimeLoading = true;
     SQLiteDatabase mDatabase;

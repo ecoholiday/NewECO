@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -41,6 +42,7 @@
         app:cardUseCompatPadding="true"
         android:layout_margin="2dp">
         <ImageView
+            android:id="@+id/imgCampThings"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/camp_things"
@@ -80,5 +82,22 @@
             android:layout_margin="10sp"
             android:textSize="22sp"/>
     </android.support.v7.widget.CardView>
+
+    <View
+        android:visibility="gone"
+        android:layout_weight="1"
+        android:id="@+id/viewHikinBelow1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </View>
+    <View
+        android:visibility="gone"
+        android:layout_weight="1"
+        android:id="@+id/viewHikinBelow2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </View>
 
 </LinearLayout>

@@ -29,6 +29,8 @@ public class ThingsTodo extends AppCompatActivity {
         cardHiking = (CardView)findViewById(R.id.cardHiking);
         cardLookouts = (CardView)findViewById(R.id.cardLookouts);
         cardCamping = (CardView)findViewById(R.id.cardCamping);
+        View viewHikinBelow1 = (View)findViewById(R.id.viewHikinBelow1);
+        View viewHikinBelow2 = (View)findViewById(R.id.viewHikinBelow2);
 
 
         if( Arrays.asList("Barmah National Park",
@@ -36,23 +38,31 @@ public class ThingsTodo extends AppCompatActivity {
                 "Organ Pipes National Park",
                 "Wyperfeld National Park",
                 "Yarra Ranges National Park").contains(parkName) ){
-            cardLookouts.setVisibility(View.INVISIBLE);
+            cardLookouts.setVisibility(View.GONE);
+            viewHikinBelow1.setVisibility(View.VISIBLE);
         }
 
         if( Arrays.asList("Mornington Peninsula National Park",
                 "Mount Richmond National Park",
                 "Organ Pipes National Park",
                 "Port Campbell National Park",
-                "Tarra-Bulga National Park",
+                "Tarra-Bulga National Park","Dandenong Ranges National Park",
                 "Yarra Ranges National Park").contains(parkName) ){
-            cardCamping.setVisibility(View.INVISIBLE);
+            cardCamping.setVisibility(View.GONE);
+            viewHikinBelow1.setVisibility(View.VISIBLE);
+            if( Arrays.asList("Organ Pipes National Park","Yarra Ranges National Park").contains(parkName) ){
+                viewHikinBelow2.setVisibility(View.VISIBLE);
+
+            }
+
         }
 
         if( Arrays.asList("Kara Kara National Park",
                 "Kinglake National Park",
                 "Mount Eccles National Park",
                 "Murray - Sunset National Park").contains(parkName) ){
-            cardHiking.setVisibility(View.INVISIBLE);
+            cardHiking.setVisibility(View.GONE);
+            viewHikinBelow2.setVisibility(View.VISIBLE);
         }
 
 

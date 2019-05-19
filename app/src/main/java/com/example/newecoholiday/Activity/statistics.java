@@ -1,7 +1,6 @@
 package com.example.newecoholiday.Activity;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,8 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.example.newecoholiday.R;
 
@@ -22,9 +19,6 @@ public class statistics extends AppCompatActivity {
     FrameLayout vicFrame;
     CardView cardWorld,cardAus,cardVic ;
 
-    //toolbar buttons and texviews
-    TextView txtStatsToolbar;
-    ImageButton imgExplore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +72,7 @@ public class statistics extends AppCompatActivity {
 
                 onChartChange();
                 cardWorld.setBackgroundColor(Color.parseColor("#FFAE76"));
+                cardWorld.setCardElevation(12);
                 worldFrame.setVisibility(View.VISIBLE);
 
             }
@@ -89,6 +84,7 @@ public class statistics extends AppCompatActivity {
 
                 onChartChange();
                 cardAus.setBackgroundColor(Color.parseColor("#FFAE76"));
+                cardAus.setCardElevation(12);
                 ausFrame.setVisibility(View.VISIBLE);
             }
         });
@@ -101,6 +97,7 @@ public class statistics extends AppCompatActivity {
 
                 onChartChange();
                 cardVic.setBackgroundColor(Color.parseColor("#FFAE76"));
+                cardVic.setCardElevation(12);
                 vicFrame.setVisibility(View.VISIBLE);
 
             }
@@ -136,19 +133,5 @@ public class statistics extends AppCompatActivity {
 
     }
 
-    public void toolBarChanges(){
-        txtStatsToolbar = (TextView)findViewById(R.id.txtExploreToolbar);
-        txtStatsToolbar.setVisibility(View.VISIBLE);
 
-        imgExplore= (ImageButton)findViewById(R.id.imgExplore);
-        imgExplore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(statistics.this, Home.class);
-                progressDialogueShowClose();
-                startActivity(intent);
-            }
-        });
-
-    }
 }

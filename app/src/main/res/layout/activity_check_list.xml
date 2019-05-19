@@ -13,13 +13,13 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
         <TextView
-            android:fontFamily="cursive"
-            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textStyle="bold|italic"
             android:typeface="serif"
             android:id="@+id/parkName"
             android:textColor="@color/black"
             android:text="Packing List"
-            android:background="@color/carbonSaved"
+            android:background="@color/imageBackgroundClicked"
             android:textSize="30sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,21 +45,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="clothes"
                         android:layout_marginLeft="5dp"
-                        android:textColor="#F9AA33"
+                        android:textColor="@color/imageBackgroundClicked"
                         android:textSize="28dp" />
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkSirts"
                         android:layout_width="wrap_content"
@@ -68,10 +68,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkJeans"
                         android:layout_width="wrap_content"
@@ -79,10 +79,10 @@
                         android:text="Jeans / Shorts"/>
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkCoats"
                         android:layout_width="wrap_content"
@@ -90,10 +90,10 @@
                         android:text="Coats / Sweaters"/>
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkSleepwear"
                         android:layout_width="wrap_content"
@@ -101,10 +101,10 @@
                         android:text="Sleepwear"/>
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkUnder"
                         android:layout_width="wrap_content"
@@ -113,10 +113,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkSocks"
                         android:layout_width="wrap_content"
@@ -141,50 +141,50 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Shoes"
-                        android:textColor="#F9AA33"
+                        android:textColor="@color/imageBackgroundClicked"
                         android:textSize="28dp" />
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkTennis"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tennis Shoes"/>
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkSandals"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sandals"/>
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkFlips"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Flip Flops"/>
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkWShoes"
                         android:layout_width="wrap_content"
@@ -219,21 +219,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Extras"
                         android:layout_marginLeft="5dp"
-                        android:textColor="#F9AA33"
+                        android:textColor="@color/imageBackgroundClicked"
                         android:textSize="28dp" />
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkHats"
                         android:layout_width="wrap_content"
@@ -242,10 +242,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/check22"
                         android:layout_width="wrap_content"
@@ -254,10 +254,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkSlippers"
                         android:layout_width="wrap_content"
@@ -267,10 +267,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkSunglasses"
                         android:layout_width="wrap_content"
@@ -279,10 +279,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkSunCream"
                         android:layout_width="wrap_content"
@@ -308,20 +308,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Others"
-                        android:textColor="#F9AA33"
+                        android:textColor="@color/imageBackgroundClicked"
                         android:textSize="28dp" />
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkBlanket"
                         android:layout_width="wrap_content"
@@ -330,10 +330,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkDocs"
                         android:layout_width="wrap_content"
@@ -342,10 +342,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkBattery"
                         android:layout_width="wrap_content"
@@ -353,10 +353,10 @@
                         android:text="Battery"/>
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkCamera"
                         android:layout_width="wrap_content"
@@ -366,10 +366,10 @@
 
 
                     <TextView
-                        android:fontFamily="cursive"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:typeface="serif"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
                         android:id="@+id/chkMaps"
                         android:layout_width="wrap_content"

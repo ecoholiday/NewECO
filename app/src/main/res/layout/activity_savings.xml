@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".Activity.Savings">
 
@@ -367,7 +368,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="@color/carbonSaved"
-            android:text="Net Savings:"/>
+            android:text="Net:"/>
         <LinearLayout
             android:gravity="center_vertical"
             android:orientation="vertical"

@@ -9,18 +9,14 @@ import android.widget.TextView;
 
 import com.example.newecoholiday.R;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import static java.lang.Math.round;
 
 public class Savings extends AppCompatActivity {
 
-    String sdate,edate,nationalPark,distance;
+    String days,nationalPark,distance;
     int diffDays,dist;
     //    double moneySaved;
 //    double carbonSaved;
-    Date StartDate,EndDate;
     TextView count1,day_count1;
     TextView TDays,
             TotalDistance,
@@ -53,8 +49,8 @@ public class Savings extends AppCompatActivity {
 
 
         Intent fromParkActivity = getIntent();
-        sdate = fromParkActivity.getStringExtra("startDate");
-        edate = fromParkActivity.getStringExtra("endDate");
+        days = fromParkActivity.getStringExtra("days");
+        days = days.substring(0,1);
         distance = fromParkActivity.getStringExtra("distance");
         nationalPark = fromParkActivity.getStringExtra("NPname");
         //Toast.makeText(getApplicationContext(),distance+" : Distance : "+ distance.substring(15) , Toast.LENGTH_LONG).show();
@@ -78,16 +74,9 @@ public class Savings extends AppCompatActivity {
 
 
 
-        SimpleDateFormat dfDate = new SimpleDateFormat("dd/MM/yyyy");
-
-        try {
-            StartDate = dfDate.parse(sdate);
-            EndDate = dfDate.parse(edate);
-        } catch (java.text.ParseException e) {
-            e.printStackTrace();
-        }
-        long difference = Math.abs(StartDate.getTime() - EndDate.getTime());
-        diffDays = (int) (difference / (1000 * 60 * 60 * 24))+1;
+         //long difference = Math.abs(StartDate.getTime() - EndDate.getTime());
+        int intDays = Integer.parseInt(days);
+        diffDays = (int) (intDays / (1000 * 60 * 60 * 24))+1;
         dist = Integer.parseInt(distance);
 
         //Start calculations
@@ -109,7 +98,7 @@ public class Savings extends AppCompatActivity {
 
         txtParkReport.setText(nationalPark);
 
-        TDays.setText(diffDays+" days");
+        TDays.setText(intDays+" days");
         //TDistance.setText(TravelDistance+" KM");
         TotalDistance.setText(dist+" KMs");
         EUsed.setText(ElectricityUsed+" KWh");

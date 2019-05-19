@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fourth_black"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Activity.WeatherActivity">
 
@@ -115,7 +115,7 @@
                 app:cv_titleSubtitleSpace="40"
                 app:cv_fillColor="@color/imageBackgroundClicked"
                 app:cv_strokeColorValue="@color/imageBackgroundClicked"
-                app:cv_backgroundColorValue="@color/fourth_black"
+                app:cv_backgroundColorValue="@color/white"
                 app:cv_titleColor="@color/black"
                 app:cv_titleSize="50sp"
                 app:cv_titleText="temp"

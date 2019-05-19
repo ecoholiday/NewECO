@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Activity.ParkPage">
 
@@ -37,10 +38,8 @@
             android:layout_margin="10sp"
             android:textSize="22sp"/>
 
-    </android.support.v7.widget.CardView>
-    </LinearLayout>
-
         <LinearLayout
+            android:layout_gravity="bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <ImageView
@@ -49,102 +48,72 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_car" />
+                app:srcCompat="@drawable/ic_car_red" />
 
             <TextView
                 android:id="@+id/txtParkDistance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/txtDist"
+                android:textColor="@color/carbonSpent"
                 android:textSize="18sp"
                 android:text="100 KMs"
                 android:layout_margin="5sp"
                 android:fontFamily="serif"
                 android:typeface="serif"
                 android:textStyle="bold|italic"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-            <ImageButton
-                android:id="@+id/btnNavigation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15sp"
-                android:background="@color/white"
-                app:srcCompat="@drawable/ic_directions" />
         </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="40dp">
 
         <ImageView
             android:id="@+id/imgCalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="10dp"
             app:srcCompat="@drawable/ic_calendar" />
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardStartDate"
+        <LinearLayout
+            android:layout_marginRight="10sp"
+            android:orientation="vertical"
+            android:layout_weight="8"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/white"
-            android:layout_weight="3"
-            app:cardCornerRadius="12dp"
-            android:background="@drawable/table_shape"
-            android:layout_margin="5dp"
-            android:elevation="5dp">
+            android:layout_height="match_parent">
             <TextView
-                android:layout_gravity="center"
-                android:layout_margin="5sp"
-                android:fontFamily="cursive"
-                android:textStyle="bold"
-                android:typeface="serif"
-                android:textColor="@color/black"
-                android:id="@+id/sdate"
-                android:focusable="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardEndDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="3"
-            android:elevation="5dp"
-            android:background="@drawable/table_shape"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp">
-
-            <TextView
-                android:layout_gravity="center"
-                android:layout_margin="5sp"
-                android:fontFamily="cursive"
-                android:textStyle="bold"
-                android:typeface="serif"
-                android:id="@+id/edate"
-                android:textColor="@color/black"
+                android:layout_gravity="end"
+                android:id="@+id/txtSeekDays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:focusable="false" />
-        </android.support.v7.widget.CardView>
+                android:textColor="@color/txtDist"
+                android:text="1 Day"/>
+
+            <SeekBar
+                android:id="@+id/seekBarDays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="5sp"
+                android:layout_marginBottom="5sp"
+                android:progressBackgroundTint="@color/black"
+                android:backgroundTint="@color/black"
+                android:max="5"
+                android:min="1"
+                android:progress="1"
+                android:progressDrawable="@drawable/seekbar" />
+        </LinearLayout>
 
 
-
-
-
-            <ImageView
+        <ImageView
                 android:layout_weight="1"
                 android:id="@+id/imgWeather"
                 android:layout_width="wrap_content"
@@ -225,7 +194,7 @@
                 android:layout_weight="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/prepare"
+                app:cardBackgroundColor="@color/savings"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="5dp"
                 android:elevation="5dp">
@@ -246,13 +215,10 @@
                 android:layout_weight="3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/savings"
+                app:cardBackgroundColor="@color/carbonSaved"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="5dp"
                 android:elevation="5dp">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/txtEcological"
                     android:layout_width="wrap_content"
@@ -264,12 +230,8 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:text="Ecological trip??"/>
-                </LinearLayout>
-
 
             </android.support.v7.widget.CardView>
-
-
 
         </LinearLayout>
 

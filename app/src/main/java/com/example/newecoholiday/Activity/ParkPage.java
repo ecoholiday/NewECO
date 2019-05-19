@@ -1,6 +1,5 @@
 package com.example.newecoholiday.Activity;
 
-import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -13,48 +12,21 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
-import android.widget.DatePicker;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.newecoholiday.R;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 public class ParkPage extends AppCompatActivity {
 
     SQLiteDatabase mDatabase;
-
-
-    //calendar
-    TextView cDate,cWeather;
-    CardView cardStartDate,cardEndDate;
-    TextView sdate,edate;
-    private static final DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    String dateTime;
-    Calendar dateSelected = Calendar.getInstance();
-    private DatePickerDialog datePickerDialog;
-    final Calendar startCalendar = Calendar.getInstance();
-    final Calendar endCalendar = Calendar.getInstance();
-    String myFormat = "MM/dd/yy"; //In which you need put here
-
-    //calendar
-
-    Boolean firstTimeLoading = true;
     SharedPreferences sharedpreferences;
     int NPID;
-    String parkName;
-    String area;
-    String parkDistance;
-    String latitude;
-    String longitude;
+    String parkName,area,parkDistance;
+    String latitude,longitude,days;
     ProgressDialog pDialog;
+    ImageView imgPark;
 
     //CardView clicks
     CardView cardTodo,cardSavings,cardHelp,cardPrepare;
@@ -73,20 +45,23 @@ public class ParkPage extends AppCompatActivity {
         longitude = sharedpreferences.getString("ParkLongitude","");
 
 
-        ImageButton btnNavigation = (ImageButton) findViewById(R.id.btnNavigation);
+        //ImageButton btnNavigation = (ImageButton) findViewById(R.id.btnNavigation);
+        imgPark = (ImageView)findViewById(R.id.imgPark);
 
         //set the image nd name of national park
         TextView txtPark = (TextView)findViewById(R.id.txtPark);
         TextView txtParkDistance = (TextView)findViewById(R.id.txtParkDistance);
+        final SeekBar seekBarDays = findViewById(R.id.seekBarDays);
+        final TextView txtSeekDays = findViewById(R.id.txtSeekDays);
+
         txtPark.setText(parkName);
         setNPImage(parkName);
         txtParkDistance.setText(" " + parkDistance +" KMs");
 
 
-        btnNavigation.setOnClickListener(new View.OnClickListener() {
+        imgPark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 startActivity(new Intent(ParkPage.this,MapsActivity.class));
             }
         });
@@ -122,10 +97,9 @@ public class ParkPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intentReport = new Intent(ParkPage.this, Savings.class);
-
-                intentReport.putExtra("startDate", sdate.getText().toString());
-                intentReport.putExtra("endDate", edate.getText().toString());
+                Intent intentReport = new Intent(ParkPage.this, CarbonEmissions.class);
+                //Toast.makeText(getApplicationContext(),""+txtSeekDays.getText(),Toast.LENGTH_LONG).show();
+                intentReport.putExtra("days", txtSeekDays.getText());
                 intentReport.putExtra("distance", parkDistance);
                 intentReport.putExtra("NPname", parkName);
 
@@ -134,24 +108,33 @@ public class ParkPage extends AppCompatActivity {
         });
 
 
-        // dates code
+        if (seekBarDays != null) {
+            seekBarDays.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                }
 
-        sdate =(TextView) findViewById(R.id.sdate);
-        edate =(TextView) findViewById(R.id.edate);
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+                }
 
-        // initializing dates
-        Date today = dateSelected.getTime();
-        dateSelected.add(Calendar.MONTH, 1);
-        String tod = dateSelected.get(Calendar.DATE) + "/" + dateSelected.get(Calendar.MONTH) +"/" + (dateSelected.get(Calendar.YEAR));
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                    if (seekBarDays.getProgress() ==0){
+                        seekBarDays.setProgress(1);
+                    }
+                    days = String.valueOf(seekBarDays.getProgress());
+                    if (seekBarDays.getProgress() ==1){
+                        txtSeekDays.setText(days+" Day");
+                    }else{
+                        txtSeekDays.setText(days+" Days");
+                    }
 
 
-        //tod = tod.substring(0,tod.length()-2);
-        dateSelected.add(Calendar.DATE, 1);
-        String tom = dateSelected.get(Calendar.DATE) + "/" + dateSelected.get(Calendar.MONTH) +"/" + (dateSelected.get(Calendar.YEAR));
-        //tom = tom.substring(0,tod.length()-2);
+                }
+            });
+        }
 
-        sdate.setText(tod);
-        edate.setText(tom);
 
         RotateAnimation anim = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         anim.setInterpolator(new LinearInterpolator());
@@ -159,67 +142,6 @@ public class ParkPage extends AppCompatActivity {
         anim.setDuration(2000);
         final ImageView imgWeather = (ImageView) findViewById(R.id.imgWeather);
         imgWeather.startAnimation(anim);
-
-
-
-        cardStartDate = (CardView)findViewById(R.id.cardStartDate);
-        cardEndDate= (CardView)findViewById(R.id.cardEndDate);
-
-
-
-        final DatePickerDialog.OnDateSetListener startDate = new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-                startCalendar.set(Calendar.YEAR, year);
-                startCalendar.set(Calendar.MONTH, monthOfYear);
-                startCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateStartDate();
-            }
-
-        };
-
-        final DatePickerDialog.OnDateSetListener endDate = new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-
-                endCalendar.set(Calendar.YEAR, year);
-                endCalendar.set(Calendar.MONTH, monthOfYear);
-                endCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateEndDate();
-            }
-
-        };
-
-        cardEndDate.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if(sdate.getText().toString().equals("Start Date")){
-                    Toast.makeText(getApplicationContext(),"Please Select Start Date",Toast.LENGTH_LONG).show();
-                }else{
-                    DatePickerDialog datePickerDialog = new DatePickerDialog(ParkPage.this, endDate, endCalendar
-                            .get(Calendar.YEAR), endCalendar.get(Calendar.MONTH),
-                            endCalendar.get(Calendar.DAY_OF_MONTH));
-                    datePickerDialog.getDatePicker().setMinDate(startCalendar.getTimeInMillis());
-                    datePickerDialog.show();
-                }
-            }
-        });
-        cardStartDate.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(ParkPage.this, startDate, startCalendar
-                        .get(Calendar.YEAR), startCalendar.get(Calendar.MONTH),
-                        startCalendar.get(Calendar.DAY_OF_MONTH));
-                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-                datePickerDialog.show();
-            }
-        });
 
         imgWeather.setOnClickListener(new View.OnClickListener() {
 
@@ -240,7 +162,7 @@ public class ParkPage extends AppCompatActivity {
     }
 
     public void setNPImage(String name){
-        ImageView imgPark = (ImageView)findViewById(R.id.imgPark);
+
         if(name.contains("lpine")){
             imgPark.setImageResource(R.drawable.alpine);
         }else if(name.contains("armah")){
@@ -294,19 +216,6 @@ public class ParkPage extends AppCompatActivity {
         }
 
 
-    }
-
-    private void updateStartDate() {
-        String myFormat = "dd/MM/yyyy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
-        sdate.setText(sdf.format(startCalendar.getTime()));
-    }
-    private void updateEndDate() {
-        String myFormat = "dd/MM/yyyy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
-        edate.setText(sdf.format(endCalendar.getTime()));
     }
 
 }

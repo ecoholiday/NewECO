@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.Help"></activity>
+        <activity android:name=".Activity.CarbonEmissions"></activity>
+        <activity android:name=".Activity.Help" />
         <activity android:name=".Activity.CampSite" />
         <activity android:name=".Activity.WeatherActivity" />
         <activity android:name=".Activity.Savings" />

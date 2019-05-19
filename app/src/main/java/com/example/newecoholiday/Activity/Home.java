@@ -51,7 +51,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -102,7 +101,7 @@ public class Home extends AppCompatActivity {
     //String[] showdistance = new String[20];
 
     // camping and treking tables
-    List<String> CampingName = new ArrayList<String>();
+    /*List<String> CampingName = new ArrayList<String>();
     List<String> CNPID = new ArrayList<String>();
     List<String> CampDesc = new ArrayList<String>();
     List<String> CampLatitude = new ArrayList<String>();
@@ -143,7 +142,7 @@ public class Home extends AppCompatActivity {
     List<String> NPBBQ = new ArrayList<String>();
     List<String> NPBirdWatching = new ArrayList<String>();
     List<String> NPPlayGround = new ArrayList<String>();
-    List<String> NPID = new ArrayList<String>();
+    List<String> NPID = new ArrayList<String>(); */
     //Facilities Data
 
 
@@ -198,16 +197,21 @@ public class Home extends AppCompatActivity {
 
         ImageButton imgfilter = (ImageButton) findViewById(R.id.imgfilter);
         posPopup = (RelativeLayout) findViewById(R.id.relHome);
+        //posPopup.setEnabled(false);
+
 
         imgfilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
                 View customView = inflater.inflate(R.layout.popup_filter, null);
 
                 popupFilter = new PopupWindow(customView,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        RelativeLayout.LayoutParams.MATCH_PARENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
+                posPopup.setEnabled(false);
 
                 popupFilter.showAtLocation(posPopup, Gravity.CENTER, 0, 0);
 
@@ -267,10 +271,14 @@ public class Home extends AppCompatActivity {
 
 
         new GetParksData().execute();
+        Latitude = Arrays.asList(getResources().getStringArray(R.array.Latitude));
+        Longitude = Arrays.asList(getResources().getStringArray(R.array.Longitude));
+
+
         // list is updated
 
         // added above code
-        NationalParks = Arrays.asList(getResources().getStringArray(R.array.NationalParks));
+        /*NationalParks = Arrays.asList(getResources().getStringArray(R.array.NationalParks));
         Area = Arrays.asList(getResources().getStringArray(R.array.Area));
         Latitude = Arrays.asList(getResources().getStringArray(R.array.Latitude));
         Longitude = Arrays.asList(getResources().getStringArray(R.array.Longitude));
@@ -316,31 +324,31 @@ public class Home extends AppCompatActivity {
         NPBBQ = Arrays.asList(getResources().getStringArray(R.array.NPBBQ));
         NPBirdWatching = Arrays.asList(getResources().getStringArray(R.array.NPBirdWatching));
         NPPlayGround = Arrays.asList(getResources().getStringArray(R.array.NPPlayGround));
-        NPID = Arrays.asList(getResources().getStringArray(R.array.NPID));
+        NPID = Arrays.asList(getResources().getStringArray(R.array.NPID)); */
 
         //Facilities Data
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
-        if (createEcoParkTables()) {
+        /*if (createEcoParkTables()) {
             new Home.UploadData().execute();
             //Toast.makeText(getApplicationContext(), "Tables Created", Toast.LENGTH_LONG).show();
 
         } else {
             Toast.makeText(getApplicationContext(), "Error has occured. Please try again", Toast.LENGTH_LONG).show();
 
-        }
+        }*/
 
-        try {
-            PlacePicker.IntentBuilder intentBuilder = new PlacePicker.IntentBuilder();
-            Intent intent = intentBuilder.build(Home.this);
-            startActivityForResult(intent, START_PLACE_PICKER_REQUEST);
+        startLocation();
 
-        } catch (GooglePlayServicesRepairableException
-                | GooglePlayServicesNotAvailableException e) {
-            e.printStackTrace();
-        }
+        RelativeLayout relChangeLoc = (RelativeLayout)findViewById(R.id.relChangeLoc);
+        relChangeLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startLocation();
+            }
+        });
 
         //enabling text search keypad
         txtHomeSearch = (AutoCompleteTextView)findViewById(R.id.txtHomeSearch);
@@ -380,15 +388,16 @@ public class Home extends AppCompatActivity {
             final CharSequence address = place.getAddress();
             String attributions = (String) place.getAttributions();
             final LatLng latLng = place.getLatLng();
+
             la = latLng.latitude;
             Lat = la.toString();
-            Lat = Lat.substring(0,10);
+            //Lat = Lat.substring(0,10);
             ln = latLng.longitude;
             lon = ln.toString();
-            lon=lon.substring(0,10);
+            //lon=lon.substring(0,10);
+            //Toast.makeText(getApplicationContext(),""+la+" "+ln,Toast.LENGTH_LONG).show();
 
             current_address =(String)address;
-            //Toast.makeText(getApplicationContext(),la+" : "+ln,Toast.LENGTH_LONG).show();
             Distance1.clear();
             Latitude1.clear();
             Longitude1.clear();
@@ -447,7 +456,7 @@ public class Home extends AppCompatActivity {
         return dist;
     }
 
-    private boolean createEcoParkTables() {
+    /*private boolean createEcoParkTables() {
         boolean isCreated = false;
         //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
         try{
@@ -530,191 +539,10 @@ public class Home extends AppCompatActivity {
         }
 
 
-    }
-
-
-    private class UploadData extends AsyncTask<String,String,String> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            //Toast.makeText(MainActivity.this," Data is Loading",Toast.LENGTH_LONG).show();
-
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            if(NationalParks.size()>0){
-                Calendar cal = Calendar.getInstance();
-                String dateTime = sdf.format(cal.getTime());
-                z="SUCCESS";
-                for(int i=0;i<NationalParks.size();i++){
-                    if(CheckIsDataAlreadyInDBorNot("tbl_NationalParksList",
-                            "NationalPark",NationalParks.get(i),
-                            "Area",Area.get(i))){
-                        try{
-                            String insertSQL = "INSERT INTO tbl_NationalParksList \n" +
-                                    "(NationalPark, Area, Latitude, Longitude,Distance)\n" +
-                                    "VALUES \n" +
-                                    "('"+NationalParks.get(i)+"'," +
-                                    " '"+Area.get(i)+"'," +
-                                    " '"+Latitude.get(i)+"'," +
-                                    " '"+Longitude.get(i)+"'," +
-                                    " "+Double.parseDouble(Distance.get(i)) +
-                                    ");";
-
-
-                            mDatabase.execSQL(insertSQL);
-                        }catch (SQLException se){
-                            Toast.makeText(getApplicationContext(),"National Parks Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
-                            z="FAIL";
-                        }
-                    }
-                }
-                for(int i=0;i<CampingName.size();i++){
-                    if(CheckIsDataAlreadyInDBorNotInt("tbl_Camping_Sites",
-                            "CampingDescription",CampingName.get(i),
-                            "NPID",Integer.parseInt(CNPID.get(i)))){
-                        try{
-                            String insertSQL = "INSERT INTO tbl_Camping_Sites \n" +
-                                    "(NPID, CampingName,CampingDescription,Latitude,Longitude)\n" +
-                                    "VALUES \n" +
-                                    "("+Integer.parseInt(CNPID.get(i))+"," +
-                                    " '"+CampingName.get(i)+"'," +
-                                    " '"+CampDesc.get(i)+"'," +
-                                    " '"+CampLatitude.get(i)+"'," +
-                                    " '"+CampLongitude.get(i) + "'"+
-                                    ");";
-
-
-                            mDatabase.execSQL(insertSQL);
-                        }catch (SQLException se){
-                            Toast.makeText(getApplicationContext(),"Camping Table Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
-                            z="FAIL";
-                        }
-                    }
-                }
-                for(int i=0;i<TrackName.size();i++){
-                    if(CheckIsDataAlreadyInDBorNotInt("tbl_Treck_Sites",
-                            "TrackName",TrackName.get(i),
-                            "NPID",Integer.parseInt(TNPID.get(i)))){
-                        try{
-                            String insertSQL = "INSERT INTO tbl_Treck_Sites \n" +
-                                    "(NPID, TrackName,Description,Length,Time,Latitude,Longitude)\n" +
-                                    "VALUES \n" +
-                                    "("+Integer.parseInt(TNPID.get(i))+"," +
-                                    " '"+TrackName.get(i)+"'," +
-                                    " '"+TrackDesc.get(i)+"'," +
-                                    " "+Double.parseDouble(TrackLength.get(i))+"," +
-                                    " "+Double.parseDouble(TrackTime.get(i))+ ","+
-                                    " '"+TrackLat.get(i)+"'," +
-                                    " '"+TrackLong.get(i) + "'"+
-                                    ");";
-
-
-                            mDatabase.execSQL(insertSQL);
-                        }catch (SQLException se){
-                            Toast.makeText(getApplicationContext(),"Track Table Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
-                            z="FAIL";
-                        }
-                    }
-                }
-                for(int i=0;i<LookoutSite.size();i++){
-                    if(CheckIsDataAlreadyInDBorNotInt("tbl_LookOut_Sites",
-                            "LookOutSite",LookoutSite.get(i),
-                            "NPID",Integer.parseInt(LNPID.get(i)))){
-                        try{
-                            String insertSQL = "INSERT INTO tbl_LookOut_Sites \n" +
-                                    "(NPID, LookOutSite,Description,Latitude,Longitude)\n" +
-                                    "VALUES \n" +
-                                    "("+Integer.parseInt(LNPID.get(i))+"," +
-                                    " '"+LookoutSite.get(i)+"'," +
-                                    " '"+LookDesc.get(i)+"'," +
-                                    " '"+LookLatitude.get(i)+"'," +
-                                    " '"+LookLongitude.get(i)+ "'"+
-                                    ");";
-
-                            mDatabase.execSQL(insertSQL);
-                        }catch (SQLException se){
-                            Toast.makeText(getApplicationContext(),"Lookouts Table Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
-                            z="FAIL";
-                        }
-                    }
-                }
-                for(int i=0;i<NPCamping.size();i++){
-                    if(CheckIsDataAlreadyInDBorNotIntiger("tbl_NationalPark_Facilities",
-                            "NPID",Integer.parseInt(NPID.get(i)))){
-                        try{
-                            String insertSQL = "INSERT INTO tbl_NationalPark_Facilities \n" +
-                                    "(NPID, " +
-                                    "Camping," +
-                                    "Canoeing," +
-                                    "Fishing," +
-                                    "ScienicDrive," +
-                                    "HorseRiding," +
-                                    "Hunting," +
-                                    "Trekking," +
-                                    "Cycling," +
-                                    "Picknicking," +
-                                    "SightSeeing," +
-                                    "Skiing," +
-                                    "whiteWaterRafting," +
-                                    "CampFire," +
-                                    "Swimming," +
-                                    "YachtingSailing," +
-                                    "BBQ," +
-                                    "BirdWatching," +
-                                    "Playground )"+
-                                    "VALUES \n" +
-                                    "("+Integer.parseInt(NPID.get(i))+"," +
-                                    " '"+NPCamping.get(i)+"'," +
-                                    " '"+NPCanoeing.get(i)+"'," +
-                                    " '"+NPFishing.get(i)+"'," +
-                                    " '"+NPScienceDrive.get(i)+"'," +
-                                    " '"+NPHorseRiding.get(i)+"'," +
-                                    " '"+NPHunting.get(i)+"'," +
-                                    " '"+NPTrekking.get(i)+"'," +
-                                    " '"+NPCycling.get(i)+"'," +
-                                    " '"+NPPicnicking.get(i)+"'," +
-                                    " '"+NPSightSeeing.get(i)+"'," +
-                                    " '"+NPSkiing.get(i)+"'," +
-                                    " '"+NPWhiteWaterRafting.get(i)+"'," +
-                                    " '"+NPCampFire.get(i)+"'," +
-                                    " '"+NPSwimming.get(i)+"'," +
-                                    " '"+NPSailing.get(i)+"'," +
-                                    " '"+NPBBQ.get(i)+"'," +
-                                    " '"+NPBirdWatching.get(i)+"'," +
-                                    " '"+NPPlayGround.get(i)+"'" +
-                                    ");";
-
-
-                            mDatabase.execSQL(insertSQL);
-                        }catch (SQLException se){
-                            Toast.makeText(getApplicationContext(),"Track Table Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
-                            z="FAIL";
-                        }
-                    }
-                }
-
-            }
-
-
-            return z;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            if(z=="SUCCESS"){
-                //Toast.makeText(getApplicationContext(),"Data Loading Completed.",Toast.LENGTH_LONG).show();
-            }else{
-                Toast.makeText(getApplicationContext(),"Data Loading Fail. Please try again",Toast.LENGTH_LONG).show();
-            }
+    }*/
 
 
 
-        }
-    }
 
     private class UpdateDistance extends AsyncTask<String,String,String> {
         @Override
@@ -730,7 +558,7 @@ public class Home extends AppCompatActivity {
             if(Distance1.size()>0){
                 z="SUCCESS";
                 for(int i=0;i<Distance1.size();i++){
-                    if(CheckIsDataAlreadyInDBorNot1("tbl_NationalParksList",
+                    if(LandingPage.CheckIsDataAlreadyInDBorNot1("tbl_NationalParksList",
                             "Latitude",Latitude1.get(i),
                             "Longitude",Longitude1.get(i),
                             "Distance",Double.parseDouble(Distance1.get(i)))){
@@ -772,7 +600,7 @@ public class Home extends AppCompatActivity {
     }
 
 
-    public boolean CheckIsDataAlreadyInDBorNot(String TableName,
+    /*public boolean CheckIsDataAlreadyInDBorNot(String TableName,
                                                String dbfield,
                                                String fieldValue,
                                                String dbfield1,
@@ -836,7 +664,7 @@ public class Home extends AppCompatActivity {
         cursor.close();
         //mDatabase.close();
         return true;
-    }
+    } */
 
     @Override
     protected void onResume() {
@@ -908,7 +736,7 @@ public class Home extends AppCompatActivity {
                 if(ParksList.size()>0){
                     ParksAdapter parkListAdapter = new ParksAdapter(Home.this,ParksList);
                     viewData.setAdapter(parkListAdapter);
-                    viewData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    /*viewData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             // Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_LONG).show();
@@ -922,7 +750,7 @@ public class Home extends AppCompatActivity {
                             editor.commit();
                             startActivity(new Intent(Home.this,MapsActivity.class));
                         }
-                    });
+                    });*/
 
                 }else{
                     viewData.setAdapter(null);
@@ -1031,6 +859,18 @@ public class Home extends AppCompatActivity {
                 break;
 
             }
+        }
+    }
+
+    public void startLocation(){
+        try {
+            PlacePicker.IntentBuilder intentBuilder = new PlacePicker.IntentBuilder();
+            Intent intent = intentBuilder.build(Home.this);
+            startActivityForResult(intent, START_PLACE_PICKER_REQUEST);
+
+        } catch (GooglePlayServicesRepairableException
+                | GooglePlayServicesNotAvailableException e) {
+            e.printStackTrace();
         }
     }
 }

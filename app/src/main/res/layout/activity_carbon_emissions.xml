@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CarbonEmissions">
+
+    <LinearLayout
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardNet"
+            android:layout_weight="1"
+            android:elevation="5sp"
+            android:layout_margin="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center_horizontal"
+                android:textSize="30sp"
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Net"/>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardSaved"
+            android:layout_weight="1"
+            android:elevation="5sp"
+            android:layout_margin="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:gravity="center_horizontal"
+                android:textSize="30sp"
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saved"/>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardSpent"
+            android:layout_weight="1"
+            android:elevation="5sp"
+            android:layout_margin="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center_horizontal"
+                android:textSize="30sp"
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Spent"/>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="5sp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginTop="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_park"/>
+            <TextView
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:id="@+id/txtParkReport"
+                android:layout_width="wrap_content"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:text="National Park"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginRight="10sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="0dp">
+
+            </View>
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_date_report"/>
+            <TextView
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:id="@+id/txtDaysReport"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 Days"/>
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="0dp">
+
+            </View>
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_car_report"/>
+            <TextView
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:layout_weight="1"
+                android:id="@+id/txtDistReport"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50 KMs"/>
+            <View
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="0dp">
+
+            </View>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameSaved"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameSpent"/>
+    <LinearLayout
+        android:id="@+id/linInvisible"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_marginTop="5sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="serif"
+                android:typeface="serif"
+                android:textStyle="italic"
+                android:textColor="@color/txtDist"
+                android:text="Traveller Type"/>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="14sp"
+                android:layout_margin="1sp"
+                android:layout_height="wrap_content">
+                <Spinner
+                    android:id="@+id/spinnerUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"/>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="serif"
+                android:typeface="serif"
+                android:textColor="@color/txtDist"
+                android:textStyle="italic"
+                android:text="House Type"/>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="14sp"
+                android:layout_margin="1sp"
+                android:layout_height="wrap_content">
+                <Spinner
+                    android:id="@+id/spinnerHouse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:spinnerMode="dropdown"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="serif"
+                android:typeface="serif"
+                android:textStyle="italic"
+                android:textColor="@color/txtDist"
+                android:text="Kids/Friends"/>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="14sp"
+                android:layout_margin="1sp"
+                android:layout_height="wrap_content">
+                <Spinner
+                    android:id="@+id/spinnerKids"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"/>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardNetVisibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="10dp"
+        android:elevation="5dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtNetSavings"
+            android:textStyle="bold|italic"
+            android:fontFamily="serif"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/carbonSaved"
+            android:text="Net:"/>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp">
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_elec"/>
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Electricity : "/>
+
+                <TextView
+                    android:id="@+id/txtElecTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:text="22 Kwh"
+                    android:textColor="@color/carbonSaved"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imgTotalMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dollar_saved"/>
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Money : "/>
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:id="@+id/txtMoneyFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/carbonSaved"
+                    android:text="55 $"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imgTotalCarbon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_carbon"/>
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Carbon Emissions : "/>
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:id="@+id/txtCarbonFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/carbonSaved"
+                    android:text="5600 gm"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="15dp"
+                    android:id="@+id/txtNegative"
+                    android:layout_marginTop="10sp"
+                    android:gravity="center"
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:textColor="@color/rareColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="Please Stay More Days at the National Parks to Make it ECO-Holiday"/>
+
+                <TextView
+                    android:layout_marginTop="10sp"
+                    android:gravity="center"
+                    android:textStyle="bold|italic"
+                    android:fontFamily="serif"
+                    android:textColor="@color/rareColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="More Travel, More Fun, More Advantages"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>
