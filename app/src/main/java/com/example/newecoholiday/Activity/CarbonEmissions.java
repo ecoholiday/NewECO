@@ -40,11 +40,11 @@ public class CarbonEmissions extends AppCompatActivity implements AdapterView.On
     int dist,intDays;
     TextView txtElecTotal,txtMoneyFinal,txtCarbonFinal,txtParkReport,txtDistReport,txtDaysReport;
 
-    long carbonHotel = 3500;
-    long moneyHotel= 120;
-    long alcohol = 500;
-    long mobile = 3500;
-    long otherElectronics = 4000;
+    long carbonHotel;
+    long moneyHotel;
+    long alcohol;
+    long mobile;
+    long otherElectronics;
 
 
     @Override
@@ -71,11 +71,6 @@ public class CarbonEmissions extends AppCompatActivity implements AdapterView.On
 
         intDays = Integer.parseInt(days);
         dist = Integer.parseInt(distance);
-        carbonHotel = carbonHotel*intDays;
-        moneyHotel= moneyHotel*intDays;
-        alcohol = alcohol*intDays;
-        mobile = mobile*intDays;
-        otherElectronics = otherElectronics*intDays;
 
 
         frameSaved = findViewById(R.id.frameSaved);
@@ -212,6 +207,13 @@ public class CarbonEmissions extends AppCompatActivity implements AdapterView.On
 
     public void dropDownChanged(){
 
+        carbonHotel = 3500*intDays;
+        moneyHotel=120* intDays;
+        alcohol = 500*intDays;
+        mobile = 3500*intDays;
+        otherElectronics = 4000*intDays;
+
+
         FuelConsumed = round(dist*2*0.1);
         MoneyConsumed = round(dist*2*0.1*1.4);
         CarbonConsumed = round(dist*2*0.1*1954);
@@ -270,6 +272,13 @@ public class CarbonEmissions extends AppCompatActivity implements AdapterView.On
             txtNegative.setVisibility(View.VISIBLE);
             ImageView imgTotalCarbon = (ImageView)findViewById(R.id.imgTotalCarbon);
             imgTotalCarbon.setImageResource(R.drawable.ic_carbon_spent);
+        }else{
+            txtCarbonFinal.setTextColor(getColor(R.color.carbonSaved));
+            TextView txtNegative = findViewById(R.id.txtNegative);
+            txtNegative.setVisibility(View.INVISIBLE);
+            ImageView imgTotalCarbon = (ImageView)findViewById(R.id.imgTotalCarbon);
+            imgTotalCarbon.setImageResource(R.drawable.ic_carbon);
+
         }
 
     }
