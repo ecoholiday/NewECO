@@ -79,16 +79,117 @@
             android:id="@+id/imgCalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             app:srcCompat="@drawable/ic_calendar" />
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Days: "/>
         <LinearLayout
             android:layout_marginRight="10sp"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_weight="8"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
-            <TextView
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardDay1"
+                android:layout_weight="1"
+                app:cardElevation="2sp"
+                android:layout_margin="3sp"
+                app:cardCornerRadius="6sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="1"/>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardDay2"
+                android:layout_weight="1"
+                app:cardElevation="2sp"
+                android:layout_margin="3sp"
+                app:cardCornerRadius="6sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="2"/>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardDay3"
+                android:layout_weight="1"
+                app:cardElevation="2sp"
+                android:layout_margin="3sp"
+                app:cardCornerRadius="6sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="3"/>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardDay4"
+                android:layout_weight="1"
+                app:cardElevation="2sp"
+                android:layout_margin="3sp"
+                app:cardCornerRadius="6sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="4"/>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardDay5"
+                android:layout_weight="1"
+                app:cardElevation="2sp"
+                android:layout_margin="3sp"
+                app:cardCornerRadius="6sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="5"/>
+
+            </android.support.v7.widget.CardView>
+
+
+            <!--<TextView
                 android:layout_gravity="end"
                 android:id="@+id/txtSeekDays"
                 android:layout_width="wrap_content"
@@ -108,8 +209,7 @@
                 android:backgroundTint="@color/black"
                 android:max="5"
                 android:min="1"
-                android:progress="1"
-                android:progressDrawable="@drawable/seekbar" />
+                android:progress="1" /> -->
         </LinearLayout>
 
 
@@ -177,7 +277,7 @@
                     app:fontFamily="serif"
                     android:textColor="@color/black"
                     android:textStyle="bold|italic"
-                    android:text="Help"/>
+                    android:text="Contact"/>
 
             </android.support.v7.widget.CardView>
 

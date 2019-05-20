@@ -1,6 +1,5 @@
 package com.example.newecoholiday.Activity;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,9 +10,10 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.databinding.DataBindingUtil;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +35,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.newecoholiday.GPS.GPSTracker;
 import com.example.newecoholiday.Item.ParkItems;
 import com.example.newecoholiday.R;
 import com.example.newecoholiday.adapter.ParksAdapter;
@@ -47,8 +46,6 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.model.LatLng;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,20 +54,18 @@ import java.util.TimerTask;
 
 import static java.lang.Math.round;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements LocationListener{
+    LocationManager locationManager;
+    boolean firstTimeLocding = true;
+
     SQLiteDatabase mDatabase;
     TextView distanceCount;
-    TextView dayCount;
-    ImageView imgSearch;
     SeekBar seekDistance;
-    SeekBar seekDays;
     ListView viewData;
-    int DistCount=1000;
-    int MinDistCount = 0;
-    int DaysCount=5;
+    int DistCount = 1000;
     SharedPreferences sharedpreferences;
     //private ProgressDialog pDialog;
-    public static ArrayList<ParkItems> ParksList ;
+    public static ArrayList<ParkItems> ParksList;
 
     // search bar
     AutoCompleteTextView txtHomeSearch;
@@ -81,7 +76,7 @@ public class Home extends AppCompatActivity {
     //search bar
 
     // image slider
-    public  ActivityHomeBinding mBinding;
+    public ActivityHomeBinding mBinding;
     ViewPager viewPager;
     LinearLayout sliderDots;
     public int dotCounts;
@@ -91,119 +86,59 @@ public class Home extends AppCompatActivity {
     public static final String DATABASE_NAME = "myecodatabase";
     String z;
     List<String> NationalParks = new ArrayList<String>();
-    List<String> Area = new ArrayList<String>();
     List<String> Latitude = new ArrayList<String>();
     List<String> Longitude = new ArrayList<String>();
-    List<String> Distance = new ArrayList<String>();
     List<String> Latitude1 = new ArrayList<String>();
     List<String> Longitude1 = new ArrayList<String>();
     List<String> Distance1 = new ArrayList<String>();
-    //String[] showdistance = new String[20];
-
-    // camping and treking tables
-    /*List<String> CampingName = new ArrayList<String>();
-    List<String> CNPID = new ArrayList<String>();
-    List<String> CampDesc = new ArrayList<String>();
-    List<String> CampLatitude = new ArrayList<String>();
-    List<String> CampLongitude= new ArrayList<String>();
-
-    List<String> TNPID = new ArrayList<String>();
-    List<String> TrackName = new ArrayList<String>();
-    List<String> TrackDesc = new ArrayList<String>();
-    List<String> TrackLength = new ArrayList<String>();
-    List<String> TrackTime = new ArrayList<String>();
-    List<String> TrackLat = new ArrayList<String>();
-    List<String> TrackLong= new ArrayList<String>();
-    //
-
-    //lookouts table
-    List<String> LookoutSite = new ArrayList<String>();
-    List<String> LookLatitude = new ArrayList<String>();
-    List<String> LookLongitude = new ArrayList<String>();
-    List<String> LNPID = new ArrayList<String>();
-    List<String> LookDesc = new ArrayList<String>();
-    //
-    //Facilities Data
-    List<String> NPCamping = new ArrayList<String>();
-    List<String> NPCanoeing = new ArrayList<String>();
-    List<String> NPFishing = new ArrayList<String>();
-    List<String> NPScienceDrive = new ArrayList<String>();
-    List<String> NPHorseRiding = new ArrayList<String>();
-    List<String> NPHunting = new ArrayList<String>();
-    List<String> NPTrekking = new ArrayList<String>();
-    List<String> NPCycling = new ArrayList<String>();
-    List<String> NPPicnicking = new ArrayList<String>();
-    List<String> NPSightSeeing = new ArrayList<String>();
-    List<String> NPSkiing = new ArrayList<String>();
-    List<String> NPWhiteWaterRafting = new ArrayList<String>();
-    List<String> NPCampFire = new ArrayList<String>();
-    List<String> NPSwimming = new ArrayList<String>();
-    List<String> NPSailing = new ArrayList<String>();
-    List<String> NPBBQ = new ArrayList<String>();
-    List<String> NPBirdWatching = new ArrayList<String>();
-    List<String> NPPlayGround = new ArrayList<String>();
-    List<String> NPID = new ArrayList<String>(); */
-    //Facilities Data
 
 
-    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String MyPREFERENCES = "MyPrefs";
     //SharedPreferences sharedpreferences;
 
     private static final int START_PLACE_PICKER_REQUEST = 1;
 
-    String mPermission = Manifest.permission.ACCESS_FINE_LOCATION;
-    GPSTracker gps;
-    double latitude, longitude;
-    String address = "";
-    Double la, ln, la1, ln1;
-    String Lat, lat1, lon, lon1;
+    Double la, ln;
+    String Lat, lon;
     String current_address;
     boolean doubleBackToExitPressedOnce = false;
     //GoogleApiClient mGoogleApiClient;
 
-    private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+
 
     // current changes
     private PopupWindow popupFilter;
     private RelativeLayout posPopup;
 
-    //toolbar buttons and texviews
-    TextView txtStatsToolbar,txtExploreToolbar;
-    ImageButton imgStats,imgExplore;
+    ImageButton imgStats;
 
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        NationalParks = Arrays.asList(getResources().getStringArray(R.array.NationalParks));
+
         //imageslider
         startImageSlider();
-
-        //toolbarchanges
-        //toolBarChanges();
 
         // popup filter
         imgStats = (ImageButton) findViewById(R.id.imgStats);
         imgStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this,statistics.class));
-
-
+                startActivity(new Intent(Home.this, statistics.class));
             }
         });
 
-
         ImageButton imgfilter = (ImageButton) findViewById(R.id.imgfilter);
         posPopup = (RelativeLayout) findViewById(R.id.relHome);
-        //posPopup.setEnabled(false);
-
 
         imgfilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
                 View customView = inflater.inflate(R.layout.popup_filter, null);
@@ -225,15 +160,17 @@ public class Home extends AppCompatActivity {
                 seekDistance.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        distanceCount.setText(progress+"");
+                        distanceCount.setText(progress + "");
                         DistCount = progress;
                     }
 
                     @Override
-                    public void onStartTrackingTouch(SeekBar seekBar) {}
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
 
                     @Override
-                    public void onStopTrackingTouch(SeekBar seekBar) {}
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
 
                 });
 
@@ -275,83 +212,25 @@ public class Home extends AppCompatActivity {
         Longitude = Arrays.asList(getResources().getStringArray(R.array.Longitude));
 
 
-        // list is updated
-
-        // added above code
-        /*NationalParks = Arrays.asList(getResources().getStringArray(R.array.NationalParks));
-        Area = Arrays.asList(getResources().getStringArray(R.array.Area));
-        Latitude = Arrays.asList(getResources().getStringArray(R.array.Latitude));
-        Longitude = Arrays.asList(getResources().getStringArray(R.array.Longitude));
-        Distance = Arrays.asList(getResources().getStringArray(R.array.Distance));
-
-        // camping and treking data
-        CampingName = Arrays.asList(getResources().getStringArray(R.array.Camping));
-        CNPID = Arrays.asList(getResources().getStringArray(R.array.CNPID));
-        CampDesc = Arrays.asList(getResources().getStringArray(R.array.CampDesc));
-        CampLatitude = Arrays.asList(getResources().getStringArray(R.array.CampLat));
-        CampLongitude = Arrays.asList(getResources().getStringArray(R.array.CampLong));
-
-        TrackName = Arrays.asList(getResources().getStringArray(R.array.TrackName));
-        TNPID = Arrays.asList(getResources().getStringArray(R.array.TNPID));
-        TrackDesc = Arrays.asList(getResources().getStringArray(R.array.TrackDesc));
-        TrackLength = Arrays.asList(getResources().getStringArray(R.array.TrackLength));
-        TrackTime = Arrays.asList(getResources().getStringArray(R.array.TrackTime));
-        TrackLat = Arrays.asList(getResources().getStringArray(R.array.TrackkLat));
-        TrackLong = Arrays.asList(getResources().getStringArray(R.array.TrackLong));
-        //
-        // LookOut Data
-        LookoutSite = Arrays.asList(getResources().getStringArray(R.array.LookoutSite));
-        LookLatitude = Arrays.asList(getResources().getStringArray(R.array.LookLatitude));
-        LookLongitude = Arrays.asList(getResources().getStringArray(R.array.LookLongitude));
-        LNPID = Arrays.asList(getResources().getStringArray(R.array.LNPID));
-        LookDesc=Arrays.asList(getResources().getStringArray(R.array.LookDesc));
-        //
-        NPCamping = Arrays.asList(getResources().getStringArray(R.array.NPCamping));
-        NPCanoeing = Arrays.asList(getResources().getStringArray(R.array.NPCanoeing));
-        NPFishing = Arrays.asList(getResources().getStringArray(R.array.NPFishing));
-        NPScienceDrive = Arrays.asList(getResources().getStringArray(R.array.NPScienceDrive));
-        NPHorseRiding = Arrays.asList(getResources().getStringArray(R.array.NPHorseRiding));
-        NPHunting = Arrays.asList(getResources().getStringArray(R.array.NPHunting));
-        NPTrekking = Arrays.asList(getResources().getStringArray(R.array.NPTrekking));
-        NPCycling = Arrays.asList(getResources().getStringArray(R.array.NPCycling));
-        NPPicnicking = Arrays.asList(getResources().getStringArray(R.array.NPPicnicking));
-        NPSightSeeing = Arrays.asList(getResources().getStringArray(R.array.NPSightSeeing));
-        NPSkiing = Arrays.asList(getResources().getStringArray(R.array.NPSkiing));
-        NPWhiteWaterRafting = Arrays.asList(getResources().getStringArray(R.array.NPWhiteWaterRafting));
-        NPCampFire = Arrays.asList(getResources().getStringArray(R.array.NPCampFire));
-        NPSwimming = Arrays.asList(getResources().getStringArray(R.array.NPSwimming));
-        NPSailing = Arrays.asList(getResources().getStringArray(R.array.NPSailing));
-        NPBBQ = Arrays.asList(getResources().getStringArray(R.array.NPBBQ));
-        NPBirdWatching = Arrays.asList(getResources().getStringArray(R.array.NPBirdWatching));
-        NPPlayGround = Arrays.asList(getResources().getStringArray(R.array.NPPlayGround));
-        NPID = Arrays.asList(getResources().getStringArray(R.array.NPID)); */
-
-        //Facilities Data
-
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
-        //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
-        /*if (createEcoParkTables()) {
-            new Home.UploadData().execute();
-            //Toast.makeText(getApplicationContext(), "Tables Created", Toast.LENGTH_LONG).show();
+        if(firstTimeLocding){
+            getLoc();
+        }else {
+            startLocation();
+        }
 
-        } else {
-            Toast.makeText(getApplicationContext(), "Error has occured. Please try again", Toast.LENGTH_LONG).show();
-
-        }*/
-
-        startLocation();
-
-        RelativeLayout relChangeLoc = (RelativeLayout)findViewById(R.id.relChangeLoc);
+        RelativeLayout relChangeLoc = (RelativeLayout) findViewById(R.id.relChangeLoc);
         relChangeLoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                firstTimeLocding = false;
                 startLocation();
             }
         });
 
         //enabling text search keypad
-        txtHomeSearch = (AutoCompleteTextView)findViewById(R.id.txtHomeSearch);
+        txtHomeSearch = (AutoCompleteTextView) findViewById(R.id.txtHomeSearch);
         txtHomeSearch.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
@@ -363,7 +242,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        NPAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,NationalParks);
+        NPAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, NationalParks);
 
         txtHomeSearch.setAdapter(NPAdapter);
 
@@ -371,12 +250,19 @@ public class Home extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                selectNPName = (String)parent.getItemAtPosition(position);
+                selectNPName = (String) parent.getItemAtPosition(position);
                 checkForTheNP(selectNPName);
+
 
             }
         });
+
+        progressDialog = ProgressDialog.show(Home.this,
+                "Fetching Your Location","Please Wait...");
+        progressDialog.setCancelable(true);
+
     }
+
     @Override
     protected void onActivityResult(int requestCode,
                                     int resultCode, Intent data) {
@@ -397,13 +283,13 @@ public class Home extends AppCompatActivity {
             //lon=lon.substring(0,10);
             //Toast.makeText(getApplicationContext(),""+la+" "+ln,Toast.LENGTH_LONG).show();
 
-            current_address =(String)address;
+            current_address = (String) address;
             Distance1.clear();
             Latitude1.clear();
             Longitude1.clear();
-            if(Latitude.size()>0 && Longitude.size()>0 && Latitude.size() == Longitude.size()){
+            if (Latitude.size() > 0 && Longitude.size() > 0 && Latitude.size() == Longitude.size()) {
 
-                for(int i=0;i<Longitude.size();i++){
+                for (int i = 0; i < Longitude.size(); i++) {
                     Location locationA = new Location("point A");
 
                     locationA.setLatitude(la);
@@ -415,26 +301,26 @@ public class Home extends AppCompatActivity {
                     locationB.setLongitude(Double.parseDouble(Longitude.get(i)));
 
                     float dist = locationA.distanceTo(locationB);
-                    int ditKM = (int)round(dist/1000.0);
-                    Distance1.add(ditKM+"");
+                    int ditKM = (int) round(dist / 1000.0);
+                    Distance1.add(ditKM + "");
                     Latitude1.add(Latitude.get(i));
                     Longitude1.add(Longitude.get(i));
                 }
 
 
-                if(Distance1.size() == Latitude.size()){
+                if (Distance1.size() == Latitude.size()) {
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putString("Latitude", la.toString());
                     editor.putString("Longitude", ln.toString());
-                    editor.putString("Address",current_address);
+                    editor.putString("Address", current_address);
                     editor.commit();
                     new Home.UpdateDistance().execute();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Problem in Uploading Distance. Contact to our Support Team",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Problem in Uploading Distance. Contact to our Support Team", Toast.LENGTH_LONG).show();
                 }
 
-            }else{
-                Toast.makeText(getApplicationContext(),"Problem in Uploading Distance. Contact to our Support Team",Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Problem in Uploading Distance. Contact to our Support Team", Toast.LENGTH_LONG).show();
             }
 
         } else {
@@ -456,95 +342,73 @@ public class Home extends AppCompatActivity {
         return dist;
     }
 
-    /*private boolean createEcoParkTables() {
-        boolean isCreated = false;
-        //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
-        try{
-            mDatabase.execSQL(
-                    "CREATE TABLE IF NOT EXISTS tbl_NationalParksList (\n" +
-                            "   [NPID] INTEGER NOT NULL CONSTRAINT PK_tbl_NationalParksList PRIMARY KEY AUTOINCREMENT,\n" +
-                            "   [NationalPark] [varchar](1000),\n" +
-                            "   [Area] [varchar](100),\n" +
-                            "   [Latitude] [varchar](500),\n" +
-                            "   [Longitude] [varchar](500),\n" +
-                            "   [Distance] [REAL] \n" +
-                            ");"
-            );
-            mDatabase.execSQL(
-                    "CREATE TABLE IF NOT EXISTS tbl_Camping_Sites (\n" +
-                            "   [CampID] INTEGER NOT NULL CONSTRAINT PK_tbl_Camping_Sites PRIMARY KEY AUTOINCREMENT,\n" +
-                            "   [NPID] [int],\n" +
-                            "   [CampingName] [varchar](100),\n" +
-                            "   [CampingDescription] [varchar](1000),\n" +
-                            "   [Latitude] [varchar](500),\n" +
-                            "   [Longitude] [varchar](500)\n" +
-                            ");"
-            );
-            mDatabase.execSQL(
-                    "CREATE TABLE IF NOT EXISTS tbl_Treck_Sites (\n" +
-                            "   [TID] INTEGER NOT NULL CONSTRAINT PK_tbl_Treck_Sites PRIMARY KEY AUTOINCREMENT,\n" +
-                            "   [NPID] [int],\n" +
-                            "   [TrackName] [varchar](1000),\n" +
-                            "   [Description] [varchar](1000) ,\n" +
-                            "   [Length] [REAL],\n" +
-                            "   [Time] [REAL],\n" +
-                            "   [Latitude] [varchar](500),\n" +
-                            "   [Longitude] [varchar](500)\n" +
-                            ");"
-            );
-            mDatabase.execSQL(
-                    "CREATE TABLE IF NOT EXISTS tbl_LookOut_Sites (\n" +
-                            "   [LookID] INTEGER NOT NULL CONSTRAINT PK_tbl_LookOut_Sites PRIMARY KEY AUTOINCREMENT,\n" +
-                            "   [NPID] [int],\n" +
-                            "   [LookOutSite] [varchar](1000),\n" +
-                            "   [Description] [varchar](1000) ,\n" +
-                            "   [Latitude] [varchar](500),\n" +
-                            "   [Longitude] [varchar](500)\n" +
-                            ");"
-            );
-            mDatabase.execSQL(
-                    "CREATE TABLE IF NOT EXISTS tbl_NationalPark_Facilities (\n" +
-                            "   [NPFID] INTEGER NOT NULL CONSTRAINT PK_tbl_NationalPark_Facilities PRIMARY KEY AUTOINCREMENT,\n" +
-                            "   [NPID] [int],\n" +
-                            "   [Camping] [varchar] (10),\n" +
-                            "   [Canoeing] [varchar] (10) ,\n" +
-                            "   [Fishing] [varchar] (10),\n" +
-                            "   [ScienicDrive] [varchar] (10),\n" +
-                            "   [HorseRiding] [varchar] (10),\n" +
-                            "   [Hunting] [varchar] (10),\n" +
-                            "   [Trekking] [varchar] (10),\n" +
-                            "   [Cycling] [varchar] (10),\n" +
-                            "   [Picknicking] [varchar] (10),\n" +
-                            "   [SightSeeing] [varchar] (10),\n" +
-                            "   [Skiing] [varchar] (10),\n" +
-                            "   [whiteWaterRafting] [varchar] (10),\n" +
-                            "   [CampFire] [varchar] (10),\n" +
-                            "   [Swimming] [varchar] (10),\n" +
-                            "   [YachtingSailing] [varchar] (10),\n" +
-                            "   [BBQ] [varchar] (10),\n" +
-                            "   [BirdWatching] [varchar] (10),\n" +
-                            "   [Playground] [varchar] (10)\n" +
-                            ");"
-            );
-//            pDialog.hide();
-            isCreated =true;
+    @Override
+    public void onLocationChanged(Location location) {
 
-        }catch (SQLException e){
-            Toast.makeText(getApplicationContext(),e.getMessage()+"",Toast.LENGTH_LONG).show();
-            isCreated= false;
-        }
-        finally {
-            //mDatabase.close();
-            return isCreated;
+        //Toast.makeText(this, " "+String.valueOf(location.getLongitude())+" "+String.valueOf(location.getLatitude()), Toast.LENGTH_SHORT).show();
+        la = location.getLatitude();
+        ln = location.getLongitude();
+
+        Distance1.clear();
+        Latitude1.clear();
+        Longitude1.clear();
+        if (Latitude.size() > 0 && Longitude.size() > 0 && Latitude.size() == Longitude.size()) {
+
+            for (int i = 0; i < Longitude.size(); i++) {
+                Location locationA = new Location("point A");
+
+                locationA.setLatitude(la);
+                locationA.setLongitude(ln);
+
+                Location locationB = new Location("point B");
+
+                locationB.setLatitude(Double.parseDouble(Latitude.get(i)));
+                locationB.setLongitude(Double.parseDouble(Longitude.get(i)));
+
+                float dist = locationA.distanceTo(locationB);
+                int ditKM = (int) round(dist / 1000.0);
+                Distance1.add(ditKM + "");
+                Latitude1.add(Latitude.get(i));
+                Longitude1.add(Longitude.get(i));
+            }
+
+
+            if (Distance1.size() == Latitude.size()) {
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("Latitude", la.toString());
+                editor.putString("Longitude", ln.toString());
+                editor.putString("Address", current_address);
+                editor.commit();
+                new Home.UpdateDistance().execute();
+            } else {
+                Toast.makeText(getApplicationContext(), "Problem in Uploading Distance. Contact to our Support Team", Toast.LENGTH_LONG).show();
+            }
+
+        } else {
+            Toast.makeText(getApplicationContext(), "Problem in Uploading Distance. Contact to our Support Team", Toast.LENGTH_LONG).show();
         }
 
+        locationManager.removeUpdates(this);
 
-    }*/
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
 
 
-
-
-    private class UpdateDistance extends AsyncTask<String,String,String> {
+    private class UpdateDistance extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -555,30 +419,31 @@ public class Home extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
-            if(Distance1.size()>0){
-                z="SUCCESS";
-                for(int i=0;i<Distance1.size();i++){
-                    if(LandingPage.CheckIsDataAlreadyInDBorNot1("tbl_NationalParksList",
-                            "Latitude",Latitude1.get(i),
-                            "Longitude",Longitude1.get(i),
-                            "Distance",Double.parseDouble(Distance1.get(i)))){
-                        try{
-                            z="SUCCESS";
+            if (Distance1.size() > 0) {
+                z = "SUCCESS";
+                for (int i = 0; i < Distance1.size(); i++) {
+                    if (LandingPage.CheckIsDataAlreadyInDBorNot1("tbl_NationalParksList",
+                            "Latitude", Latitude1.get(i),
+                            "Longitude", Longitude1.get(i),
+                            "Distance", Double.parseDouble(Distance1.get(i)))) {
+                        try {
+                            z = "SUCCESS";
 
                             String updateQuery = "UPDATE tbl_NationalParksList " +
-                                    "set Distance = "+Double.parseDouble(Distance1.get(i))+" " +
-                                    "Where Latitude = '"+Latitude1.get(i)+"' and Longitude = '"+Longitude1.get(i)+"'";
+                                    "set Distance = " + Double.parseDouble(Distance1.get(i)) + " " +
+                                    "Where Latitude = '" + Latitude1.get(i) + "' and Longitude = '" + Longitude1.get(i) + "'";
                             mDatabase.execSQL(updateQuery);
 
 
-
-                        }catch (SQLException se){
-                            Toast.makeText(getApplicationContext(),"National Parks Loading Problem :"+se.getMessage(),Toast.LENGTH_LONG).show();
-                            z="FAIL";
+                        } catch (SQLException se) {
+                            Toast.makeText(getApplicationContext(), "National Parks Loading Problem :" + se.getMessage(), Toast.LENGTH_LONG).show();
+                            z = "FAIL";
                         }
                     }
                 }
             }
+
+            progressDialog.dismiss();
 
             return z;
         }
@@ -586,85 +451,17 @@ public class Home extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            if(z=="SUCCESS"){
+            if (z == "SUCCESS") {
                 //Toast.makeText(getApplicationContext(),"Distance Updated.",Toast.LENGTH_LONG).show();
                 new GetParksData().execute();
                 //startActivity( new Intent(Home.this,Home.class));
-            }else{
-                Toast.makeText(getApplicationContext(),"Distance Update Fail",Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Distance Update Fail", Toast.LENGTH_LONG).show();
             }
 
-
-
         }
     }
 
-
-    /*public boolean CheckIsDataAlreadyInDBorNot(String TableName,
-                                               String dbfield,
-                                               String fieldValue,
-                                               String dbfield1,
-                                               String fieldValue1) {
-        //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
-        String Query = "Select * from " + TableName + " where " + dbfield + " = '" + fieldValue+"' and " + dbfield1 + " = '" + fieldValue1+"'";
-        Cursor cursor = mDatabase.rawQuery(Query, null);
-        if(cursor.getCount() > 0){
-            cursor.close();
-            return false;
-        }
-        cursor.close();
-        //mDatabase.close();
-        return true;
-    }
-    public boolean CheckIsDataAlreadyInDBorNotIntiger(String TableName,
-                                                      String dbfield,
-                                                      int fieldValue)
-    {
-        String Query = "Select * from " + TableName + " where " + dbfield + " = " + fieldValue;
-        Cursor cursor = mDatabase.rawQuery(Query, null);
-        if(cursor.getCount() > 0){
-            cursor.close();
-            return false;
-        }
-        cursor.close();
-        return true;
-    }
-
-    public boolean CheckIsDataAlreadyInDBorNotInt(String TableName,
-                                                  String dbfield,
-                                                  String fieldValue,
-                                                  String dbfield1,
-                                                  int fieldValue1) {
-        //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
-        String Query = "Select * from " + TableName + " where " + dbfield + " = '" + fieldValue+"' and " + dbfield1 + " = '" + fieldValue1+"'";
-        Cursor cursor = mDatabase.rawQuery(Query, null);
-        if(cursor.getCount() > 0){
-            cursor.close();
-            return false;
-        }
-        cursor.close();
-        //mDatabase.close();
-        return true;
-    }
-
-    public boolean CheckIsDataAlreadyInDBorNot1(String TableName,
-                                                String dbfield,
-                                                String fieldValue,
-                                                String dbfield1,
-                                                String fieldValue1,
-                                                String dbfield2,
-                                                double fieldValue2) {
-        //mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
-        String Query = "Select * from " + TableName + " where " + dbfield + " = '" + fieldValue+"' and " + dbfield1 + " = '" + fieldValue1+"' and " + dbfield2 + " = " + fieldValue2+"";
-        Cursor cursor = mDatabase.rawQuery(Query, null);
-        if(cursor.getCount() > 0){
-            cursor.close();
-            return false;
-        }
-        cursor.close();
-        //mDatabase.close();
-        return true;
-    } */
 
     @Override
     protected void onResume() {
@@ -684,7 +481,7 @@ public class Home extends AppCompatActivity {
 
     }
 
-    private class GetParksData extends AsyncTask<String,String,String> {
+    private class GetParksData extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -700,13 +497,13 @@ public class Home extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             String z = "SUCCESS";
-            try{
+            try {
 
-                String query = "select * from tbl_NationalParksList where Distance <="+DistCount+" order by Distance ASC";
+                String query = "select * from tbl_NationalParksList where Distance <=" + DistCount + " order by Distance ASC";
                 Cursor cursorRoom = mDatabase.rawQuery(query, null);
 
-                if(cursorRoom.moveToFirst()){
-                    do{
+                if (cursorRoom.moveToFirst()) {
+                    do {
                         final ParkItems item = new ParkItems();
                         item.setNationalParks(cursorRoom.getString(cursorRoom.getColumnIndex("NationalPark")));
                         item.setArea(cursorRoom.getString(cursorRoom.getColumnIndex("Area")));
@@ -717,11 +514,11 @@ public class Home extends AppCompatActivity {
                         NPIDonSearch.add(cursorRoom.getInt(cursorRoom.getColumnIndex("NPID")));
                         NPSearch.add(cursorRoom.getString(cursorRoom.getColumnIndex("NationalPark")));
                         ParksList.add(item);
-                    }while (cursorRoom.moveToNext());
+                    } while (cursorRoom.moveToNext());
                 }
                 cursorRoom.close();
-            }catch (Exception e){
-                z="FAIL";
+            } catch (Exception e) {
+                z = "FAIL";
             }
             //mDatabase.close();
             return z;
@@ -732,9 +529,9 @@ public class Home extends AppCompatActivity {
             super.onPostExecute(result);
             //pDialog.hide();
 
-            if(result.equals("SUCCESS")){
-                if(ParksList.size()>0){
-                    ParksAdapter parkListAdapter = new ParksAdapter(Home.this,ParksList);
+            if (result.equals("SUCCESS")) {
+                if (ParksList.size() > 0) {
+                    ParksAdapter parkListAdapter = new ParksAdapter(Home.this, ParksList);
                     viewData.setAdapter(parkListAdapter);
                     /*viewData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -752,41 +549,27 @@ public class Home extends AppCompatActivity {
                         }
                     });*/
 
-                }else{
+                } else {
                     viewData.setAdapter(null);
-                    Toast.makeText(getApplicationContext(),"No Parks Found to this Distance",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "No Parks Found to this Distance", Toast.LENGTH_LONG).show();
                 }
             }
         }
     }
 
-    public void progressDialogueShowClose(){
-        final ProgressDialog progressDialog = ProgressDialog.show(Home.this,
-                "Loading","Please Wait...");
-        progressDialog.setCancelable(true);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                progressDialog.dismiss();
-
-            }
-        }, 500);
-
-    }
-
-    public void startImageSlider(){
-        mBinding = DataBindingUtil.setContentView(this,R.layout.activity_home);
+    public void startImageSlider() {
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         viewPager = mBinding.viewPager;
         sliderDots = mBinding.SliderDots;
-        ViewPageAdapter viewPageAdapter=new ViewPageAdapter(Home.this);
+        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(Home.this);
         viewPager.setAdapter(viewPageAdapter);
         dotCounts = viewPageAdapter.getCount();
         dots = new ImageView[dotCounts];
 
-        for(int i=0;i<dotCounts;i++){
-            dots[i]=new ImageView(this);
-            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.not_active_dot));
+        for (int i = 0; i < dotCounts; i++) {
+            dots[i] = new ImageView(this);
+            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.not_active_dot));
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             params.setMargins(8, 0, 8, 0);
             sliderDots.addView(dots[i], params);
@@ -802,7 +585,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
 
-                for(int i = 0; i< dotCounts; i++){
+                for (int i = 0; i < dotCounts; i++) {
                     dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.not_active_dot));
                 }
                 dots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
@@ -815,7 +598,7 @@ public class Home extends AppCompatActivity {
             }
         });
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new Home.myTimerTask(), 4000 ,4000);
+        timer.scheduleAtFixedRate(new Home.myTimerTask(), 4000, 4000);
     }
 
     public class myTimerTask extends TimerTask {
@@ -826,14 +609,13 @@ public class Home extends AppCompatActivity {
                 @Override
                 public void run() {
 
-                    if(viewPager.getCurrentItem() == 0){
+                    if (viewPager.getCurrentItem() == 0) {
                         viewPager.setCurrentItem(1);
-                    } else if(viewPager.getCurrentItem() == 1){
+                    } else if (viewPager.getCurrentItem() == 1) {
                         viewPager.setCurrentItem(2);
-                    } else if(viewPager.getCurrentItem() == 2){
+                    } else if (viewPager.getCurrentItem() == 2) {
                         viewPager.setCurrentItem(3);
-                    }else
-                    {
+                    } else {
                         viewPager.setCurrentItem(0);
                     }
 
@@ -842,27 +624,26 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    public void checkForTheNP(String selectNPName){
-        int pos=-1;
+    public void checkForTheNP(String selectNPName) {
+        int pos = -1;
         for (int i = 0; i < NationalParks.size(); i++) {
             if (NationalParks.get(i).equals(selectNPName)) {
 
                 SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString("ParkLatitude",Latitude.get(i));
+                editor.putString("ParkLatitude", Latitude.get(i));
                 editor.putString("ParkLongitude", Longitude.get(i));
-                editor.putString("ParkName",NationalParks.get(i));
-                editor.putString("ParkArea",Area.get(i));
+                editor.putString("ParkName", NationalParks.get(i));
                 editor.putString("ParkDistance", Distance1.get(i));
-                editor.putInt("NPID",NPIDonSearch.get(NPSearch.indexOf(selectNPName)));
+                editor.putInt("NPID", NPIDonSearch.get(NPSearch.indexOf(selectNPName)));
                 editor.apply();
-                startActivity(new Intent(Home.this,ParkPage.class));
+                startActivity(new Intent(Home.this, ParkPage.class));
                 break;
 
             }
         }
     }
 
-    public void startLocation(){
+    public void startLocation() {
         try {
             PlacePicker.IntentBuilder intentBuilder = new PlacePicker.IntentBuilder();
             Intent intent = intentBuilder.build(Home.this);
@@ -872,5 +653,17 @@ public class Home extends AppCompatActivity {
                 | GooglePlayServicesNotAvailableException e) {
             e.printStackTrace();
         }
+
     }
+    public void getLoc(){
+
+        try {
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 5000, (LocationListener) this);
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

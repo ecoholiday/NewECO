@@ -157,8 +157,8 @@ public class LandingPage extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         if (!isLocationEnabled()) {
             new AlertDialog.Builder(this)
-                    .setTitle("Please activate location")
-                    .setMessage("Click ok to goto settings else exit.")
+                    .setTitle("Please enable location access for better results")
+                    .setMessage("Click ok to enable or cancel and enable manually later")
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
@@ -179,6 +179,7 @@ public class LandingPage extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
+                        sleep(1000);
                         mhandler.post(new Runnable() {
                             @Override
                             public void run() {
@@ -198,7 +199,7 @@ public class LandingPage extends AppCompatActivity {
                             }
                         });
 
-                        sleep(10);
+                        sleep(1000);
                         mhandler.post(new Runnable() {
                             @Override
                             public void run() {

@@ -1,6 +1,7 @@
 package com.example.newecoholiday.Activity;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,6 +12,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
@@ -30,10 +32,10 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.android.volley.Response;
 import com.example.newecoholiday.R;
 import com.example.newecoholiday.adapter.RecyclerViewAdapter;
 import com.example.newecoholiday.database.DatabaseQuery;
@@ -118,6 +120,7 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
         if(actionBar != null){
             actionBar.hide();
         }
+        progressDialogueShowClose();
         sharedpreferences = getSharedPreferences(Home.MyPREFERENCES, Context.MODE_PRIVATE);
         NPID = sharedpreferences.getInt("NPID", 0);
         parkName = sharedpreferences.getString("ParkName","");
@@ -384,5 +387,20 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
             e.printStackTrace();
         }
         return days;
+    }
+
+    public void progressDialogueShowClose(){
+        final ProgressDialog progressDialog = ProgressDialog.show(WeatherActivity.this,
+                "Loading","Please Wait...");
+        progressDialog.setCancelable(true);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                progressDialog.dismiss();
+
+            }
+        }, 750);
+
     }
 }

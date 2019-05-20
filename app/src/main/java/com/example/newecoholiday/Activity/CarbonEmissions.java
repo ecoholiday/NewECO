@@ -57,7 +57,6 @@ public class CarbonEmissions extends AppCompatActivity implements AdapterView.On
 
         Intent fromParkActivity = getIntent();
         days = fromParkActivity.getStringExtra("days");
-        days = days.substring(0,1);
         distance = fromParkActivity.getStringExtra("distance");
         nationalPark = fromParkActivity.getStringExtra("NPname");
 

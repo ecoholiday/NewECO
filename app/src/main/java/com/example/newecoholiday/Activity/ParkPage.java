@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -13,7 +14,6 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.newecoholiday.R;
@@ -30,6 +30,7 @@ public class ParkPage extends AppCompatActivity {
 
     //CardView clicks
     CardView cardTodo,cardSavings,cardHelp,cardPrepare;
+    CardView cardDay1,cardDay2,cardDay3,cardDay4,cardDay5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +52,8 @@ public class ParkPage extends AppCompatActivity {
         //set the image nd name of national park
         TextView txtPark = (TextView)findViewById(R.id.txtPark);
         TextView txtParkDistance = (TextView)findViewById(R.id.txtParkDistance);
-        final SeekBar seekBarDays = findViewById(R.id.seekBarDays);
-        final TextView txtSeekDays = findViewById(R.id.txtSeekDays);
+        //final SeekBar seekBarDays = findViewById(R.id.seekBarDays);
+        //final TextView txtSeekDays = findViewById(R.id.txtSeekDays);
 
         txtPark.setText(parkName);
         setNPImage(parkName);
@@ -99,7 +100,7 @@ public class ParkPage extends AppCompatActivity {
 
                 Intent intentReport = new Intent(ParkPage.this, CarbonEmissions.class);
                 //Toast.makeText(getApplicationContext(),""+txtSeekDays.getText(),Toast.LENGTH_LONG).show();
-                intentReport.putExtra("days", txtSeekDays.getText());
+                intentReport.putExtra("days", days);
                 intentReport.putExtra("distance", parkDistance);
                 intentReport.putExtra("NPname", parkName);
 
@@ -107,8 +108,58 @@ public class ParkPage extends AppCompatActivity {
             }
         });
 
+        cardDay1 = findViewById(R.id.cardDay1);
+        cardDay2 = findViewById(R.id.cardDay2);
+        cardDay3 = findViewById(R.id.cardDay3);
+        cardDay4 = findViewById(R.id.cardDay4);
+        cardDay5 = findViewById(R.id.cardDay5);
+        days="1";
+        cardDay1.setBackgroundColor(Color.parseColor("#FFAE76"));
 
-        if (seekBarDays != null) {
+
+        cardDay1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                days = "1";
+                changeDaysCards();
+                cardDay1.setBackgroundColor(Color.parseColor("#FFAE76"));
+
+            }
+        });
+        cardDay2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                days = "2";
+                changeDaysCards();
+                cardDay2.setBackgroundColor(Color.parseColor("#FFAE76"));
+            }
+        });
+        cardDay3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                days = "3";
+                changeDaysCards();
+                cardDay3.setBackgroundColor(Color.parseColor("#FFAE76"));
+            }
+        });
+        cardDay4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                days = "4";
+                changeDaysCards();
+                cardDay4.setBackgroundColor(Color.parseColor("#FFAE76"));
+            }
+        });
+        cardDay5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                days = "5";
+                changeDaysCards();
+                cardDay5.setBackgroundColor(Color.parseColor("#FFAE76"));
+            }
+        });
+
+        /*if (seekBarDays != null) {
             seekBarDays.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -133,7 +184,7 @@ public class ParkPage extends AppCompatActivity {
 
                 }
             });
-        }
+        }*/
 
 
         RotateAnimation anim = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -215,6 +266,15 @@ public class ParkPage extends AppCompatActivity {
             imgPark.setImageResource(R.drawable.yarra);
         }
 
+
+    }
+
+    public void changeDaysCards(){
+        cardDay1.setBackgroundColor(Color.parseColor("#ffffff"));
+        cardDay2.setBackgroundColor(Color.parseColor("#ffffff"));
+        cardDay3.setBackgroundColor(Color.parseColor("#ffffff"));
+        cardDay4.setBackgroundColor(Color.parseColor("#ffffff"));
+        cardDay5.setBackgroundColor(Color.parseColor("#ffffff"));
 
     }
 
